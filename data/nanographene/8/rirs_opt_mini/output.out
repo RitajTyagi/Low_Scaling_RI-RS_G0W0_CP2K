@@ -1,0 +1,2884 @@
+cpu-bind=MASK - n2lcn0118, task  8  0 [4686]: mask 0x|BBBBBBBB|BBBBBBBB||--------|--------||--------|--------||--------|--------||||--------|--------||--------|--------||--------|--------||--------|--------| set
+cpu-bind=MASK - n2lcn0118, task  9  1 [4687]: mask 0x|--------|--------||BBBBBBBB|BBBBBBBB||--------|--------||--------|--------||||--------|--------||--------|--------||--------|--------||--------|--------| set
+cpu-bind=MASK - n2lcn0118, task 10  2 [4688]: mask 0x|--------|--------||--------|--------||BBBBBBBB|BBBBBBBB||--------|--------||||--------|--------||--------|--------||--------|--------||--------|--------| set
+cpu-bind=MASK - n2lcn0118, task 11  3 [4689]: mask 0x|--------|--------||--------|--------||--------|--------||BBBBBBBB|BBBBBBBB||||--------|--------||--------|--------||--------|--------||--------|--------| set
+cpu-bind=MASK - n2lcn0118, task 12  4 [4690]: mask 0x|--------|--------||--------|--------||--------|--------||--------|--------||||BBBBBBBB|BBBBBBBB||--------|--------||--------|--------||--------|--------| set
+cpu-bind=MASK - n2lcn0118, task 13  5 [4691]: mask 0x|--------|--------||--------|--------||--------|--------||--------|--------||||--------|--------||BBBBBBBB|BBBBBBBB||--------|--------||--------|--------| set
+cpu-bind=MASK - n2lcn0118, task 14  6 [4692]: mask 0x|--------|--------||--------|--------||--------|--------||--------|--------||||--------|--------||--------|--------||BBBBBBBB|BBBBBBBB||--------|--------| set
+cpu-bind=MASK - n2lcn0118, task 15  7 [4693]: mask 0x|--------|--------||--------|--------||--------|--------||--------|--------||||--------|--------||--------|--------||--------|--------||BBBBBBBB|BBBBBBBB| set
+cpu-bind=MASK - n2lcn0104, task  0  0 [7212]: mask 0x|BBBBBBBB|BBBBBBBB||--------|--------||--------|--------||--------|--------||||--------|--------||--------|--------||--------|--------||--------|--------| set
+cpu-bind=MASK - n2lcn0104, task  1  1 [7213]: mask 0x|--------|--------||BBBBBBBB|BBBBBBBB||--------|--------||--------|--------||||--------|--------||--------|--------||--------|--------||--------|--------| set
+cpu-bind=MASK - n2lcn0104, task  2  2 [7214]: mask 0x|--------|--------||--------|--------||BBBBBBBB|BBBBBBBB||--------|--------||||--------|--------||--------|--------||--------|--------||--------|--------| set
+cpu-bind=MASK - n2lcn0104, task  3  3 [7215]: mask 0x|--------|--------||--------|--------||--------|--------||BBBBBBBB|BBBBBBBB||||--------|--------||--------|--------||--------|--------||--------|--------| set
+cpu-bind=MASK - n2lcn0104, task  4  4 [7216]: mask 0x|--------|--------||--------|--------||--------|--------||--------|--------||||BBBBBBBB|BBBBBBBB||--------|--------||--------|--------||--------|--------| set
+cpu-bind=MASK - n2lcn0104, task  5  5 [7217]: mask 0x|--------|--------||--------|--------||--------|--------||--------|--------||||--------|--------||BBBBBBBB|BBBBBBBB||--------|--------||--------|--------| set
+cpu-bind=MASK - n2lcn0104, task  6  6 [7218]: mask 0x|--------|--------||--------|--------||--------|--------||--------|--------||||--------|--------||--------|--------||BBBBBBBB|BBBBBBBB||--------|--------| set
+cpu-bind=MASK - n2lcn0104, task  7  7 [7219]: mask 0x|--------|--------||--------|--------||--------|--------||--------|--------||||--------|--------||--------|--------||--------|--------||BBBBBBBB|BBBBBBBB| set
+ DBCSR| CPU Multiplication driver                                           XSMM (U)
+ DBCSR| Multrec recursion limit                                              512 (U)
+ DBCSR| Multiplication stack size                                           1000 (D)
+ DBCSR| Maximum elements for images                                    UNLIMITED (U)
+ DBCSR| Multiplicative factor virtual images                                   1 (U)
+ DBCSR| Use multiplication densification                                       T (D)
+ DBCSR| Multiplication size stacks                                             3 (U)
+ DBCSR| Use memory pool for CPU allocation                                     F (U)
+ DBCSR| Number of 3D layers                                               SINGLE (U)
+ DBCSR| Use MPI memory allocation                                              F (U)
+ DBCSR| Use RMA algorithm                                                      F (U)
+ DBCSR| Use Communication thread                                               T (U)
+ DBCSR| Communication thread load                                             30 (D)
+ DBCSR| MPI: My process id                                                     0
+ DBCSR| MPI: Number of processes                                              16
+ DBCSR| OMP: Current number of threads                                        16
+ DBCSR| OMP: Max number of threads                                            16
+ DBCSR| Split modifier for TAS multiplication algorithm                  1.0E+00 (U)
+
+
+  **** **** ******  **  PROGRAM STARTED AT               2026-09-15 00:17:52.878
+ ***** ** ***  *** **   PROGRAM STARTED ON                             n2lcn0104
+ **    ****   ******    PROGRAM STARTED BY                              metdyn07
+ ***** **    ** ** **   PROGRAM PROCESS ID                                  7212
+  **** **  *******  **  PROGRAM STARTED IN /scratch/hpc-prf-metdyn/metdyn07_Rita
+                                           j/otus/nanographene/8/rirs_opt_3
+
+ CP2K| version string:                 CP2K version 2026.2 (Development Version)
+ CP2K| source code revision number:                                   0005d2399e
+ CP2K| cp2kflags: omp libint fftw3 libxc elpa parallel scalapack mpi_f08 cosma l
+ CP2K|            ibxs libxsmm plumed2 spglib openblas sirius libvori libbqb lib
+ CP2K|            bvdwxc hdf5 greenx
+ CP2K| is freely available from                            https://www.cp2k.org/
+ CP2K| Program compiled at                                   2026-09-14 14:16:23
+ CP2K| Program compiled on                                              n2login5
+ CP2K| Program compiled for                                               x86_64
+ CP2K| Data directory path    /pc2/groups/hpc-prf-metdyn/metdyn07_Ritaj/implemen
+ CP2K| Input file name                                                 input.inp
+
+ GLOBAL| Force Environment number                                              1
+ GLOBAL| Basis set file name                                      BASIS_mini_all
+ GLOBAL| Potential file name                                      ALL_POTENTIALS
+ GLOBAL| MM Potential file name                                     MM_POTENTIAL
+ GLOBAL| Coordinate file name                                          struc.xyz
+ GLOBAL| Method name                                                        CP2K
+ GLOBAL| Project name                                                       RIRS
+ GLOBAL| Run type                                                         ENERGY
+ GLOBAL| FFT library                                                       FFTW3
+ GLOBAL| Diagonalization library                                            ELPA
+ GLOBAL| Cholesky decomposition library                                ScaLAPACK
+ GLOBAL| DGEMM library                                                      BLAS
+ GLOBAL| Minimum number of eigenvectors for ELPA usage                        64
+ GLOBAL| Orthonormality check for eigenvectors                          DISABLED
+ GLOBAL| Matrix multiplication library                                     COSMA
+ GLOBAL| All-to-all communication in single precision                          F
+ GLOBAL| Grid backend                                                       AUTO
+ GLOBAL| Global print level                                               MEDIUM
+ GLOBAL| MPI I/O enabled                                                       T
+ GLOBAL| Total number of message passing processes                            16
+ GLOBAL| Number of distributed systems (nodes)                                 2
+ GLOBAL| Number of threads for this process                                   16
+ GLOBAL| This output is from process                                           0
+ GLOBAL| OpenMP stack size per thread (OMP_STACKSIZE)                    default
+ GLOBAL| CPU model name                          AMD EPYC 7763 64-Core Processor
+ GLOBAL| CPUID                                                              1002
+ GLOBAL| Compiled for CPUID                                                    0
+
+ *** HINT in environment.F:968 :: The compiler target (generic) used to ***
+ *** build this binary does not enable all instruction-set extensions   ***
+ *** available on this CPU (x86_avx2). Consider reconfiguring and       ***
+ *** rebuilding CP2K for this target system to enable them.             ***
+
+
+ MEMORY| system memory details [Kb]
+ MEMORY|                        rank 0           min           max       average
+ MEMORY| MemTotal           1056620476    1056620476    1056620480    1056620478
+ MEMORY| MemFree            1045270936    1045270936    1045453644    1045362290
+ MEMORY| Buffers                127360        126000        127360        126680
+ MEMORY| Cached                5920480       5849056       5920480       5884768
+ MEMORY| Slab                   803020        743848        803020        773434
+ MEMORY| SReclaimable           161856        155268        161856        158562
+ MEMORY| MemLikelyFree      1051480632    1051480632    1051583968    1051532300
+
+
+ *** Fundamental physical constants (SI units) ***
+
+ *** Literature: B. J. Mohr and B. N. Taylor,
+ ***             CODATA recommended values of the fundamental physical
+ ***             constants: 2006, Web Version 5.1
+ ***             http://physics.nist.gov/constants
+
+ Speed of light in vacuum [m/s]                             2.99792458000000E+08
+ Magnetic constant or permeability of vacuum [N/A**2]       1.25663706143592E-06
+ Electric constant or permittivity of vacuum [F/m]          8.85418781762039E-12
+ Planck constant (h) [J*s]                                  6.62606896000000E-34
+ Planck constant (h-bar) [J*s]                              1.05457162825177E-34
+ Elementary charge [C]                                      1.60217648700000E-19
+ Electron mass [kg]                                         9.10938215000000E-31
+ Electron g factor [ ]                                     -2.00231930436220E+00
+ Proton mass [kg]                                           1.67262163700000E-27
+ Fine-structure constant                                    7.29735253760000E-03
+ Rydberg constant [1/m]                                     1.09737315685270E+07
+ Avogadro constant [1/mol]                                  6.02214179000000E+23
+ Boltzmann constant [J/K]                                   1.38065040000000E-23
+ Atomic mass unit [kg]                                      1.66053878200000E-27
+ Bohr radius [m]                                            5.29177208590000E-11
+
+ *** Conversion factors ***
+
+ [u] -> [a.u.]                                              1.82288848426455E+03
+ [Angstrom] -> [Bohr] = [a.u.]                              1.88972613288564E+00
+ [a.u.] = [Bohr] -> [Angstrom]                              5.29177208590000E-01
+ [a.u.] -> [s]                                              2.41888432650478E-17
+ [a.u.] -> [fs]                                             2.41888432650478E-02
+ [a.u.] -> [J]                                              4.35974393937059E-18
+ [a.u.] -> [N]                                              8.23872205491840E-08
+ [a.u.] -> [K]                                              3.15774647902944E+05
+ [a.u.] -> [kJ/mol]                                         2.62549961709828E+03
+ [a.u.] -> [kcal/mol]                                       6.27509468713739E+02
+ [a.u.] -> [Pa]                                             2.94210107994716E+13
+ [a.u.] -> [bar]                                            2.94210107994716E+08
+ [a.u.] -> [atm]                                            2.90362800883016E+08
+ [a.u.] -> [eV]                                             2.72113838565563E+01
+ [a.u.] -> [Hz]                                             6.57968392072181E+15
+ [a.u.] -> [1/cm] (wave numbers)                            2.19474631370540E+05
+ [a.u./Bohr**2] -> [1/cm]                                   5.14048714338585E+03
+ 
+
+ CELL| Volume [angstrom^3]:                                         13454.654070
+ CELL| Vector a [angstrom]:      21.190     0.000     0.000   |a| =    21.190000
+ CELL| Vector b [angstrom]:       0.000    46.860     0.000   |b| =    46.860000
+ CELL| Vector c [angstrom]:       0.000     0.000    13.550   |c| =    13.550000
+ CELL| Angle (b,c), alpha [degree]:                                    90.000000
+ CELL| Angle (a,c), beta  [degree]:                                    90.000000
+ CELL| Angle (a,b), gamma [degree]:                                    90.000000
+ CELL| Numerically orthorhombic:                                             YES
+ CELL| Periodicity                                                          NONE
+
+ CELL_REF| Volume [angstrom^3]:                                     13454.654070
+ CELL_REF| Vector a [angstrom    21.190     0.000     0.000   |a| =    21.190000
+ CELL_REF| Vector b [angstrom     0.000    46.860     0.000   |b| =    46.860000
+ CELL_REF| Vector c [angstrom     0.000     0.000    13.550   |c| =    13.550000
+ CELL_REF| Angle (b,c), alpha [degree]:                                90.000000
+ CELL_REF| Angle (a,c), beta  [degree]:                                90.000000
+ CELL_REF| Angle (a,b), gamma [degree]:                                90.000000
+ CELL_REF| Numerically orthorhombic:                                         YES
+ CELL_REF| Periodicity                                                      NONE
+
+ GENERATE|  Preliminary Number of Bonds generated:                             0
+ GENERATE|  Achieved consistency in connectivity generation.
+
+ *******************************************************************************
+ *******************************************************************************
+ **                                                                           **
+ **     #####                         ##              ##                      **
+ **    ##   ##            ##          ##              ##                      **
+ **   ##     ##                       ##            ######                    **
+ **   ##     ##  ##   ##  ##   #####  ##  ##   ####   ##    #####    #####    **
+ **   ##     ##  ##   ##  ##  ##      ## ##   ##      ##   ##   ##  ##   ##   **
+ **   ##  ## ##  ##   ##  ##  ##      ####     ###    ##   ######   ######    **
+ **    ##  ###   ##   ##  ##  ##      ## ##      ##   ##   ##       ##        **
+ **     #######   #####   ##   #####  ##  ##  ####    ##    #####   ##        **
+ **           ##                                                    ##        **
+ **                                                                           **
+ **                                                ... make the atoms dance   **
+ **                                                                           **
+ **            Copyright (C) by CP2K developers group (2000-2026)             **
+ **                      J. Chem. Phys. 152, 194103 (2020)                    **
+ **                                                                           **
+ *******************************************************************************
+
+ DFT| Spin restricted Kohn-Sham (RKS) calculation                            RKS
+ DFT| Multiplicity                                                             1
+ DFT| Number of spin states                                                    1
+ DFT| Charge                                                                   0
+ DFT| Self-interaction correction (SIC)                                       NO
+ DFT| Cutoffs: density                                              1.000000E-10
+ DFT|          gradient                                             1.000000E-10
+ DFT|          tau                                                  1.000000E-10
+ DFT|          cutoff_smoothing_range                               0.000000E+00
+ DFT| XC density smoothing                                                  NONE
+ DFT| XC derivatives                                                          PW
+
+ FUNCTIONAL| PBE:
+ FUNCTIONAL| J.P.Perdew, K.Burke, M.Ernzerhof, Phys. Rev. Letter, vol. 77, n 18,
+ FUNCTIONAL|  pp. 3865-3868, (1996) {spin unpolarized}                          
+
+
+ QS| Method:                                                                GAPW
+ QS| Density plane wave grid type                        NON-SPHERICAL FULLSPACE
+ QS| Number of grid levels:                                                    4
+ QS| Density cutoff [a.u.]:                                                300.0
+ QS| Multi grid cutoff [a.u.]: 1) grid level                               300.0
+ QS|                           2) grid level                               100.0
+ QS|                           3) grid level                                33.3
+ QS|                           4) grid level                                11.1
+ QS| Grid level progression factor:                                          3.0
+ QS| Relative density cutoff [a.u.]:                                        30.0
+ QS| Interaction thresholds: eps_pgf_orb:                                3.2E-08
+ QS|                         eps_filter_matrix:                          0.0E+00
+ QS|                         eps_core_charge:                            1.0E-17
+ QS|                         eps_rho_gspace:                             1.0E-15
+ QS|                         eps_rho_rspace:                             1.0E-15
+ QS|                         eps_gvg_rspace:                             3.2E-08
+ QS|                         eps_ppl:                                    1.0E-02
+ QS|                         eps_ppnl:                                   3.2E-10
+ QS| GAPW|      One center basis from orbital basis primitives
+ QS| GAPW|                   eps_fit:                                    1.0E-04
+ QS| GAPW|                   eps_iso:                                    1.0E-12
+ QS| GAPW|                   eps_svd:                                    1.0E-08
+ QS| GAPW|                   eps_cpc:                                    1.0E-15
+ QS| GAPW|   atom-r-grid: quadrature:                                     GC_LOG
+ QS| GAPW|      atom-s-grid:  max l :                                          2
+ QS| GAPW|      max_l_rho0 :                                                   2
+ QS| GAPW|      At least one kind is NOT PAW, i.e. it has only soft AO 
+ QS| GAPW|      The NOT PAW atoms are treated fully GPW
+
+
+ ATOMIC KIND INFORMATION
+
+  1. Atomic kind: C                                     Number of atoms:     112
+
+     Orbital Basis Set                                    aug-SZV-MOLOPT-ae-mini
+
+       Number of orbital shell sets:                                           2
+       Number of orbital shells:                                               5
+       Number of primitive Cartesian functions:                                7
+       Number of Cartesian basis functions:                                    9
+       Number of spherical basis functions:                                    9
+       Norm type:                                                              2
+
+       Normalised Cartesian orbitals:
+
+                        Set   Shell   Orbital            Exponent    Coefficient
+
+                          1       1    1s               71.616837       2.707801
+                                                        13.045096       2.618883
+                                                         3.530512       0.816191
+
+                          2       1    2s                0.114558       0.000000
+                                                         0.222289       0.161536
+                                                         0.683483       0.214036
+                                                         2.941249      -0.160017
+
+                          2       2    3s                0.114558       0.000272
+                                                         0.222289       0.256636
+                                                         0.683483      -0.079244
+                                                         2.941249       0.000032
+
+                          2       3    3px               0.114558       0.000000
+                                                         0.222289       0.085276
+                                                         0.683483       0.538304
+                                                         2.941249       0.856044
+                          2       3    3py               0.114558       0.000000
+                                                         0.222289       0.085276
+                                                         0.683483       0.538304
+                                                         2.941249       0.856044
+                          2       3    3pz               0.114558       0.000000
+                                                         0.222289       0.085276
+                                                         0.683483       0.538304
+                                                         2.941249       0.856044
+
+                          2       4    4px               0.114558      -0.035043
+                                                         0.222289      -0.159067
+                                                         0.683483       0.106927
+                                                         2.941249      -0.036832
+                          2       4    4py               0.114558      -0.035043
+                                                         0.222289      -0.159067
+                                                         0.683483       0.106927
+                                                         2.941249      -0.036832
+                          2       4    4pz               0.114558      -0.035043
+                                                         0.222289      -0.159067
+                                                         0.683483       0.106927
+                                                         2.941249      -0.036832
+
+     RI Auxiliary Basis Set                      RI_aug-SZV-MOLOPT-ae-mini_tier1
+
+       Number of orbital shell sets:                                           7
+       Number of orbital shells:                                               7
+       Number of primitive Cartesian functions:                                7
+       Number of Cartesian basis functions:                                   11
+       Number of spherical basis functions:                                   11
+       Norm type:                                                              2
+
+       Normalised Cartesian orbitals:
+
+                        Set   Shell   Orbital            Exponent    Coefficient
+
+                          1       1    1s                0.916541       0.667612
+
+                          2       1    2s                1.427899       0.930964
+
+                          3       1    3s                2.204249       1.289305
+
+                          4       1    4s                3.433303       1.797605
+
+                          5       1    5s                5.397142       2.523673
+
+                          6       1    6px               0.514441       0.621025
+                          6       1    6py               0.514441       0.621025
+                          6       1    6pz               0.514441       0.621025
+
+                          7       1    7px               1.555827       2.476805
+                          7       1    7py               1.555827       2.476805
+                          7       1    7pz               1.555827       2.476805
+
+       Atomic covalent radius [Angstrom]:                                  0.770
+
+       Atomic van der Waals radius [Angstrom]:                             1.700
+
+     The atoms of this atomic kind are PAW atoms (GAPW):
+       Hard Gaussian function radius:                                      1.512
+       Rho0 radius:                                                        1.512
+       Maximum GTO radius used for PAW projector construction:            24.566
+
+     GAPW Soft Basis Set                             aug-SZV-MOLOPT-ae-mini_soft
+
+       Number of orbital shell sets:                                           2
+       Number of orbital shells:                                               5
+       Number of primitive Cartesian functions:                                5
+       Number of Cartesian basis functions:                                    9
+       Number of spherical basis functions:                                    9
+       Norm type:                                                              2
+
+       Normalised Cartesian orbitals:
+
+                        Set   Shell   Orbital            Exponent    Coefficient
+
+                          1       1    1s                3.530512       0.816191
+
+                          2       1    2s                0.114558       0.000000
+                                                         0.222289       0.161536
+                                                         0.683483       0.214036
+                                                         2.941249      -0.160017
+
+                          2       2    3s                0.114558       0.000272
+                                                         0.222289       0.256636
+                                                         0.683483      -0.079244
+                                                         2.941249       0.000032
+
+                          2       3    3px               0.114558       0.000000
+                                                         0.222289       0.085276
+                                                         0.683483       0.538304
+                                                         2.941249       0.856044
+                          2       3    3py               0.114558       0.000000
+                                                         0.222289       0.085276
+                                                         0.683483       0.538304
+                                                         2.941249       0.856044
+                          2       3    3pz               0.114558       0.000000
+                                                         0.222289       0.085276
+                                                         0.683483       0.538304
+                                                         2.941249       0.856044
+
+                          2       4    4px               0.114558      -0.035043
+                                                         0.222289      -0.159067
+                                                         0.683483       0.106927
+                                                         2.941249      -0.036832
+                          2       4    4py               0.114558      -0.035043
+                                                         0.222289      -0.159067
+                                                         0.683483       0.106927
+                                                         2.941249      -0.036832
+                          2       4    4pz               0.114558      -0.035043
+                                                         0.222289      -0.159067
+                                                         0.683483       0.106927
+                                                         2.941249      -0.036832
+
+     AE Potential information for                                            ALL
+
+       Description:                                       All-electron potential
+                                          Krack, Parrinello, PCCP 2, 2105 (2000)
+
+       Gaussian exponent of the core charge distribution:               4.109048
+       Electronic configuration (s p d ...):                           4   2   0
+
+  2. Atomic kind: H                                     Number of atoms:      40
+
+     Orbital Basis Set                                    aug-SZV-MOLOPT-ae-mini
+
+       Number of orbital shell sets:                                           1
+       Number of orbital shells:                                               4
+       Number of primitive Cartesian functions:                                4
+       Number of Cartesian basis functions:                                    6
+       Number of spherical basis functions:                                    6
+       Norm type:                                                              2
+
+       Normalised Cartesian orbitals:
+
+                        Set   Shell   Orbital            Exponent    Coefficient
+
+                          1       1    2s                0.065428       0.000000
+                                                         0.168855       0.083474
+                                                         0.623914       0.267839
+                                                         3.425251       0.276934
+
+                          1       2    3s                0.065428      -0.066952
+                                                         0.168855       0.261968
+                                                         0.623914       0.081548
+                                                         3.425251      -0.022414
+
+                          1       3    4s                0.065428       0.165615
+                                                         0.168855      -0.226449
+                                                         0.623914      -0.005802
+                                                         3.425251       0.005451
+
+                          1       4    3px               0.065428       0.053063
+                                                         0.168855      -0.030502
+                                                         0.623914       0.062721
+                                                         3.425251       0.019012
+                          1       4    3py               0.065428       0.053063
+                                                         0.168855      -0.030502
+                                                         0.623914       0.062721
+                                                         3.425251       0.019012
+                          1       4    3pz               0.065428       0.053063
+                                                         0.168855      -0.030502
+                                                         0.623914       0.062721
+                                                         3.425251       0.019012
+
+     RI Auxiliary Basis Set                      RI_aug-SZV-MOLOPT-ae-mini_tier1
+
+       Number of orbital shell sets:                                           2
+       Number of orbital shells:                                               2
+       Number of primitive Cartesian functions:                                2
+       Number of Cartesian basis functions:                                    2
+       Number of spherical basis functions:                                    2
+       Norm type:                                                              2
+
+       Normalised Cartesian orbitals:
+
+                        Set   Shell   Orbital            Exponent    Coefficient
+
+                          1       1    1s                0.636484       0.507868
+
+                          2       1    2s                2.457925       1.399061
+
+       Atomic covalent radius [Angstrom]:                                  0.320
+
+       Atomic van der Waals radius [Angstrom]:                             1.090
+
+     AE Potential information for                                            ALL
+
+       Description:                                       All-electron potential
+                                          Krack, Parrinello, PCCP 2, 2105 (2000)
+
+       Gaussian exponent of the core charge distribution:              12.500000
+       Electronic configuration (s p d ...):                           1   0   0
+
+
+ MOLECULE KIND INFORMATION
+
+
+ All atoms are their own molecule, skipping detailed information
+
+
+ TOTAL NUMBERS AND MAXIMUM NUMBERS
+
+  Total number of            - Atomic kinds:                                   2
+                             - Atoms:                                        152
+                             - Shell sets:                                   264
+                             - Shells:                                       720
+                             - Primitive Cartesian functions:                944
+                             - Cartesian basis functions:                   1248
+                             - Spherical basis functions:                   1248
+
+  Maximum angular momentum of the orbital basis functions:                     1
+
+
+ MODULE QUICKSTEP: ATOMIC COORDINATES IN ANGSTROM
+
+   Atom Kind Element         X             Y             Z       Z(eff)     Mass
+      1    1 C     6      6.959983      9.184968      6.775000   6.0000  12.0107
+      2    1 C     6      8.154329      9.919438      6.775000   6.0000  12.0107
+      3    1 C     6      9.371477      9.215213      6.775000   6.0000  12.0107
+      4    1 C     6     10.595000      9.928398      6.775000   6.0000  12.0107
+      5    1 C     6     11.818523      9.215213      6.775000   6.0000  12.0107
+      6    1 C     6     13.035671      9.919438      6.775000   6.0000  12.0107
+      7    1 C     6     14.230017      9.184968      6.775000   6.0000  12.0107
+      8    1 C     6      6.959983     12.090673      6.775000   6.0000  12.0107
+      9    1 C     6      6.959983     13.449028      6.775000   6.0000  12.0107
+     10    1 C     6      8.154329     11.356203      6.775000   6.0000  12.0107
+     11    1 C     6      8.154329     14.183498      6.775000   6.0000  12.0107
+     12    1 C     6      9.371477     12.060428      6.775000   6.0000  12.0107
+     13    1 C     6      9.371477     13.479273      6.775000   6.0000  12.0107
+     14    1 C     6     10.595000     11.347243      6.775000   6.0000  12.0107
+     15    1 C     6     10.595000     14.192458      6.775000   6.0000  12.0107
+     16    1 C     6     11.818523     12.060428      6.775000   6.0000  12.0107
+     17    1 C     6     11.818523     13.479273      6.775000   6.0000  12.0107
+     18    1 C     6     13.035671     11.356203      6.775000   6.0000  12.0107
+     19    1 C     6     13.035671     14.183498      6.775000   6.0000  12.0107
+     20    1 C     6     14.230017     12.090673      6.775000   6.0000  12.0107
+     21    1 C     6     14.230017     13.449028      6.775000   6.0000  12.0107
+     22    1 C     6      6.959983     16.354733      6.775000   6.0000  12.0107
+     23    1 C     6      6.959983     17.713087      6.775000   6.0000  12.0107
+     24    1 C     6      8.154329     15.620263      6.775000   6.0000  12.0107
+     25    1 C     6      8.154329     18.447558      6.775000   6.0000  12.0107
+     26    1 C     6      9.371477     16.324488      6.775000   6.0000  12.0107
+     27    1 C     6      9.371477     17.743333      6.775000   6.0000  12.0107
+     28    1 C     6     10.595000     15.611303      6.775000   6.0000  12.0107
+     29    1 C     6     10.595000     18.456518      6.775000   6.0000  12.0107
+     30    1 C     6     11.818523     16.324488      6.775000   6.0000  12.0107
+     31    1 C     6     11.818523     17.743333      6.775000   6.0000  12.0107
+     32    1 C     6     13.035671     15.620263      6.775000   6.0000  12.0107
+     33    1 C     6     13.035671     18.447558      6.775000   6.0000  12.0107
+     34    1 C     6     14.230017     16.354733      6.775000   6.0000  12.0107
+     35    1 C     6     14.230017     17.713087      6.775000   6.0000  12.0107
+     36    1 C     6      6.959983     20.618793      6.775000   6.0000  12.0107
+     37    1 C     6      6.959983     21.977147      6.775000   6.0000  12.0107
+     38    1 C     6      8.154329     19.884323      6.775000   6.0000  12.0107
+     39    1 C     6      8.154329     22.711618      6.775000   6.0000  12.0107
+     40    1 C     6      9.371477     20.588548      6.775000   6.0000  12.0107
+     41    1 C     6      9.371477     22.007393      6.775000   6.0000  12.0107
+     42    1 C     6     10.595000     19.875363      6.775000   6.0000  12.0107
+     43    1 C     6     10.595000     22.720578      6.775000   6.0000  12.0107
+     44    1 C     6     11.818523     20.588548      6.775000   6.0000  12.0107
+     45    1 C     6     11.818523     22.007393      6.775000   6.0000  12.0107
+     46    1 C     6     13.035671     19.884323      6.775000   6.0000  12.0107
+     47    1 C     6     13.035671     22.711618      6.775000   6.0000  12.0107
+     48    1 C     6     14.230017     20.618793      6.775000   6.0000  12.0107
+     49    1 C     6     14.230017     21.977147      6.775000   6.0000  12.0107
+     50    1 C     6      6.959983     24.882853      6.775000   6.0000  12.0107
+     51    1 C     6      6.959983     26.241207      6.775000   6.0000  12.0107
+     52    1 C     6      8.154329     24.148382      6.775000   6.0000  12.0107
+     53    1 C     6      8.154329     26.975677      6.775000   6.0000  12.0107
+     54    1 C     6      9.371477     24.852607      6.775000   6.0000  12.0107
+     55    1 C     6      9.371477     26.271452      6.775000   6.0000  12.0107
+     56    1 C     6     10.595000     24.139423      6.775000   6.0000  12.0107
+     57    1 C     6     10.595000     26.984637      6.775000   6.0000  12.0107
+     58    1 C     6     11.818523     24.852607      6.775000   6.0000  12.0107
+     59    1 C     6     11.818523     26.271452      6.775000   6.0000  12.0107
+     60    1 C     6     13.035671     24.148382      6.775000   6.0000  12.0107
+     61    1 C     6     13.035671     26.975677      6.775000   6.0000  12.0107
+     62    1 C     6     14.230017     24.882853      6.775000   6.0000  12.0107
+     63    1 C     6     14.230017     26.241207      6.775000   6.0000  12.0107
+     64    1 C     6      6.959983     29.146913      6.775000   6.0000  12.0107
+     65    1 C     6      6.959983     30.505267      6.775000   6.0000  12.0107
+     66    1 C     6      8.154329     28.412442      6.775000   6.0000  12.0107
+     67    1 C     6      8.154329     31.239737      6.775000   6.0000  12.0107
+     68    1 C     6      9.371477     29.116667      6.775000   6.0000  12.0107
+     69    1 C     6      9.371477     30.535512      6.775000   6.0000  12.0107
+     70    1 C     6     10.595000     28.403482      6.775000   6.0000  12.0107
+     71    1 C     6     10.595000     31.248697      6.775000   6.0000  12.0107
+     72    1 C     6     11.818523     29.116667      6.775000   6.0000  12.0107
+     73    1 C     6     11.818523     30.535512      6.775000   6.0000  12.0107
+     74    1 C     6     13.035671     28.412442      6.775000   6.0000  12.0107
+     75    1 C     6     13.035671     31.239737      6.775000   6.0000  12.0107
+     76    1 C     6     14.230017     29.146913      6.775000   6.0000  12.0107
+     77    1 C     6     14.230017     30.505267      6.775000   6.0000  12.0107
+     78    1 C     6      6.959983     33.410972      6.775000   6.0000  12.0107
+     79    1 C     6      6.959983     34.769327      6.775000   6.0000  12.0107
+     80    1 C     6      8.154329     32.676502      6.775000   6.0000  12.0107
+     81    1 C     6      8.154329     35.503797      6.775000   6.0000  12.0107
+     82    1 C     6      9.371477     33.380727      6.775000   6.0000  12.0107
+     83    1 C     6      9.371477     34.799572      6.775000   6.0000  12.0107
+     84    1 C     6     10.595000     32.667542      6.775000   6.0000  12.0107
+     85    1 C     6     10.595000     35.512757      6.775000   6.0000  12.0107
+     86    1 C     6     11.818523     33.380727      6.775000   6.0000  12.0107
+     87    1 C     6     11.818523     34.799572      6.775000   6.0000  12.0107
+     88    1 C     6     13.035671     32.676502      6.775000   6.0000  12.0107
+     89    1 C     6     13.035671     35.503797      6.775000   6.0000  12.0107
+     90    1 C     6     14.230017     33.410972      6.775000   6.0000  12.0107
+     91    1 C     6     14.230017     34.769327      6.775000   6.0000  12.0107
+     92    1 C     6      6.959983     37.675032      6.775000   6.0000  12.0107
+     93    1 C     6      6.959983     39.033386      6.775000   6.0000  12.0107
+     94    1 C     6      8.154329     36.940562      6.775000   6.0000  12.0107
+     95    1 C     6      9.371477     37.644787      6.775000   6.0000  12.0107
+     96    1 C     6     10.595000     36.931602      6.775000   6.0000  12.0107
+     97    1 C     6     11.818523     37.644787      6.775000   6.0000  12.0107
+     98    1 C     6     13.035671     36.940562      6.775000   6.0000  12.0107
+     99    1 C     6     14.230017     37.675032      6.775000   6.0000  12.0107
+    100    1 C     6     14.230017     39.033386      6.775000   6.0000  12.0107
+    101    2 H     1      5.998191      7.306846      6.775000   1.0000   1.0079
+    102    2 H     1      5.998191      9.704735      6.775000   1.0000   1.0079
+    103    2 H     1     15.191809      7.306846      6.775000   1.0000   1.0079
+    104    2 H     1     15.191809      9.704735      6.775000   1.0000   1.0079
+    105    2 H     1      5.998191     11.570906      6.775000   1.0000   1.0079
+    106    2 H     1      5.998191     13.968795      6.775000   1.0000   1.0079
+    107    2 H     1     15.191809     11.570906      6.775000   1.0000   1.0079
+    108    2 H     1     15.191809     13.968795      6.775000   1.0000   1.0079
+    109    2 H     1      5.998191     15.834966      6.775000   1.0000   1.0079
+    110    2 H     1      5.998191     18.232855      6.775000   1.0000   1.0079
+    111    2 H     1     15.191809     15.834966      6.775000   1.0000   1.0079
+    112    2 H     1     15.191809     18.232855      6.775000   1.0000   1.0079
+    113    2 H     1      5.998191     20.099026      6.775000   1.0000   1.0079
+    114    2 H     1      5.998191     22.496915      6.775000   1.0000   1.0079
+    115    2 H     1     15.191809     20.099026      6.775000   1.0000   1.0079
+    116    2 H     1     15.191809     22.496915      6.775000   1.0000   1.0079
+    117    2 H     1      5.998191     24.363085      6.775000   1.0000   1.0079
+    118    2 H     1      5.998191     26.760974      6.775000   1.0000   1.0079
+    119    2 H     1     15.191809     24.363085      6.775000   1.0000   1.0079
+    120    2 H     1     15.191809     26.760974      6.775000   1.0000   1.0079
+    121    2 H     1      5.998191     28.627145      6.775000   1.0000   1.0079
+    122    2 H     1      5.998191     31.025034      6.775000   1.0000   1.0079
+    123    2 H     1     15.191809     28.627145      6.775000   1.0000   1.0079
+    124    2 H     1     15.191809     31.025034      6.775000   1.0000   1.0079
+    125    2 H     1      5.998191     32.891205      6.775000   1.0000   1.0079
+    126    2 H     1      5.998191     35.289094      6.775000   1.0000   1.0079
+    127    2 H     1     15.191809     32.891205      6.775000   1.0000   1.0079
+    128    2 H     1     15.191809     35.289094      6.775000   1.0000   1.0079
+    129    2 H     1      5.998191     37.155265      6.775000   1.0000   1.0079
+    130    2 H     1      5.998191     39.553154      6.775000   1.0000   1.0079
+    131    2 H     1     15.191809     37.155265      6.775000   1.0000   1.0079
+    132    2 H     1     15.191809     39.553154      6.775000   1.0000   1.0079
+    133    1 C     6      6.959983      7.826614      6.775000   6.0000  12.0107
+    134    1 C     6     14.230017      7.826614      6.775000   6.0000  12.0107
+    135    1 C     6      8.154329      7.092143      6.775000   6.0000  12.0107
+    136    1 C     6      9.371477      7.796368      6.775000   6.0000  12.0107
+    137    1 C     6     10.595000      7.083183      6.775000   6.0000  12.0107
+    138    1 C     6     11.818523      7.796368      6.775000   6.0000  12.0107
+    139    1 C     6     13.035671      7.092143      6.775000   6.0000  12.0107
+    140    1 C     6      8.154329     39.767857      6.775000   6.0000  12.0107
+    141    1 C     6      9.371477     39.063632      6.775000   6.0000  12.0107
+    142    1 C     6     10.595000     39.776817      6.775000   6.0000  12.0107
+    143    1 C     6     11.818523     39.063632      6.775000   6.0000  12.0107
+    144    1 C     6     13.035671     39.767857      6.775000   6.0000  12.0107
+    145    2 H     1      8.154329      5.998893      6.775000   1.0000   1.0079
+    146    2 H     1     10.595000      6.310139      7.548044   1.0000   1.0079
+    147    2 H     1     10.595000      6.310139      6.001956   1.0000   1.0079
+    148    2 H     1     13.035671      5.998893      6.775000   1.0000   1.0079
+    149    2 H     1      8.154329     40.861107      6.775000   1.0000   1.0079
+    150    2 H     1     10.595000     40.549861      7.548044   1.0000   1.0079
+    151    2 H     1     10.595000     40.549861      6.001956   1.0000   1.0079
+    152    2 H     1     13.035671     40.861107      6.775000   1.0000   1.0079
+
+
+
+ SCF PARAMETERS         Density guess:                                   RESTART
+                        --------------------------------------------------------
+                        max_scf:                                             200
+                        max_scf_history:                                       0
+                        max_diis:                                              4
+                        --------------------------------------------------------
+                        eps_scf:                                        1.00E-07
+                        eps_scf_history:                                0.00E+00
+                        eps_diis:                                       1.00E-01
+                        eps_eigval:                                     1.00E-05
+                        --------------------------------------------------------
+                        level_shift [a.u.]:                             0.000000
+                        SCF update method:                                MIXING
+                        added MOs                                       100    0
+                        --------------------------------------------------------
+                        Mixing method:                            BROYDEN_MIXING
+                                                charge density mixing in g-space
+                        --------------------------------------------------------
+                        Smear method:                                FERMI_DIRAC
+                        Electronic temperature [K]:                        100.0
+                        Electronic temperature [a.u.]:                  3.17E-04
+                        Accuracy threshold:                             1.00E-10
+                        --------------------------------------------------------
+                        No outer SCF
+
+ PW_GRID| Information for grid number                                          1
+ PW_GRID| Grid distributed over                                    16 processors
+ PW_GRID| Real space group dimensions                                    16    1
+ PW_GRID| the grid is blocked:                                                NO
+ PW_GRID| Cutoff [a.u.]                                                    300.0
+ PW_GRID| spherical cutoff:                                                   NO
+ PW_GRID|   Bounds   1           -160     159                Points:         320
+ PW_GRID|   Bounds   2           -360     359                Points:         720
+ PW_GRID|   Bounds   3           -100      99                Points:         200
+ PW_GRID| Volume element (a.u.^3)  0.1970E-02     Volume (a.u.^3)     90796.5074
+ PW_GRID| Grid span                                                    FULLSPACE
+ PW_GRID|   Distribution                         Average         Max         Min
+ PW_GRID|   G-Vectors                          2880000.0     2880000     2880000
+ PW_GRID|   G-Rays                                9000.0        9000        9000
+ PW_GRID|   Real Space Points                  2880000.0     2880000     2880000
+
+ PW_GRID| Information for grid number                                          2
+ PW_GRID| Number of the reference grid                                         1
+ PW_GRID| Grid distributed over                                    16 processors
+ PW_GRID| Real space group dimensions                                    16    1
+ PW_GRID| the grid is blocked:                                                NO
+ PW_GRID| Cutoff [a.u.]                                                    100.0
+ PW_GRID| spherical cutoff:                                                   NO
+ PW_GRID|   Bounds   1            -96      95                Points:         192
+ PW_GRID|   Bounds   2           -200     199                Points:         400
+ PW_GRID|   Bounds   3            -60      59                Points:         120
+ PW_GRID| Volume element (a.u.^3)  0.9852E-02     Volume (a.u.^3)     90796.5074
+ PW_GRID| Grid span                                                    FULLSPACE
+ PW_GRID|   Distribution                         Average         Max         Min
+ PW_GRID|   G-Vectors                           576000.0      576576      575616
+ PW_GRID|   G-Rays                                3000.0        3003        2998
+ PW_GRID|   Real Space Points                   576000.0      576000      576000
+
+ PW_GRID| Information for grid number                                          3
+ PW_GRID| Number of the reference grid                                         1
+ PW_GRID| Grid distributed over                                    16 processors
+ PW_GRID| Real space group dimensions                                    16    1
+ PW_GRID| the grid is blocked:                                                NO
+ PW_GRID| Cutoff [a.u.]                                                     33.3
+ PW_GRID| spherical cutoff:                                                   NO
+ PW_GRID|   Bounds   1            -54      53                Points:         108
+ PW_GRID|   Bounds   2           -120     119                Points:         240
+ PW_GRID|   Bounds   3            -36      35                Points:          72
+ PW_GRID| Volume element (a.u.^3)  0.4865E-01     Volume (a.u.^3)     90796.5074
+ PW_GRID| Grid span                                                    FULLSPACE
+ PW_GRID|   Distribution                         Average         Max         Min
+ PW_GRID|   G-Vectors                           116640.0      116856      116532
+ PW_GRID|   G-Rays                                1080.0        1082        1079
+ PW_GRID|   Real Space Points                   116640.0      120960      103680
+
+ PW_GRID| Information for grid number                                          4
+ PW_GRID| Number of the reference grid                                         1
+ PW_GRID| Grid distributed over                                    16 processors
+ PW_GRID| Real space group dimensions                                    16    1
+ PW_GRID| the grid is blocked:                                                NO
+ PW_GRID| Cutoff [a.u.]                                                     11.1
+ PW_GRID| spherical cutoff:                                                   NO
+ PW_GRID|   Bounds   1            -32      31                Points:          64
+ PW_GRID|   Bounds   2            -67      67                Points:         135
+ PW_GRID|   Bounds   3            -20      19                Points:          40
+ PW_GRID| Volume element (a.u.^3)  0.2627         Volume (a.u.^3)     90796.5074
+ PW_GRID| Grid span                                                    FULLSPACE
+ PW_GRID|   Distribution                         Average         Max         Min
+ PW_GRID|   G-Vectors                            21600.0       21888       21376
+ PW_GRID|   G-Rays                                 337.5         342         334
+ PW_GRID|   Real Space Points                    21600.0       21600       21600
+
+ POISSON| Solver                                             MULTIPOLE (Bloechl)
+ POISSON| Periodicity                                                       NONE
+
+ RS_GRID| Information for grid number                                          1
+ RS_GRID|   Bounds   1           -160     159                Points:         320
+ RS_GRID|   Bounds   2           -360     359                Points:         720
+ RS_GRID|   Bounds   3           -100      99                Points:         200
+ RS_GRID| Real space distribution over                                  2 groups
+ RS_GRID| Real space distribution along direction                              1
+ RS_GRID| Border size                                                         29
+ RS_GRID| Real space distribution over                                  8 groups
+ RS_GRID| Real space distribution along direction                              2
+ RS_GRID| Border size                                                         29
+ RS_GRID|   Distribution                         Average         Max         Min
+ RS_GRID|   Planes                                 218.0         218         218
+ RS_GRID|   Distribution                         Average         Max         Min
+ RS_GRID|   Planes                                 148.0         148         148
+
+ RS_GRID| Information for grid number                                          2
+ RS_GRID|   Bounds   1            -96      95                Points:         192
+ RS_GRID|   Bounds   2           -200     199                Points:         400
+ RS_GRID|   Bounds   3            -60      59                Points:         120
+ RS_GRID| Real space distribution over                                  2 groups
+ RS_GRID| Real space distribution along direction                              1
+ RS_GRID| Border size                                                         29
+ RS_GRID| Real space distribution over                                  8 groups
+ RS_GRID| Real space distribution along direction                              2
+ RS_GRID| Border size                                                         29
+ RS_GRID|   Distribution                         Average         Max         Min
+ RS_GRID|   Planes                                 154.0         154         154
+ RS_GRID|   Distribution                         Average         Max         Min
+ RS_GRID|   Planes                                 108.0         108         108
+
+ RS_GRID| Information for grid number                                          3
+ RS_GRID|   Bounds   1            -54      53                Points:         108
+ RS_GRID|   Bounds   2           -120     119                Points:         240
+ RS_GRID|   Bounds   3            -36      35                Points:          72
+ RS_GRID| Real space fully replicated
+ RS_GRID| Group size                                                           1
+
+ RS_GRID| Information for grid number                                          4
+ RS_GRID|   Bounds   1            -32      31                Points:          64
+ RS_GRID|   Bounds   2            -67      67                Points:         135
+ RS_GRID|   Bounds   3            -20      19                Points:          40
+ RS_GRID| Real space fully replicated
+ RS_GRID| Group size                                                           1
+
+ Extrapolation method: initial_guess
+ Returing early from merge_systems (na1==1 .or. na1==2)
+ Returing early from merge_systems (na1==1 .or. na1==2)
+ Returing early from merge_systems (na1==1 .or. na1==2)
+ Returing early from merge_systems (na1==1 .or. na1==2)
+ Returing early from merge_systems (na1==1 .or. na1==2)
+ Returing early from merge_systems (na1==1 .or. na1==2)
+ Returing early from merge_systems (na1==1 .or. na1==2)
+ Returing early from merge_systems (na1==1 .or. na1==2)
+ Returing early from merge_systems (na1==1 .or. na1==2)
+ Returing early from merge_systems (na1==1 .or. na1==2)
+ Returing early from merge_systems (na1==1 .or. na1==2)
+ Returing early from merge_systems (na1==1 .or. na1==2)
+ Returing early from merge_systems (na1==1 .or. na1==2)
+ Returing early from merge_systems (na1==1 .or. na1==2)
+ Returing early from merge_systems (na1==1 .or. na1==2)
+ Returing early from merge_systems (na1==1 .or. na1==2)
+ Returing early from merge_systems (na1==1 .or. na1==2)
+ Returing early from merge_systems (na1==1 .or. na1==2)
+ Returing early from merge_systems (na1==1 .or. na1==2)
+ Returing early from merge_systems (na1==1 .or. na1==2)
+
+ Number of electrons:                                                        712
+ Number of occupied orbitals:                                                356
+ Number of molecular orbitals:                                               456
+
+ Number of orbital functions:                                               1248
+ Number of independent orbital functions:                                   1248
+
+
+ SCF WAVEFUNCTION OPTIMIZATION
+
+  Step     Update method      Time    Convergence         Total energy    Change
+  ------------------------------------------------------------------------------
+  Decoupling Energy:                                              -0.0000277161
+     1 NoMix/Diag. 0.40E+00    1.4     0.00000013     -4238.3267388156 -4.24E+03
+  Decoupling Energy:                                              -0.0000277160
+     2 Broy./Diag. 0.40E+00    1.5     0.00000007     -4238.3267385952  2.20E-07
+
+  *** SCF run converged in     2 steps ***
+
+
+  Electronic density on regular grids:       -532.5396158484      179.4603841516
+  Core density on regular grids:               40.0000000000     -672.0000000000
+  Hard and soft densities (Lebedev):        -1493.6018661229    -1314.1414666042
+  Total Rho_soft + Rho1_hard - Rho1_soft     -712.0000153671
+  Total charge density (r-space):            -672.0000153671
+  Total Rho_soft + Rho0_soft (g-space):        -0.0000170696
+
+  Overlap energy of the core charge distribution:               0.00019014601282
+  Self energy of the core charge distribution:              -3317.04657968851188
+  Core Hamiltonian energy:                                   -759.96052020361356
+  Hartree energy:                                            1392.21266116163429
+  Exchange-correlation energy:                               -245.73519271228963
+
+  GAPW| Exc from hard and soft atomic rho1:                  -369.34765982297984
+  GAPW| local Eh = 1 center integrals:                       -938.44963747543488
+  Electronic entropic energy:                                  -0.00000000000000
+  Fermi energy:                                                -0.10347188661710
+
+  Total energy:                                             -4238.32673859518309
+  Total energy (extrapolated to T->0):                      -4238.32673859518309
+
+ !-----------------------------------------------------------------------------!
+                     Mulliken Population Analysis
+
+ #  Atom  Element  Kind  Atomic population                           Net charge
+       1     C        1          6.078993                             -0.078993
+       2     C        1          5.921840                              0.078160
+       3     C        1          5.990760                              0.009240
+       4     C        1          6.005336                             -0.005336
+       5     C        1          5.990760                              0.009240
+       6     C        1          5.921840                              0.078160
+       7     C        1          6.078993                             -0.078993
+       8     C        1          6.084630                             -0.084630
+       9     C        1          6.085650                             -0.085650
+      10     C        1          5.926922                              0.073078
+      11     C        1          5.924585                              0.075415
+      12     C        1          5.999020                              0.000980
+      13     C        1          6.000076                             -0.000076
+      14     C        1          6.002784                             -0.002784
+      15     C        1          5.999741                              0.000259
+      16     C        1          5.999020                              0.000980
+      17     C        1          6.000076                             -0.000076
+      18     C        1          5.926922                              0.073078
+      19     C        1          5.924585                              0.075415
+      20     C        1          6.084630                             -0.084630
+      21     C        1          6.085650                             -0.085650
+      22     C        1          6.084685                             -0.084685
+      23     C        1          6.084962                             -0.084962
+      24     C        1          5.925462                              0.074538
+      25     C        1          5.925075                              0.074925
+      26     C        1          5.999149                              0.000851
+      27     C        1          5.999437                              0.000563
+      28     C        1          6.000443                             -0.000443
+      29     C        1          5.999816                              0.000184
+      30     C        1          5.999149                              0.000851
+      31     C        1          5.999437                              0.000563
+      32     C        1          5.925462                              0.074538
+      33     C        1          5.925075                              0.074925
+      34     C        1          6.084685                             -0.084685
+      35     C        1          6.084962                             -0.084962
+      36     C        1          6.084758                             -0.084758
+      37     C        1          6.084817                             -0.084817
+      38     C        1          5.925234                              0.074766
+      39     C        1          5.925164                              0.074836
+      40     C        1          5.999266                              0.000734
+      41     C        1          5.999304                              0.000696
+      42     C        1          5.999948                              0.000052
+      43     C        1          5.999847                              0.000153
+      44     C        1          5.999266                              0.000734
+      45     C        1          5.999304                              0.000696
+      46     C        1          5.925234                              0.074766
+      47     C        1          5.925164                              0.074836
+      48     C        1          6.084758                             -0.084758
+      49     C        1          6.084817                             -0.084817
+      50     C        1          6.084817                             -0.084817
+      51     C        1          6.084758                             -0.084758
+      52     C        1          5.925164                              0.074836
+      53     C        1          5.925234                              0.074766
+      54     C        1          5.999304                              0.000696
+      55     C        1          5.999266                              0.000734
+      56     C        1          5.999847                              0.000153
+      57     C        1          5.999948                              0.000052
+      58     C        1          5.999304                              0.000696
+      59     C        1          5.999266                              0.000734
+      60     C        1          5.925164                              0.074836
+      61     C        1          5.925234                              0.074766
+      62     C        1          6.084817                             -0.084817
+      63     C        1          6.084758                             -0.084758
+      64     C        1          6.084962                             -0.084962
+      65     C        1          6.084685                             -0.084685
+      66     C        1          5.925075                              0.074925
+      67     C        1          5.925462                              0.074538
+      68     C        1          5.999437                              0.000563
+      69     C        1          5.999149                              0.000851
+      70     C        1          5.999816                              0.000184
+      71     C        1          6.000443                             -0.000443
+      72     C        1          5.999437                              0.000563
+      73     C        1          5.999149                              0.000851
+      74     C        1          5.925075                              0.074925
+      75     C        1          5.925462                              0.074538
+      76     C        1          6.084962                             -0.084962
+      77     C        1          6.084685                             -0.084685
+      78     C        1          6.085650                             -0.085650
+      79     C        1          6.084630                             -0.084630
+      80     C        1          5.924585                              0.075415
+      81     C        1          5.926922                              0.073078
+      82     C        1          6.000076                             -0.000076
+      83     C        1          5.999020                              0.000980
+      84     C        1          5.999741                              0.000259
+      85     C        1          6.002784                             -0.002784
+      86     C        1          6.000076                             -0.000076
+      87     C        1          5.999020                              0.000980
+      88     C        1          5.924585                              0.075415
+      89     C        1          5.926922                              0.073078
+      90     C        1          6.085650                             -0.085650
+      91     C        1          6.084630                             -0.084630
+      92     C        1          6.078993                             -0.078993
+      93     C        1          6.054095                             -0.054095
+      94     C        1          5.921840                              0.078160
+      95     C        1          5.990760                              0.009240
+      96     C        1          6.005336                             -0.005336
+      97     C        1          5.990760                              0.009240
+      98     C        1          5.921840                              0.078160
+      99     C        1          6.078993                             -0.078993
+     100     C        1          6.054095                             -0.054095
+     101     H        2          0.948309                              0.051691
+     102     H        2          1.010080                             -0.010080
+     103     H        2          0.948309                              0.051691
+     104     H        2          1.010080                             -0.010080
+     105     H        2          0.989722                              0.010278
+     106     H        2          0.992325                              0.007675
+     107     H        2          0.989722                              0.010278
+     108     H        2          0.992325                              0.007675
+     109     H        2          0.991296                              0.008704
+     110     H        2          0.991525                              0.008475
+     111     H        2          0.991296                              0.008704
+     112     H        2          0.991525                              0.008475
+     113     H        2          0.991256                              0.008744
+     114     H        2          0.991313                              0.008687
+     115     H        2          0.991256                              0.008744
+     116     H        2          0.991313                              0.008687
+     117     H        2          0.991313                              0.008687
+     118     H        2          0.991256                              0.008744
+     119     H        2          0.991313                              0.008687
+     120     H        2          0.991256                              0.008744
+     121     H        2          0.991525                              0.008475
+     122     H        2          0.991296                              0.008704
+     123     H        2          0.991525                              0.008475
+     124     H        2          0.991296                              0.008704
+     125     H        2          0.992325                              0.007675
+     126     H        2          0.989722                              0.010278
+     127     H        2          0.992325                              0.007675
+     128     H        2          0.989722                              0.010278
+     129     H        2          1.010080                             -0.010080
+     130     H        2          0.948309                              0.051691
+     131     H        2          1.010080                             -0.010080
+     132     H        2          0.948309                              0.051691
+     133     C        1          6.054095                             -0.054095
+     134     C        1          6.054095                             -0.054095
+     135     C        1          6.093523                             -0.093523
+     136     C        1          5.789019                              0.210981
+     137     C        1          6.501060                             -0.501060
+     138     C        1          5.789019                              0.210981
+     139     C        1          6.093523                             -0.093523
+     140     C        1          6.093523                             -0.093523
+     141     C        1          5.789019                              0.210981
+     142     C        1          6.501060                             -0.501060
+     143     C        1          5.789019                              0.210981
+     144     C        1          6.093523                             -0.093523
+     145     H        2          0.959869                              0.040131
+     146     H        2          0.893392                              0.106608
+     147     H        2          0.893392                              0.106608
+     148     H        2          0.959869                              0.040131
+     149     H        2          0.959869                              0.040131
+     150     H        2          0.893392                              0.106608
+     151     H        2          0.893392                              0.106608
+     152     H        2          0.959869                              0.040131
+ # Total charge                            712.000000                 -0.000000
+
+ !-----------------------------------------------------------------------------!
+
+ !-----------------------------------------------------------------------------!
+                           Hirshfeld Charges
+
+  #Atom  Element  Kind  Ref Charge     Population                    Net charge
+      1       C      1       6.000          6.499                        -0.499
+      2       C      1       6.000          5.990                         0.010
+      3       C      1       6.000          6.003                        -0.003
+      4       C      1       6.000          5.999                         0.001
+      5       C      1       6.000          6.003                        -0.003
+      6       C      1       6.000          5.990                         0.010
+      7       C      1       6.000          6.499                        -0.499
+      8       C      1       6.000          6.491                        -0.491
+      9       C      1       6.000          6.493                        -0.493
+     10       C      1       6.000          5.995                         0.005
+     11       C      1       6.000          5.993                         0.007
+     12       C      1       6.000          5.997                         0.003
+     13       C      1       6.000          5.998                         0.002
+     14       C      1       6.000          6.004                        -0.004
+     15       C      1       6.000          5.999                         0.001
+     16       C      1       6.000          5.997                         0.003
+     17       C      1       6.000          5.998                         0.002
+     18       C      1       6.000          5.995                         0.005
+     19       C      1       6.000          5.993                         0.007
+     20       C      1       6.000          6.491                        -0.491
+     21       C      1       6.000          6.493                        -0.493
+     22       C      1       6.000          6.491                        -0.491
+     23       C      1       6.000          6.492                        -0.492
+     24       C      1       6.000          5.994                         0.006
+     25       C      1       6.000          5.994                         0.006
+     26       C      1       6.000          5.998                         0.002
+     27       C      1       6.000          5.998                         0.002
+     28       C      1       6.000          6.000                         0.000
+     29       C      1       6.000          5.999                         0.001
+     30       C      1       6.000          5.998                         0.002
+     31       C      1       6.000          5.998                         0.002
+     32       C      1       6.000          5.994                         0.006
+     33       C      1       6.000          5.994                         0.006
+     34       C      1       6.000          6.491                        -0.491
+     35       C      1       6.000          6.492                        -0.492
+     36       C      1       6.000          6.491                        -0.491
+     37       C      1       6.000          6.491                        -0.491
+     38       C      1       6.000          5.994                         0.006
+     39       C      1       6.000          5.994                         0.006
+     40       C      1       6.000          5.998                         0.002
+     41       C      1       6.000          5.998                         0.002
+     42       C      1       6.000          5.999                         0.001
+     43       C      1       6.000          5.999                         0.001
+     44       C      1       6.000          5.998                         0.002
+     45       C      1       6.000          5.998                         0.002
+     46       C      1       6.000          5.994                         0.006
+     47       C      1       6.000          5.994                         0.006
+     48       C      1       6.000          6.491                        -0.491
+     49       C      1       6.000          6.491                        -0.491
+     50       C      1       6.000          6.491                        -0.491
+     51       C      1       6.000          6.491                        -0.491
+     52       C      1       6.000          5.994                         0.006
+     53       C      1       6.000          5.994                         0.006
+     54       C      1       6.000          5.998                         0.002
+     55       C      1       6.000          5.998                         0.002
+     56       C      1       6.000          5.999                         0.001
+     57       C      1       6.000          5.999                         0.001
+     58       C      1       6.000          5.998                         0.002
+     59       C      1       6.000          5.998                         0.002
+     60       C      1       6.000          5.994                         0.006
+     61       C      1       6.000          5.994                         0.006
+     62       C      1       6.000          6.491                        -0.491
+     63       C      1       6.000          6.491                        -0.491
+     64       C      1       6.000          6.492                        -0.492
+     65       C      1       6.000          6.491                        -0.491
+     66       C      1       6.000          5.994                         0.006
+     67       C      1       6.000          5.994                         0.006
+     68       C      1       6.000          5.998                         0.002
+     69       C      1       6.000          5.998                         0.002
+     70       C      1       6.000          5.999                         0.001
+     71       C      1       6.000          6.000                         0.000
+     72       C      1       6.000          5.998                         0.002
+     73       C      1       6.000          5.998                         0.002
+     74       C      1       6.000          5.994                         0.006
+     75       C      1       6.000          5.994                         0.006
+     76       C      1       6.000          6.492                        -0.492
+     77       C      1       6.000          6.491                        -0.491
+     78       C      1       6.000          6.493                        -0.493
+     79       C      1       6.000          6.491                        -0.491
+     80       C      1       6.000          5.993                         0.007
+     81       C      1       6.000          5.995                         0.005
+     82       C      1       6.000          5.998                         0.002
+     83       C      1       6.000          5.997                         0.003
+     84       C      1       6.000          5.999                         0.001
+     85       C      1       6.000          6.004                        -0.004
+     86       C      1       6.000          5.998                         0.002
+     87       C      1       6.000          5.997                         0.003
+     88       C      1       6.000          5.993                         0.007
+     89       C      1       6.000          5.995                         0.005
+     90       C      1       6.000          6.493                        -0.493
+     91       C      1       6.000          6.491                        -0.491
+     92       C      1       6.000          6.499                        -0.499
+     93       C      1       6.000          6.486                        -0.486
+     94       C      1       6.000          5.990                         0.010
+     95       C      1       6.000          6.003                        -0.003
+     96       C      1       6.000          5.999                         0.001
+     97       C      1       6.000          6.003                        -0.003
+     98       C      1       6.000          5.990                         0.010
+     99       C      1       6.000          6.499                        -0.499
+    100       C      1       6.000          6.486                        -0.486
+    101       H      2       1.000          0.511                         0.489
+    102       H      2       1.000          0.515                         0.485
+    103       H      2       1.000          0.511                         0.489
+    104       H      2       1.000          0.515                         0.485
+    105       H      2       1.000          0.514                         0.486
+    106       H      2       1.000          0.514                         0.486
+    107       H      2       1.000          0.514                         0.486
+    108       H      2       1.000          0.514                         0.486
+    109       H      2       1.000          0.514                         0.486
+    110       H      2       1.000          0.514                         0.486
+    111       H      2       1.000          0.514                         0.486
+    112       H      2       1.000          0.514                         0.486
+    113       H      2       1.000          0.514                         0.486
+    114       H      2       1.000          0.514                         0.486
+    115       H      2       1.000          0.514                         0.486
+    116       H      2       1.000          0.514                         0.486
+    117       H      2       1.000          0.514                         0.486
+    118       H      2       1.000          0.514                         0.486
+    119       H      2       1.000          0.514                         0.486
+    120       H      2       1.000          0.514                         0.486
+    121       H      2       1.000          0.514                         0.486
+    122       H      2       1.000          0.514                         0.486
+    123       H      2       1.000          0.514                         0.486
+    124       H      2       1.000          0.514                         0.486
+    125       H      2       1.000          0.514                         0.486
+    126       H      2       1.000          0.514                         0.486
+    127       H      2       1.000          0.514                         0.486
+    128       H      2       1.000          0.514                         0.486
+    129       H      2       1.000          0.515                         0.485
+    130       H      2       1.000          0.511                         0.489
+    131       H      2       1.000          0.515                         0.485
+    132       H      2       1.000          0.511                         0.489
+    133       C      1       6.000          6.486                        -0.486
+    134       C      1       6.000          6.486                        -0.486
+    135       C      1       6.000          6.514                        -0.514
+    136       C      1       6.000          6.002                        -0.002
+    137       C      1       6.000          6.859                        -0.859
+    138       C      1       6.000          6.002                        -0.002
+    139       C      1       6.000          6.514                        -0.514
+    140       C      1       6.000          6.514                        -0.514
+    141       C      1       6.000          6.002                        -0.002
+    142       C      1       6.000          6.859                        -0.859
+    143       C      1       6.000          6.002                        -0.002
+    144       C      1       6.000          6.514                        -0.514
+    145       H      2       1.000          0.510                         0.490
+    146       H      2       1.000          0.514                         0.486
+    147       H      2       1.000          0.514                         0.486
+    148       H      2       1.000          0.510                         0.490
+    149       H      2       1.000          0.510                         0.490
+    150       H      2       1.000          0.514                         0.486
+    151       H      2       1.000          0.514                         0.486
+    152       H      2       1.000          0.510                         0.490
+
+  Total Charge                                                            0.169
+ !-----------------------------------------------------------------------------!
+  
+ -------------------------------------------------------------------------------
+ -                                                                             -
+ -                          BANDSTRUCTURE CALCULATION                          -
+ -                                                                             -
+ -------------------------------------------------------------------------------
+  
+ Number of occupied molecular orbitals (MOs) = Number of occupied bands      356
+ Number of unoccupied (= virtual) MOs = Number of unoccupied bands           892
+ Number of Gaussian basis functions for MOs                                 1248
+
+ *** WARNING in gw_utils.F:578 :: MEMORY_PER_PROC is set, but it is not    ***
+ *** used by the RI-RS GW code, which detects the available memory per MPI ***
+ *** process automatically. The keyword is ignored.                        ***
+
+  
+ -------------------------------------------------------------------------------
+ -                                                                             -
+ -                                GW CALCULATION                               -
+ -                                                                             -
+ -------------------------------------------------------------------------------
+  
+ Input: Number of time/freq. points                                           30
+ Input: ω_max for fitting Σ(iω) (eV)                                        10.0
+ Input: Filter threshold for sparse tensor operations                    1.0E-10
+ Input: Apply Hedin shift                                                      T
+ Input: Available memory per MPI process                                 60.0 GB
+ 
+ Input: RI-RS Tikhonov regularization                                   1.00E-08
+ Input: AO grid hard cutoff radius                                        6.00 Å
+ Input: MPI ranks per atom in Z_lP solve                                       1
+ Input: Keep sparsity in χ/G/W panels                                          T
+ Input: G/W panel truncation radius                                      35.00 Å
+ Input: GW flavour                                                          G0W0
+ 
+ Input: RI-RS grid optimization activated                                      T
+ Input: Element: C, number of points per atom:                               101
+ Input: Element: H, number of points per atom:                                41
+ Input: Cutoff radius for atomic clusters                                  3.0 Å
+ Input: Maximum grid optimization iterations                                 100
+ 
+ Cutoff radius for the truncated Coulomb operator in RI metric:           12.0 Å
+ Regularization parameter of RI                                          0.0E+00
+ Regularization parameter of minimax grids                               1.0E-06
+  
+ Number of auxiliary Gaussian basis functions for χ, ε, W                   1312
+  Decoupling Energy:                                              -0.0000277147
+ 
+ SCF direct band gap (eV)                                                   1.68
+ Max. SCF eigval diff. (eV)                                               401.46
+ E-Range for minimax grid                                                 238.46
+ Number of Padé parameters for analytic continuation:                         16
+ 
+ RI-RS basis radii (Å):
+     Kind  Elem     r_AO (Å)     r_RI (Å)
+        1    C         7.5023        3.5403
+        2    H         9.9272        3.1828
+ 
+ Started RI-RS grid optimization
+ RI-RS grid optimization completed, execution time:                      204.6 s
+ Normalized 3C error:                                                    5.9E-08
+ Maximum absolute 3C error:                                              1.4E-03
+ Total grid points used for RI-RS:                                         12952
+ 
+ RI-RS grid row-blocks of Φ_μ(r_l)                                           528
+ RI-RS grid points per block (max)                                            32
+ 
+ Percentage of non-zero matrix elements in Φ_μ(r_l)                      28.55 %
+ 
+ RI-RS memory estimate per MPI process:
+   Available memory per process (system)                               133.75 GB
+   Required for Z_lP (dense upper bound; actual is sparser)              0.01 GB
+   Required for χ, W, Σ panels (peak per panel step)                     0.28 GB
+   Required for Z_lP solve peak (D_local+φ, worst-case atom)             1.16 GB
+   Worst-case local-grid number of grid points:                            11330
+   Worst-case memory D_local:                                            1.03 GB
+ 
+ Started computing Z_lP
+ Per-kind maximum RI-RS sphere cutoff (Å):
+   Kind   cutoff (Å)
+     C        15.5403
+     H        15.1828
+ 
+ Computed Z_lP (MPI rank 0) for atom          1 /  9,    Execution time    2.1 s
+ Computed Z_lP (MPI rank 0) for atom          2 /  9,    Execution time    1.7 s
+ Computed Z_lP (MPI rank 0) for atom          3 /  9,    Execution time    1.7 s
+ Computed Z_lP (MPI rank 0) for atom          4 /  9,    Execution time    1.4 s
+ Computed Z_lP (MPI rank 0) for atom          5 /  9,    Execution time    1.1 s
+ Computed Z_lP (MPI rank 0) for atom          6 /  9,    Execution time    0.9 s
+ Computed Z_lP (MPI rank 0) for atom          7 /  9,    Execution time    0.8 s
+ Computed Z_lP (MPI rank 0) for atom          8 /  9,    Execution time    0.5 s
+ Computed Z_lP (MPI rank 0) for atom          9 /  9,    Execution time    0.5 s
+ Computed Z_lP (all MPI ranks) for all atoms,            Execution time   11.0 s
+
+ Memory per MPI process after computing Z_lP:
+ Available memory per MPI process                              133.7 GB
+ Used memory per MPI process                                     1.3 GB
+ Number of batches for χ, Σ matrices                                           1
+ 
+ Percentage of non-zero matrix elements in Z_lP                          71.03 %
+ Percentage of non-zero matrix elements in G_ll', χ_ll', W_ll'           99.96 %
+ Percentage of non-zero matrix elements in χ_PQ for time point 1        100.00 %
+ 
+ Computed χ(iτ,k=0) for time point            1 / 30,    Execution time    1.0 s
+ Computed χ(iτ,k=0) for time point            2 / 30,    Execution time    0.8 s
+ Computed χ(iτ,k=0) for time point            3 / 30,    Execution time    0.8 s
+ Computed χ(iτ,k=0) for time point            4 / 30,    Execution time    0.8 s
+ Computed χ(iτ,k=0) for time point            5 / 30,    Execution time    0.8 s
+ Computed χ(iτ,k=0) for time point            6 / 30,    Execution time    0.8 s
+ Computed χ(iτ,k=0) for time point            7 / 30,    Execution time    0.7 s
+ Computed χ(iτ,k=0) for time point            8 / 30,    Execution time    0.8 s
+ Computed χ(iτ,k=0) for time point            9 / 30,    Execution time    0.7 s
+ Computed χ(iτ,k=0) for time point           10 / 30,    Execution time    0.7 s
+ Computed χ(iτ,k=0) for time point           11 / 30,    Execution time    0.7 s
+ Computed χ(iτ,k=0) for time point           12 / 30,    Execution time    0.7 s
+ Computed χ(iτ,k=0) for time point           13 / 30,    Execution time    0.7 s
+ Computed χ(iτ,k=0) for time point           14 / 30,    Execution time    0.7 s
+ Computed χ(iτ,k=0) for time point           15 / 30,    Execution time    0.7 s
+ Computed χ(iτ,k=0) for time point           16 / 30,    Execution time    0.7 s
+ Computed χ(iτ,k=0) for time point           17 / 30,    Execution time    0.7 s
+ Computed χ(iτ,k=0) for time point           18 / 30,    Execution time    0.7 s
+ Computed χ(iτ,k=0) for time point           19 / 30,    Execution time    0.7 s
+ Computed χ(iτ,k=0) for time point           20 / 30,    Execution time    0.7 s
+ Computed χ(iτ,k=0) for time point           21 / 30,    Execution time    0.6 s
+ Computed χ(iτ,k=0) for time point           22 / 30,    Execution time    0.7 s
+ Computed χ(iτ,k=0) for time point           23 / 30,    Execution time    0.7 s
+ Computed χ(iτ,k=0) for time point           24 / 30,    Execution time    0.6 s
+ Computed χ(iτ,k=0) for time point           25 / 30,    Execution time    0.7 s
+ Computed χ(iτ,k=0) for time point           26 / 30,    Execution time    0.6 s
+ Computed χ(iτ,k=0) for time point           27 / 30,    Execution time    0.6 s
+ Computed χ(iτ,k=0) for time point           28 / 30,    Execution time    0.6 s
+ Computed χ(iτ,k=0) for time point           29 / 30,    Execution time    0.4 s
+ Computed χ(iτ,k=0) for time point           30 / 30,    Execution time    0.4 s
+ 
+ Computed W(iτ),                                         Execution time    1.8 s
+ 
+ Computed Σ^x(k=0),                                      Execution time    0.9 s
+ 
+ Computed Σ^c(iτ) for time point              1 / 30,    Execution time    1.3 s
+ Computed Σ^c(iτ) for time point              2 / 30,    Execution time    1.2 s
+ Computed Σ^c(iτ) for time point              3 / 30,    Execution time    1.2 s
+ Computed Σ^c(iτ) for time point              4 / 30,    Execution time    1.2 s
+ Computed Σ^c(iτ) for time point              5 / 30,    Execution time    1.1 s
+ Computed Σ^c(iτ) for time point              6 / 30,    Execution time    1.2 s
+ Computed Σ^c(iτ) for time point              7 / 30,    Execution time    1.1 s
+ Computed Σ^c(iτ) for time point              8 / 30,    Execution time    1.1 s
+ Computed Σ^c(iτ) for time point              9 / 30,    Execution time    1.2 s
+ Computed Σ^c(iτ) for time point             10 / 30,    Execution time    1.1 s
+ Computed Σ^c(iτ) for time point             11 / 30,    Execution time    1.2 s
+ Computed Σ^c(iτ) for time point             12 / 30,    Execution time    1.2 s
+ Computed Σ^c(iτ) for time point             13 / 30,    Execution time    1.2 s
+ Computed Σ^c(iτ) for time point             14 / 30,    Execution time    1.2 s
+ Computed Σ^c(iτ) for time point             15 / 30,    Execution time    1.2 s
+ Computed Σ^c(iτ) for time point             16 / 30,    Execution time    1.2 s
+ Computed Σ^c(iτ) for time point             17 / 30,    Execution time    1.2 s
+ Computed Σ^c(iτ) for time point             18 / 30,    Execution time    1.2 s
+ Computed Σ^c(iτ) for time point             19 / 30,    Execution time    1.2 s
+ Computed Σ^c(iτ) for time point             20 / 30,    Execution time    1.2 s
+ Computed Σ^c(iτ) for time point             21 / 30,    Execution time    1.1 s
+ Computed Σ^c(iτ) for time point             22 / 30,    Execution time    1.1 s
+ Computed Σ^c(iτ) for time point             23 / 30,    Execution time    1.1 s
+ Computed Σ^c(iτ) for time point             24 / 30,    Execution time    1.1 s
+ Computed Σ^c(iτ) for time point             25 / 30,    Execution time    1.1 s
+ Computed Σ^c(iτ) for time point             26 / 30,    Execution time    1.0 s
+ Computed Σ^c(iτ) for time point             27 / 30,    Execution time    0.9 s
+ Computed Σ^c(iτ) for time point             28 / 30,    Execution time    1.0 s
+ Computed Σ^c(iτ) for time point             29 / 30,    Execution time    0.8 s
+ Computed Σ^c(iτ) for time point             30 / 30,    Execution time    0.8 s
+ 
+ SCF valence band maximum (eV):                                           -4.230
+ SCF conduction band minimum (eV):                                        -2.547
+ SCF indirect band gap (eV):                                               1.684
+ SCF direct band gap (eV):                                                 1.684
+ 
+ G0W0 valence band maximum (eV):                                          -2.928
+ G0W0 conduction band minimum (eV):                                        1.486
+ G0W0 indirect band gap (eV):                                              4.414
+ G0W0 direct band gap (eV):                                                4.414
+ 
+ Hartree-Fock with SCF orbitals valence band maximum (eV):                -3.355
+ Hartree-Fock with SCF orbitals conduction band minimum (eV)               2.590
+ Hartree-Fock with SCF orbitals indirect band gap (eV):                    5.945
+ Hartree-Fock with SCF orbitals direct band gap (eV):                      5.945
+
+ ENERGY| Total FORCE_EVAL ( QS ) energy [hartree]          -4238.326738595183087
+
+ -------------------------------------------------------------------------------
+ -                                                                             -
+ -                                DBCSR STATISTICS                             -
+ -                                                                             -
+ -------------------------------------------------------------------------------
+ COUNTER                                    TOTAL       BLAS       SMM       ACC
+ flops     6 x     8 x     6               555264       0.0%    100.0%      0.0%     
+ flops     9 x     8 x     6              2353536       0.0%    100.0%      0.0%     
+ flops     6 x     8 x     9              2353536       0.0%    100.0%      0.0%     
+ flops     9 x     8 x     9              9945504       0.0%    100.0%      0.0%     
+ flops     6 x     6 x    96             10409472       0.0%    100.0%      0.0%     
+ flops     6 x     6 x   104             11276928       0.0%    100.0%      0.0%     
+ flops     6 x     6 x   128             27758592       0.0%    100.0%      0.0%     
+ flops     6 x    32 x     6             31094784       0.0%    100.0%      0.0%     
+ flops     9 x     6 x    96             41275008       0.0%    100.0%      0.0%     
+ flops     6 x     9 x    96             43452288       0.0%    100.0%      0.0%     
+ flops     9 x     6 x   104             44714592       0.0%    100.0%      0.0%     
+ flops     6 x     9 x   104             47073312       0.0%    100.0%      0.0%     
+ flops     9 x     2 x     2             62744616       0.0%    100.0%      0.0%     
+ flops     2 x     2 x     9             63699120       0.0%    100.0%      0.0%     
+ flops     5 x     2 x     2            105224120       0.0%    100.0%      0.0%     
+ flops     2 x     2 x     5            109612840       0.0%    100.0%      0.0%     
+ flops     9 x     6 x   128            110066688       0.0%    100.0%      0.0%     
+ flops     6 x     9 x   128            115872768       0.0%    100.0%      0.0%     
+ flops     6 x    32 x     9            131798016       0.0%    100.0%      0.0%     
+ flops     9 x     9 x    96            181631808       0.0%    100.0%      0.0%     
+ flops     9 x     9 x   104            196767792       0.0%    100.0%      0.0%     
+ flops     9 x     2 x     9            280907676       0.0%    100.0%      0.0%     
+ flops     6 x     6 x     9            292402224       0.0%    100.0%      0.0%     
+ flops     9 x     9 x     2            297411264       0.0%    100.0%      0.0%     
+ flops     5 x     2 x     9            456734340       0.0%    100.0%      0.0%     
+ flops     5 x     9 x     2            458434260       0.0%    100.0%      0.0%     
+ flops     6 x     6 x     5            465941520       0.0%    100.0%      0.0%     
+ flops     9 x     2 x     5            480311640       0.0%    100.0%      0.0%     
+ flops     9 x     9 x   128            484351488       0.0%    100.0%      0.0%     
+ flops     9 x     5 x     2            505978200       0.0%    100.0%      0.0%     
+ flops     5 x     5 x     2            769518200       0.0%    100.0%      0.0%     
+ flops     5 x     2 x     5            770379000       0.0%    100.0%      0.0%     
+ flops     9 x     6 x     6            784608768       0.0%    100.0%      0.0%     
+ flops     2 x    11 x     9            985477680       0.0%    100.0%      0.0%     
+ flops     9 x    11 x     2           1031408136       0.0%    100.0%      0.0%     
+ flops    11 x     2 x     9           1099007316       0.0%    100.0%      0.0%     
+ flops     5 x     6 x     5           1152066300       0.0%    100.0%      0.0%     
+ flops     9 x     2 x    11           1155114972       0.0%    100.0%      0.0%     
+ flops     6 x     9 x     9           1258932456       0.0%    100.0%      0.0%     
+ flops     5 x     6 x     6           1260601200       0.0%    100.0%      0.0%     
+ flops     2 x    11 x     5           1696349380       0.0%    100.0%      0.0%     
+ flops     5 x    11 x     2           1730904560       0.0%    100.0%      0.0%     
+ flops    11 x     2 x     5           1897850240       0.0%    100.0%      0.0%     
+ flops     9 x     5 x     6           1898181540       0.0%    100.0%      0.0%     
+ flops     5 x     2 x    11           1945944220       0.0%    100.0%      0.0%     
+ flops     6 x     9 x     5           2012630760       0.0%    100.0%      0.0%     
+ flops    32 x     2 x     2           2317971200       0.0%    100.0%      0.0%     
+ flops     2 x     2 x    32           2438647040       0.0%    100.0%      0.0%     
+ flops     5 x     5 x     6           2972678700       0.0%    100.0%      0.0%     
+ flops     9 x     6 x     5           3267534600       0.0%    100.0%      0.0%     
+ flops     9 x     9 x     6           4486422492       0.0%    100.0%      0.0%     
+ flops     9 x    11 x     9           4850940798       0.0%    100.0%      0.0%     
+ flops     9 x     6 x     9           5195942640       0.0%    100.0%      0.0%     
+ flops     9 x     9 x    11           5385524760       0.0%    100.0%      0.0%     
+ flops     5 x     9 x     5           6422782050       0.0%    100.0%      0.0%     
+ flops     5 x     9 x     6           7199753580       0.0%    100.0%      0.0%     
+ flops     5 x    11 x     9           7882677990       0.0%    100.0%      0.0%     
+ flops     9 x    11 x     5           8338351230       0.0%    100.0%      0.0%     
+ flops     5 x     9 x    11           8341231140       0.0%    100.0%      0.0%     
+ flops     5 x     6 x     9           8619390900       0.0%    100.0%      0.0%     
+ flops     9 x     5 x    11           9185661540       0.0%    100.0%      0.0%     
+ flops    32 x     2 x     9           9879790464       0.0%    100.0%      0.0%     
+ flops    32 x     9 x     2          10200591360       0.0%    100.0%      0.0%     
+ flops     9 x     2 x    32          11074999680       0.0%    100.0%      0.0%     
+ flops     9 x    32 x     2          11124027648       0.0%    100.0%      0.0%     
+ flops     9 x     5 x     9          11977407630       0.0%    100.0%      0.0%     
+ flops     6 x     6 x    32          12394103040       0.0%    100.0%      0.0%     
+ flops     5 x    11 x     5          13359154600       0.0%    100.0%      0.0%     
+ flops     5 x     5 x    11          14062115650       0.0%    100.0%      0.0%     
+ flops     9 x     9 x     5          15362352270       0.0%    100.0%      0.0%     
+ flops    32 x     2 x     5          16675101440       0.0%    100.0%      0.0%     
+ flops     5 x    32 x     2          16945100160       0.0%    100.0%      0.0%     
+ flops    11 x    11 x     9          17000021808       0.0%    100.0%      0.0%     
+ flops    32 x     5 x     2          17159678720       0.0%    100.0%      0.0%     
+ flops     5 x     2 x    32          17574507520       0.0%    100.0%      0.0%     
+ flops     9 x    11 x    11          18681121998       0.0%    100.0%      0.0%     
+ flops     5 x     5 x     9          18891933300       0.0%    100.0%      0.0%     
+ flops    32 x     6 x     5          25434545280       0.0%    100.0%      0.0%     
+ flops     9 x     9 x     9          27748959264       0.0%    100.0%      0.0%     
+ flops    11 x    11 x     5          29370014190       0.0%    100.0%      0.0%     
+ flops     5 x     6 x    32          30385670400       0.0%    100.0%      0.0%     
+ flops     5 x    11 x    11          31475512200       0.0%    100.0%      0.0%     
+ flops    32 x     6 x     6          32110460928       0.0%    100.0%      0.0%     
+ flops     2 x    11 x    32          37721812480       0.0%    100.0%      0.0%     
+ flops    32 x    11 x     2          38123968256       0.0%    100.0%      0.0%     
+ flops    11 x     2 x    32          41798952448       0.0%    100.0%      0.0%     
+ flops    32 x     2 x    11          42434457472       0.0%    100.0%      0.0%     
+ flops     5 x     9 x     9          45313914240       0.0%    100.0%      0.0%     
+ flops     9 x    32 x     6          48295319040       0.0%    100.0%      0.0%     
+ flops     6 x     9 x    32          53133190272       0.0%    100.0%      0.0%     
+ flops    32 x     5 x     6          64272034560       0.0%    100.0%      0.0%     
+ flops     5 x    32 x     6          75586588800       0.0%    100.0%      0.0%     
+ flops     9 x     6 x    32          85918389120       0.0%    100.0%      0.0%     
+ flops    32 x     9 x     5         146761139520       0.0%    100.0%      0.0%     
+ flops     5 x     9 x    32         165898321920       0.0%    100.0%      0.0%     
+ flops    32 x    11 x     9         170534897280       0.0%    100.0%      0.0%     
+ flops    32 x     9 x     6         176181937920       0.0%    100.0%      0.0%     
+ flops    32 x     9 x    11         184867543872       0.0%    100.0%      0.0%     
+ flops     9 x    11 x    32         190493937216       0.0%    100.0%      0.0%     
+ flops     9 x    32 x    11         199918819584       0.0%    100.0%      0.0%     
+ flops    32 x     6 x     9         205795178496       0.0%    100.0%      0.0%     
+ flops     9 x    32 x     9         287581446144       0.0%    100.0%      0.0%     
+ flops    32 x    11 x     5         289108311360       0.0%    100.0%      0.0%     
+ flops     5 x    11 x    32         302049520960       0.0%    100.0%      0.0%     
+ flops     5 x    32 x    11         306490472640       0.0%    100.0%      0.0%     
+ flops    32 x     5 x    11         312088304000       0.0%    100.0%      0.0%     
+ flops    32 x    32 x     2         377783480320       0.0%    100.0%      0.0%     
+ flops    32 x     2 x    32         379816255488       0.0%    100.0%      0.0%     
+ flops     9 x     9 x    32         398018510208       0.0%    100.0%      0.0%     
+ flops    32 x     5 x     9         409328703360       0.0%    100.0%      0.0%     
+ flops     5 x    32 x     9         453302714880       0.0%    100.0%      0.0%     
+ flops    11 x    11 x    32         646536376640       0.0%    100.0%      0.0%     
+ flops    32 x     6 x    32         666284322816       0.0%    100.0%      0.0%     
+ flops    32 x    11 x    11         686264877760       0.0%    100.0%      0.0%     
+ flops    32 x     9 x     9        1066340401920       0.0%    100.0%      0.0%     
+ flops    32 x    32 x     6        1633136762880       0.0%    100.0%      0.0%     
+ flops    32 x     9 x    32        3729761648640       0.0%    100.0%      0.0%     
+ flops    32 x    11 x    32        6527237128192       0.0%    100.0%      0.0%     
+ flops    32 x    32 x    11        6801274478592       0.0%    100.0%      0.0%     
+ flops    32 x    32 x     9        9823277795328       0.0%    100.0%      0.0%     
+ flops inhomo. stacks                           0       0.0%      0.0%      0.0%
+ flops total                        37.591046E+12       0.0%    100.0%      0.0%
+ flops max/rank                      3.598431E+12       0.0%    100.0%      0.0%
+ matmuls inhomo. stacks                         0       0.0%      0.0%      0.0%
+ matmuls total                         4114560901       0.0%    100.0%      0.0%
+ number of processed stacks               6234693       0.0%    100.0%      0.0%
+ average stack size                                     0.0     659.9       0.0
+ marketing flops                   113.125496E+12
+ -------------------------------------------------------------------------------
+ # multiplications                            490
+ max memory usage/rank              23.484355E+09
+ # max total images/rank                        1
+ # max 3D layers                                1
+ # MPI messages exchanged                   47040
+ MPI messages size (bytes):
+  total size                       528.039150E+09
+  min size                           0.000000E+00
+  max size                         142.688256E+06
+  average size                      11.225322E+06
+ MPI breakdown and total messages size (bytes):
+             size <=      128                2160                        0
+       128 < size <=     8192                   0                        0
+      8192 < size <=    32768                   0                        0
+     32768 < size <=   131072                   0                        0
+    131072 < size <=  4194304               26283              52093392816
+   4194304 < size <= 16777216               14229             109708585152
+  16777216 < size                            4368             366236820768
+ -------------------------------------------------------------------------------
+ -                                                                             -
+ -                      DBCSR MESSAGE PASSING PERFORMANCE                      -
+ -                                                                             -
+ -------------------------------------------------------------------------------
+ ROUTINE             CALLS      AVE VOLUME [Bytes]
+ MP_Bcast              121                     12.
+ MP_Allreduce         2303                     92.
+ MP_Alltoall          3315                 214141.
+ MP_ISend            14850                3208291.
+ MP_IRecv            14482                2831072.
+ -------------------------------------------------------------------------------
+
+ -------------------------------------------------------------------------------
+ -                                                                             -
+ -                                GRID STATISTICS                              -
+ -                                                                             -
+ -------------------------------------------------------------------------------
+ LP    KERNEL             BACKEND                              COUNT     PERCENT
+ 2     collocate ortho    CPU                                  14784      48.34%
+ 2     integrate ortho    CPU                                  14784      48.34%
+ 2     collocate general  CPU                                    336       1.10%
+ 2     integrate general  CPU                                    336       1.10%
+ 0     collocate general  CPU                                    192       0.63%
+ 0     integrate general  CPU                                    152       0.50%
+ -------------------------------------------------------------------------------
+
+ -------------------------------------------------------------------------------
+ -                                                                             -
+ -                          OFFLOAD MEMPOOL STATISTICS                         -
+ -                                                                             -
+ -------------------------------------------------------------------------------
+ Memory consumption                Number of allocations  Used [MiB]  Size [MiB]
+ Host                                                  7         131    21714464
+ -------------------------------------------------------------------------------
+
+ MEMORY| Estimated peak process memory [MiB]                                3058
+
+ -------------------------------------------------------------------------------
+ -                                                                             -
+ -                         MESSAGE PASSING PERFORMANCE                         -
+ -                                                                             -
+ -------------------------------------------------------------------------------
+
+ ROUTINE             CALLS      AVE VOLUME [Bytes]
+ MP_Group                6
+ MP_Bcast             1206                  18357.
+ MP_Allreduce         1846                  22307.
+ MP_Sync                12
+ MP_Alltoall            69               86901742.
+ MP_SendRecv            90                 570240.
+ MP_ISendRecv           90                 570240.
+ MP_Wait               415
+ MP_comm_split           6
+ MP_ISend              266                3278643.
+ MP_IRecv              266                3278643.
+ -------------------------------------------------------------------------------
+
+
+ -------------------------------------------------------------------------------
+ -                                                                             -
+ -                           R E F E R E N C E S                               -
+ -                                                                             -
+ -------------------------------------------------------------------------------
+ 
+ CP2K version 2026.2 (Development Version), the CP2K developers group (2026).
+ CP2K is freely available from https://www.cp2k.org/ .
+ 
+ M. Iannuzzi, J. Wilhelm, F. Stein, A. Bussy, H. Elgabarty, D. Golze, A. Hehn, 
+ M. Graml, S. Marek, B. Sertcan Gökmen, C. Schran, H. Forbert, R. Z. 
+ Khaliullin, A. Kozhevnikov, M. Taillefumier, R. Meli, V. V. Rybkin, M. Brehm, 
+ R. Schade, O. Schütt, J. V. Pototschnig, H. Mirhosseini, A. Knüpfer, D. Marx, 
+ M. Krack, J. Hutter, T. D. Kühne.
+ J. Phys. Chem. B 130, 1237-1310 (2026).
+ The CP2K Program Package Made Simple.
+ https://doi.org/10.1021/acs.jpcb.5c05851
+
+ M. Graml, K. Zollner, D. Hernangómez-Pérez, P. E. Faria Junior, J. Wilhelm.
+ J. Chem. Theory Comput. 20, 2202-2208 (2024).
+ Low-scaling GW algorithm applied to twisted transition-metal dichalcogenide 
+ heterobilayers.
+ https://doi.org/10.1021/acs.jctc.3c01230
+
+ T. D. Kühne, M. Iannuzzi, M. Del Ben, V. V. Rybkin, P. Seewald, F. Stein, T. 
+ Laino, R. Z. Khaliullin, O. Schütt, F. Schiffmann, D. Golze, J. Wilhelm, S. 
+ Chulkov, M. H. Bani-Hashemian, V. Weber, U. Borstnik, M. Taillefumier, A. S. 
+ Jakobovits, A. Lazzaro, H. Pabst, T. Müller, R. Schade, M. Guidon, S. 
+ Andermatt, N. Holmberg, G. K. Schenter, A. Hehn, A. Bussy, F. Belleflamme, G. 
+ Tabacchi, A. Glöß, M. Lass, I. Bethune, C. J. Mundy, C. Plessl, M. Watkins, 
+ J. VandeVondele, M. Krack, J. Hutter.
+ J. Chem. Phys. 152, 194103 (2020).
+ CP2K: An electronic structure and molecular dynamics software package - 
+ Quickstep: Efficient and accurate electronic structure calculations.
+ https://doi.org/10.1063/5.0007045
+
+ O. Schuett, P. Messmer, J. Hutter, J. VandeVondele.
+ Electronic Structure Calculations on Graphics Processing Units, 173-190 (2016).
+ GPU-Accelerated Sparse Matrix-Matrix Multiplication for Linear Scaling Density 
+ Functional Theory.
+ https://doi.org/10.1002/9781118670712.ch8
+
+ A. Heinecke, G. Henry, M. Hutchinson, H. Pabst.
+ Proceedings of Intl. Supercomputing Conference, 981-991 (2016).
+ LIBXSMM: Accelerating Small Matrix Multiplications by Runtime Code Generation.
+ https://doi.org/10.1109/SC.2016.83
+
+ U. Borstnik, J. VandeVondele, V. Weber, J. Hutter.
+ Parallel Comput. 40, 47-58 (2014).
+ Sparse matrix multiplication: The distributed block-compressed sparse row 
+ library.
+ https://doi.org/10.1016/j.parco.2014.03.012
+
+ A. Marek, V. Blum, R. Johanni, V. Havu, B. Lang, T. Auckenthaler, A. Heinecke, 
+ H. Bungartz, H. Lederer.
+ J. Phys. Condens. Matter 26, 213201 (2014).
+ The ELPA library: scalable parallel eigenvalue solutions for electronic 
+ structure theory and computational science.
+ https://doi.org/10.1088/0953-8984/26/21/213201
+
+ J. VandeVondele, J. Hutter.
+ J. Chem. Phys. 127, 114105 (2007).
+ Gaussian basis sets for accurate calculations on molecular systems in gas and 
+ condensed phases.
+ https://doi.org/10.1063/1.2770708
+
+ M. Frigo, S. G. Johnson.
+ Proc. IEEE 93, 216-231 (2005).
+ The design and implementation of FFTW3.
+ https://doi.org/10.1109/JPROC.2004.840301
+
+ M. Krack, M. Parrinello.
+ Phys. Chem. Chem. Phys. 2, 2105-2112 (2000).
+ All-electron ab-initio molecular dynamics.
+ https://doi.org/10.1039/b001167n
+
+ G. Lippert, J. Hutter, M. Parrinello.
+ Theor. Chem. Acc. 103, 124-140 (1999).
+ The Gaussian and augmented-plane-wave density functional method for ab initio 
+ molecular dynamics simulations.
+ https://doi.org/10.1007/s002140050523
+
+ J. P. Perdew, K. Burke, M. Ernzerhof.
+ Phys. Rev. Lett. 77, 3865-3868 (1996).
+ Generalized gradient approximation made simple.
+ https://doi.org/10.1103/PhysRevLett.77.3865
+
+ P. E. Blöchl.
+ J. Chem. Phys. 103, 7422-7428 (1995).
+ Electrostatic decoupling of periodic images of plane‐wave‐expanded 
+ densities and derived atomic point charges.
+ https://doi.org/10.1063/1.470314
+
+ R. H. Byrd, P. H. Lu, J. Nocedal, C. Y. Zhu.
+ SIAM J. Sci. Comput. 16, 1190-1208 (1995).
+ A Limited Memory Algorithm for Bound Constrained Optimization.
+ https://doi.org/10.1137/0916069
+
+ N. D. Mermin.
+ Phys. Rev. 137, A1441-A1443 (1965).
+ Thermal Properties of the Inhomogeneous Electron Gas.
+ https://doi.org/10.1103/PhysRev.137.A1441
+
+ C. G. Broyden.
+ Math. Comput. 19, 577-593 (1965).
+ A class of methods for solving nonlinear simultaneous equations.
+ https://doi.org/10.1090/S0025-5718-1965-0198670-6
+
+
+ -------------------------------------------------------------------------------
+ -                                                                             -
+ -                                T I M I N G                                  -
+ -                                                                             -
+ -------------------------------------------------------------------------------
+ SUBROUTINE                       CALLS  ASD         SELF TIME        TOTAL TIME
+                                MAXIMUM       AVERAGE  MAXIMUM  AVERAGE  MAXIMUM
+ CP2K                                 1  1.0    0.062    0.108  283.837  283.840
+ qs_energies                          1  2.0    0.014    0.028  282.941  282.944
+ qs_energies_properties               1  3.0    0.003    0.006  276.699  276.703
+ post_scf_bandstructure               1  4.0    0.002    0.005  276.696  276.703
+ gw                                   1  5.0    0.001    0.003  275.299  275.323
+ gw_calc_non_periodic_ri_rs           1  6.0    0.005    0.011  273.742  273.791
+ ri_rs_grid_assembler                 1  7.0    0.001    0.002  204.655  204.682
+ optimize_ri_rs_grid                  1  8.0    2.840    3.101  204.621  204.635
+ evaluate_rirs_grid_cluster        1010  9.0  180.735  200.892  180.735  200.892
+ dbcsr_multiply_generic             490  9.6    0.032    0.036   44.101   48.593
+ compute_Sigma_c_and_QP_energie       1  7.0    0.000    0.000   34.843   34.867
+ compute_Sigma_c                      1  8.0    0.001    0.002   34.020   34.021
+ contract_grid_panels_sigma_c        30  9.0    0.003    0.003   33.318   33.334
+ mp_sum_d                           591  3.1   20.500   32.870   20.500   32.870
+ multiply_cannon                    490 10.6    0.068    0.082   21.033   23.350
+ mp_sum_l                          1647 10.4   13.146   21.669   13.146   21.669
+ contract_grid_panels                31  8.0    0.002    0.002   20.423   20.469
+ get_mat_chi_Gamma_tau                1  7.0    0.000    0.001   20.392   20.393
+ multiply_cannon_loop               490 11.6    0.036    0.047   16.900   19.997
+ multiply_cannon_multrec           1960 12.6    9.555   12.785    9.579   12.816
+ compute_Z_lP                         1  7.0    0.000    0.000   11.193   11.197
+ compute_Z_lP_standard                1  8.0    0.012    0.017   11.193   11.197
+ mp_waitall_1                     23683 13.8    8.868   11.098    8.868   11.098
+ build_geo_template_panel            91  9.7    4.558    9.411    5.392   10.941
+ make_m2s                           980 10.6    0.012    0.012    7.522    8.491
+ make_images                        980 11.6    0.739    1.116    7.465    8.437
+ multiply_cannon_metrocomm3        1960 12.6    0.004    0.005    3.449    6.834
+ make_images_data                   980 12.6    0.012    0.013    4.433    5.900
+ compute_Z_lP_standard_dpotrf        10  9.0    5.527    5.634    5.527    5.634
+ hybrid_alltoall_any               1083 13.4    0.544    3.160    3.312    4.911
+ multiply_cannon_metrocomm1        1960 12.6    0.005    0.006    1.904    4.815
+ dbcsr_finalize                    2406 10.8    0.025    0.026    2.031    3.515
+ mp_allgather_i34                   490 11.6    2.756    3.459    2.756    3.459
+ dbcsr_merge_all                   2130 11.8    0.650    1.048    1.959    3.425
+ scf_env_do_scf                       1  3.0    0.001    0.002    3.267    3.272
+ scf_env_do_scf_inner_loop            2  4.0    0.000    0.000    3.265    3.271
+ hadamard_product                    91  9.7    1.253    1.849    1.935    3.092
+ build_gram_jacobi_blas              10  9.0    0.964    1.010    2.859    2.950
+ make_images_sizes                  980 12.6    0.001    0.001    1.962    2.930
+ mp_alltoall_i44                    980 13.6    1.961    2.929    1.961    2.929
+ parallel_gemm_fm_cosma             435  9.5    2.477    2.557    2.477    2.557
+ qs_ks_build_kohn_sham_matrix         3  7.3    0.013    0.026    2.443    2.454
+ fft_wrap_pw1pw2                     49 10.1    0.001    0.001    2.137    2.183
+ dbcsr_data_copy_aa2                976 12.8    1.144    2.165    1.144    2.165
+ dbcsr_copy                        1147 10.5    1.119    2.082    1.129    2.092
+ dbcsr_add_wm_from_matrix           259 10.6    1.075    1.637    1.354    2.088
+ fft_wrap_pw1pw2_300                 31 11.3    0.086    0.088    2.030    2.075
+ qs_ks_update_qs_env                  2  5.0    0.000    0.000    2.019    2.022
+ rebuild_ks_matrix                    2  6.0    0.000    0.000    2.017    2.021
+ build_gram_jacobi_blas_dsyrk        10 10.0    1.895    1.951    1.895    1.951
+ calculate_norms                   3400 12.6    1.527    1.912    1.527    1.912
+ buffer_matrices_ensure_size        980 11.6    1.186    1.834    1.186    1.834
+ fft3d_ps                            49 12.1    0.597    0.609    1.754    1.804
+ compute_W                            1  7.0    0.000    0.000    1.779    1.781
+ init_scf_run                         1  3.0    0.001    0.003    1.650    1.652
+ create_and_init_bs_env_for_gw        1  6.0    0.005    0.008    1.555    1.593
+ cp_fm_diag_elpa                      7  7.4    0.000    0.000    1.482    1.483
+ cp_fm_diag_elpa_base                 7  8.4    1.455    1.478    1.481    1.481
+ build_G_ao                         121  8.5    0.001    0.001    1.239    1.300
+ compute_fm_W_freq                   30  8.0    0.001    0.001    1.228    1.232
+ qs_rho_update_rho_low                3  5.0    0.000    0.000    1.169    1.172
+ mp_isend_dv                       7412 14.1    0.516    1.172    0.516    1.172
+ qs_energies_init_hamiltonians        1  3.0    0.007    0.016    1.166    1.167
+ qs_env_update_s_mstruct              1  4.0    0.001    0.001    1.121    1.156
+ calculate_rho_elec                   3  6.0    0.032    0.032    1.127    1.130
+ mp_alltoall_z22v                    49 14.1    0.989    1.045    0.989    1.045
+ qs_vxc_create                        3  8.3    0.001    0.003    1.030    1.034
+ xc_vxc_pw_create                     2  9.0    0.031    0.032    1.029    1.034
+ scf_env_initial_rho_setup            1  4.0    0.000    0.000    1.016    1.017
+ G_occ_vir                          121  9.5    0.122    0.131    0.943    1.012
+ eval_bandstructure_properties        1  5.0    0.000    0.000    0.995    0.997
+ compute_Z_lP_standard_dpotrs        10  9.0    0.907    0.961    0.907    0.961
+ cp_cfm_geeig                         1  6.0    0.000    0.000    0.918    0.920
+ dbcsr_scale_anytype               1113 10.9    0.443    0.891    0.465    0.915
+ multiply_cannon_metrocomm2        1470 12.6    0.005    0.005    0.367    0.910
+ compute_d_lp                        10  9.0    0.465    0.496    0.815    0.877
+ compute_Sigma_x                      1  7.0    0.000    0.000    0.855    0.856
+ compute_QP_energies                  1  8.0    0.000    0.000    0.822    0.827
+ yz_to_x                             25 12.6    0.088    0.094    0.777    0.820
+ cp_cfm_heevd                         1  7.0    0.000    0.000    0.791    0.791
+ cp_cfm_heevd_base                    1  8.0    0.791    0.791    0.791    0.791
+ xc_pw_derive                        12 11.0    0.000    0.000    0.723    0.765
+ build_phi_on_sphere                 10  9.0    0.067    0.077    0.650    0.679
+ qs_init_subsys                       1  2.0    0.033    0.066    0.678    0.679
+ qs_env_setup                         1  3.0    0.004    0.009    0.636    0.676
+ qs_env_rebuild_pw_env                2  3.5    0.000    0.000    0.627    0.670
+ pw_env_rebuild                       1  5.0    0.006    0.012    0.626    0.670
+ pw_grid_setup                        4  6.0    0.000    0.000    0.613    0.659
+ pw_grid_setup_internal               4  7.0    0.009    0.010    0.613    0.659
+ setup_time_and_frequency_minim       1  7.0    0.000    0.003    0.642    0.648
+ build_minimax_time_frequency_g       1  8.0    0.001    0.002    0.641    0.648
+ fit_l_sq_weights                     3  9.0    0.640    0.647    0.640    0.647
+ dbcsr_fill_wm_from_matrix          259 11.6    0.266    0.632    0.269    0.636
+ evaluate_ao_on_points             1326 10.0    0.590    0.617    0.590    0.617
+ extract_masked_blocks              366  9.6    0.441    0.517    0.517    0.608
+ calculate_rho_core                   1  5.0    0.020    0.029    0.559    0.598
+ dbcsr_set                          457 10.5    0.001    0.001    0.333    0.596
+ dbcsr_zero                         457 11.5    0.333    0.596    0.333    0.596
+ density_rs2pw                        3  7.0    0.000    0.000    0.573    0.590
+ mp_sync                             12  8.6    0.238    0.564    0.238    0.564
+ dbcsr_complete_redistribute        260 10.4    0.231    0.238    0.533    0.553
+ cp_ddapc_init                        1  5.0    0.000    0.000    0.536    0.537
+ cp_ddapc_create                      1  6.0    0.003    0.006    0.536    0.537
+ xc_rho_set_and_dset_create           2 10.0    0.021    0.025    0.524    0.535
+ mp_bcast_dm                        674  9.3    0.492    0.527    0.492    0.527
+ to_Gamma_and_mo_real                62  9.0    0.002    0.002    0.524    0.524
+ grid_collocate_task_list             3  7.0    0.517    0.524    0.517    0.524
+ xc_pw_divergence                     2 10.0    0.000    0.000    0.465    0.498
+ make_images_pack                   980 12.6    0.225    0.469    0.233    0.479
+ qs_scf_new_mos                       2  5.0    0.000    0.000    0.444    0.454
+ sum_up_and_integrate                 3  8.3    0.000    0.000    0.447    0.448
+ integrate_v_rspace                   3  9.3    0.000    0.000    0.444    0.445
+ transfer_rs2pw                      17  8.2    0.000    0.000    0.365    0.435
+ compute_V_xc                         1  7.0    0.000    0.000    0.429    0.435
+ copy_fm_to_dbcsr                   159  9.3    0.001    0.001    0.410    0.431
+ cp_fm_cholesky_invert               31  9.0    0.414    0.422    0.414    0.422
+ create_and_init_bs_env               1  5.0    0.002    0.003    0.400    0.407
+ eigensolver_symm                     2  6.0    0.000    0.000    0.406    0.407
+ dbcsr_add_d                        930  9.0    0.001    0.001    0.263    0.401
+ pw_grid_sort                         4  8.0    0.257    0.259    0.394    0.401
+ dbcsr_add_anytype                  930 10.0    0.196    0.341    0.262    0.400
+ x_to_yz                             24 13.6    0.074    0.075    0.373    0.386
+ mp_waitany                         252 11.3    0.290    0.384    0.290    0.384
+ potential_pw2rs                      3 10.3    0.001    0.001    0.382    0.383
+ mp_isend_iv                       8368 13.6    0.245    0.382    0.245    0.382
+ get_RI_basis                         1  7.0    0.000    0.001    0.362    0.375
+ transfer_rs2pw_300                   8  9.5    0.069    0.071    0.294    0.364
+ compute_Minv_Gamma                   1  8.0    0.004    0.008    0.350    0.353
+ RI_2c_integral_mat                   2  8.5    0.003    0.007    0.334    0.349
+ ewald_ddapc_pot                      1  7.0    0.298    0.333    0.338    0.341
+ extract_grid_panel                 122  9.5    0.259    0.280    0.296    0.324
+ diagonalize_ks_matrix                1  6.0    0.000    0.000    0.322    0.322
+ cp_fm_geeig_canon                    1  7.0    0.000    0.000    0.322    0.322
+ abc_contract_xsmm               356770  9.1    0.290    0.322    0.290    0.322
+ compute_d_lp_dgemm                4633 10.0    0.295    0.322    0.295    0.322
+ calculate_first_density_matrix       1  5.0    0.002    0.003    0.312    0.315
+ prepare_gapw_den                     3  8.3    0.000    0.000    0.306    0.313
+ put_rho0_on_grid                     3  9.3    0.036    0.037    0.298    0.299
+ build_2c_integrals                   2  9.5    0.047    0.277    0.291    0.297
+ cp_fm_geeig                          1  9.0    0.000    0.000    0.287    0.287
+ qs_ks_ddapc                          3  8.3    0.000    0.000    0.286    0.287
+ transfer_pw2rs                      16 10.7    0.000    0.000    0.269    0.271
+ gw_3c_ctx_create                     2  9.0    0.015    0.240    0.255    0.269
+ copy_dbcsr_to_fm                   101  9.4    0.005    0.009    0.237    0.266
+ mixing_init                          1  5.0    0.228    0.231    0.231    0.231
+ make_basis_lowdin                    1  6.0    0.000    0.000    0.222    0.222
+ cp_fm_cholesky_decompose            33  9.0    0.203    0.217    0.203    0.217
+ dbcsr_data_release               63331 12.7    0.107    0.211    0.107    0.211
+ mp_sum_dv                          179  9.4    0.151    0.197    0.151    0.197
+ transfer_pw2rs_300                   7 10.9    0.065    0.069    0.190    0.195
+ ddapc_eval_AmI                       1  7.0    0.009    0.010    0.187    0.189
+ dbcsr_binary_write                   1  9.0    0.174    0.174    0.174    0.174
+ build_A_matrix                       1  8.0    0.166    0.172    0.166    0.172
+ compute_fm_chi_Gamma_freq           30  8.0    0.001    0.001    0.164    0.169
+ mp_sum_iv                          543 11.2    0.114    0.158    0.114    0.158
+ parser_read_line                   258  5.2    0.000    0.000    0.105    0.157
+ parser_read_line_low                 7  5.3    0.001    0.014    0.105    0.157
+ broadcast_input_information          7  6.3    0.002    0.005    0.104    0.157
+ mp_alltoall_d11v                  1095 11.7    0.127    0.156    0.127    0.156
+ pw_poisson_solve                     3  8.3    0.000    0.000    0.150    0.151
+ scf_post_calculation_gpw             1  3.0    0.000    0.000    0.143    0.149
+ write_available_results              1  4.0    0.000    0.001    0.143    0.149
+ write_mo_free_results                1  5.0    0.016    0.017    0.141    0.149
+ dbcsr_destroy                     4922 10.5    0.010    0.013    0.077    0.149
+ sort_shells                          4  9.0    0.137    0.143    0.137    0.143
+ dbcsr_sort_data                    359 12.6    0.097    0.143    0.097    0.143
+ mp_alltoall_i22                    363 11.4    0.106    0.136    0.106    0.136
+ collect_used_col_blocks             92  9.7    0.007    0.008    0.102    0.136
+ check_for_restart_files              1  7.0    0.091    0.133    0.091    0.133
+ cp_fm_power                          1  7.0    0.001    0.001    0.129    0.129
+ xc_functional_eval                  30 10.1    0.000    0.000    0.109    0.123
+ pbe_lda_eval                        30 11.1    0.109    0.123    0.109    0.123
+ cp_cfm_cholesky_decompose            2  7.0    0.116    0.122    0.116    0.122
+ cp_ddapc_apply_CD                    3  9.3    0.000    0.000    0.118    0.119
+ pw_copy                             49 10.6    0.115    0.116    0.115    0.116
+ pw_scatter_p                        24 12.6    0.110    0.112    0.110    0.112
+ mp_irecv_dv                       7383 14.1    0.040    0.111    0.040    0.111
+ cp_fm_uplo_to_full                  69  9.0    0.069    0.111    0.069    0.111
+ integrate_vhg0_rspace                3  8.3    0.006    0.007    0.109    0.109
+ pw_derive                           21 11.3    0.103    0.104    0.103    0.104
+ pw_integral_ab_c1d_c1d_gs            6  9.8    0.091    0.092    0.098    0.103
+ pw_gather_p                         25 11.6    0.096    0.100    0.096    0.100
+ mp_sum_dm                         1010  7.8    0.080    0.099    0.080    0.099
+ dbcsr_desymmetrize_deep            103 10.4    0.015    0.020    0.077    0.099
+ fill_fm_Sigma_c_Gamma_time           1  9.0    0.000    0.000    0.097    0.097
+ topology_control                     1  2.0    0.006    0.012    0.076    0.094
+ coordinate_control                   1  3.0    0.001    0.001    0.060    0.093
+ coordinate_control_READ_COORDI       1  4.0    0.003    0.005    0.059    0.093
+ read_coordinate_xyz                  1  5.0    0.001    0.002    0.056    0.093
+ mp_isend_dm3                        84 11.3    0.063    0.091    0.063    0.091
+ gspace_mixing                        1  5.0    0.013    0.013    0.090    0.090
+ fft_wrap_pw1pw2_100                  6 10.7    0.004    0.004    0.084    0.089
+ dbcsr_sort_indices                2701 13.4    0.082    0.085    0.082    0.085
+ pw_grid_remap                        4  8.0    0.006    0.006    0.071    0.084
+ mp_sum_im3                           5  9.0    0.065    0.078    0.065    0.078
+ dbcsr_create_new                  5079 11.6    0.052    0.065    0.064    0.077
+ compute_V_MinvVsqrt                  1  8.0    0.003    0.006    0.075    0.077
+ setup_rec_index_2d                 980 11.6    0.071    0.075    0.071    0.075
+ mp_bcast_iv_src                      7  7.3    0.037    0.073    0.037    0.073
+ pw_poisson_set                       4  8.5    0.000    0.000    0.071    0.071
+ calculate_dm_sparse                  3  6.0    0.000    0.000    0.063    0.071
+ compute_proj_mo_on_kind              1  6.0    0.001    0.001    0.071    0.071
+ cp_dbcsr_plus_fm_fm_t                3  7.0    0.000    0.000    0.063    0.071
+ parallel_gemm_cfm                    4  7.0    0.000    0.000    0.069    0.069
+ parallel_gemm_cfm_cosma              4  8.0    0.069    0.069    0.069    0.069
+ build_grid_cache                     1  8.0    0.013    0.015    0.033    0.068
+ dbcsr_work_destroy_all            3213 12.4    0.023    0.023    0.043    0.068
+ dbcsr_special_finalize             980 12.6    0.002    0.002    0.066    0.068
+ cp_fm_symm                           2  7.0    0.067    0.067    0.067    0.067
+ create_qs_kind_set                   1  2.0    0.000    0.000    0.054    0.066
+ read_qs_kind                         2  3.0    0.004    0.012    0.054    0.066
+ quick_finalize                    1083 13.5    0.008    0.008    0.064    0.066
+ build_core_hamiltonian_matrix        1  4.0    0.009    0.017    0.035    0.063
+ check_positive_definite_overla       1  6.0    0.000    0.000    0.062    0.062
+ multiply_cannon_metrocomm4        1470 12.6    0.003    0.004    0.037    0.062
+ grid_integrate_task_list             3 10.3    0.052    0.061    0.052    0.061
+ hirshfeld_integration                1  6.0    0.030    0.040    0.061    0.061
+ pw_copy_to_array                    25 11.6    0.056    0.058    0.056    0.058
+ transfer_pw2rs_100                   3 12.3    0.006    0.006    0.047    0.057
+ calculate_hirshfeld_normalizat       1  6.0    0.029    0.037    0.054    0.055
+ read_rirs_grid_file                  2  9.0    0.020    0.055    0.020    0.055
+ cp_dbcsr_sm_fm_multiply              1  7.0    0.000    0.000    0.053    0.053
+ dbcsr_make_index_list              980 11.6    0.041    0.051    0.041    0.051
+ cp_dbcsr_sm_fm_multiply_core         1  8.0    0.000    0.000    0.048    0.050
+ mp_irecv_iv                       8184 13.6    0.019    0.049    0.019    0.049
+ mp_sum_im                            6  6.0    0.048    0.049    0.048    0.049
+ dbcsr_iterator_stop               5764 11.9    0.035    0.046    0.038    0.048
+ mp_alltoall_i11v                   883 11.4    0.041    0.048    0.041    0.048
+ dbcsr_work_create                 3213 11.5    0.021    0.022    0.038    0.047
+ read_mo_set_from_restart             1  6.0    0.004    0.041    0.045    0.047
+ pw_axpy                             28  9.0    0.045    0.046    0.045    0.046
+ dbcsr_new_transposed               246 10.6    0.004    0.004    0.034    0.044
+ mp_bcast_am_src                      7  7.3    0.042    0.043    0.042    0.043
+ dbcsr_data_new                   47074 12.1    0.031    0.042    0.031    0.042
+ calculate_rho_atom_coeff             3  6.0    0.012    0.013    0.042    0.042
+ cp_cfm_triangular_multiply           3  7.0    0.039    0.040    0.039    0.040
+ dbcsr_make_untransposed_blocks     736 10.6    0.027    0.032    0.035    0.040
+ pw_grid_assign                       4  8.0    0.037    0.039    0.039    0.040
+ modify_hartree_pot                   3 10.3    0.038    0.039    0.038    0.039
+ dbcsr_iterator_start              5764 11.9    0.024    0.024    0.036    0.039
+ mp_bcast_i_src                      33  7.2    0.022    0.039    0.022    0.039
+ transfer_rs2pw_100                   3  9.0    0.007    0.008    0.032    0.038
+ mp_comm_split_direct                 2  8.0    0.017    0.037    0.017    0.037
+ mp_bcast_b_src                      12  8.2    0.017    0.037    0.017    0.037
+ transfer_rs2pw_40                    3  9.0    0.007    0.007    0.032    0.037
+ update_ks_atom                       3  8.3    0.012    0.013    0.036    0.037
+ calculate_vxc_atom                   3  8.3    0.006    0.009    0.033    0.036
+ tree_to_linear_d                   272 13.3    0.034    0.036    0.034    0.036
+ mp_bcast_dm_src                    456  7.0    0.033    0.036    0.033    0.036
+ mp_sendrecv_dv                      90 10.0    0.029    0.034    0.029    0.034
+ get_ddapc                            3 10.3    0.000    0.000    0.030    0.034
+ multiply_cannon_multrec_finali     490 13.6    0.001    0.001    0.024    0.033
+ build_overlap_matrix_low             1  5.0    0.009    0.018    0.017    0.033
+ dbcsr_mm_multrec_finalize          490 14.6    0.010    0.013    0.023    0.032
+ rs_grid_zero                        18 10.8    0.028    0.031    0.028    0.031
+ pw_copy_from_array                  24 12.6    0.030    0.031    0.030    0.031
+ read_gw_input_parameters             1  7.0    0.000    0.000    0.023    0.030
+ read_rirs_grid_opt                   1  8.0    0.023    0.030    0.023    0.030
+ transfer_pw2rs_40                    3 12.3    0.009    0.010    0.027    0.029
+ rs_gather_matrices                   3 10.3    0.000    0.000    0.011    0.028
+ qs_create_task_list                  1  5.0    0.007    0.015    0.024    0.027
+ generate_qs_task_list                1  6.0    0.003    0.003    0.017    0.027
+ cp_cfm_triangular_invert             1  7.0    0.026    0.027    0.026    0.027
+ cp_fm_triangular_invert              1 10.0    0.022    0.026    0.022    0.026
+ broyden_mixing                       1  6.0    0.023    0.025    0.023    0.025
+ fft_wrap_pw1pw2_40                   6 10.7    0.001    0.001    0.015    0.024
+ build_2c_coulomb_matrix_kp           1  9.0    0.000    0.000    0.023    0.024
+ copy_fm_to_dbcsr_bc                159 10.3    0.012    0.013    0.022    0.024
+ lattice_sum                          1 10.0    0.000    0.000    0.023    0.024
+ distribute_tasks                     1  7.0    0.001    0.001    0.013    0.023
+ cp_fm_gemm                           3  8.0    0.022    0.023    0.022    0.023
+ mp_mem_avail_per_rank_GB             4  8.5    0.001    0.001    0.012    0.022
+ dbcsr_mm_multrec_init              490 11.6    0.001    0.001    0.020    0.022
+ get_ddapc-charges                    3 11.3    0.004    0.007    0.019    0.022
+ pw_zero                             14 10.2    0.021    0.022    0.021    0.022
+ mp_comm_split_type                   4  9.5    0.011    0.022    0.011    0.022
+ load_balance_distributed             2  8.0    0.000    0.001    0.011    0.022
+ get_current_loads                   12  9.0    0.000    0.000    0.011    0.021
+ compute_v_transl                     1 11.0    0.020    0.021    0.020    0.021
+ compute_load_list                    4  9.0    0.000    0.000    0.011    0.021
+ cp_fm_triangular_multiply            3 10.0    0.020    0.021    0.020    0.021
+ Fourier_transform_w_to_t            30  8.0    0.001    0.001    0.017    0.021
+ dbcsr_mm_csr_init                  490 12.6    0.007    0.007    0.019    0.021
+ mp_alltoall_l                       13  9.9    0.010    0.021    0.010    0.021
+ cp_fm_scale_and_add                901  9.0    0.016    0.020    0.016    0.020
+ set_parallelization_parameters       1  8.0    0.000    0.000    0.009    0.020
+ print_matrix_occupation              3  8.0    0.000    0.000    0.010    0.020
+ mp_max_i                           617  1.8    0.012    0.020    0.012    0.020
+ delete_unnecessary_files             1  8.0    0.000    0.000    0.001    0.020
+ safe_delete                         60  9.0    0.001    0.020    0.001    0.020
+ create_product_matrix              334  9.9    0.004    0.004    0.016    0.020
+ mulliken_population_analysis         1  6.0    0.000    0.001    0.009    0.019
+ cfm_ikp_from_fm_Gamma                3  6.3    0.013    0.018    0.013    0.018
+ gaVxcgb_GC                          14  9.0    0.017    0.018    0.017    0.018
+ transpose_index_local              246 11.6    0.002    0.002    0.017    0.018
+ classify_z_lp_atoms                  1  9.0    0.002    0.002    0.010    0.017
+ get_parameters_from_qs_env           1  6.0    0.000    0.000    0.009    0.017
+ dbcsr_reserve_blocks               171 12.0    0.012    0.017    0.012    0.017
+ connectivity_control                 1  3.0    0.002    0.003    0.009    0.017
+ dbcsr_mm_sched_finalize            490 15.6    0.012    0.017    0.012    0.017
+ mp_cart_create                     111 11.2    0.012    0.017    0.012    0.017
+ ab_contract                      46874 10.5    0.016    0.016    0.016    0.016
+ mp_cart_sub                        210 11.4    0.016    0.016    0.016    0.016
+ dbcsr_iterator_seek               5764 12.9    0.012    0.015    0.012    0.015
+ mp_sum_i                           208  8.9    0.011    0.015    0.011    0.015
+ copy_dbcsr_to_fm_bc                101 10.4    0.013    0.015    0.014    0.015
+ analyt_conti_and_print               1  9.0    0.004    0.007    0.009    0.015
+ mp_max_d                           109  8.9    0.008    0.015    0.008    0.015
+ build_b_vector                       3 12.3    0.014    0.015    0.014    0.015
+ merge_index                       2130 12.8    0.013    0.015    0.013    0.015
+ cp_fm_copy_general                   2  9.5    0.000    0.000    0.005    0.014
+ self_consistency_check               2  5.0    0.000    0.000    0.007    0.014
+ cp_sm_mix                            2  6.0    0.000    0.000    0.007    0.014
+ mp_irecv_dm3                        84 11.3    0.003    0.014    0.003    0.014
+ fill_hash_tables                   490 13.6    0.012    0.013    0.012    0.013
+ cp_fm_to_fm_matrix                 162 10.0    0.011    0.012    0.011    0.012
+ write_mo_set_to_restart              2  5.0    0.000    0.005    0.008    0.012
+ write_mo_set_low                     1  6.0    0.000    0.000    0.008    0.012
+ cp_fm_write_unformatted              1  7.0    0.006    0.007    0.008    0.012
+ topology_generate_bond               1  4.0    0.000    0.000    0.006    0.012
+ set_mo_occupation_1                  4  6.5    0.007    0.011    0.007    0.011
+ dbcsr_filter_anytype               159  9.3    0.002    0.002    0.011    0.011
+ setup_buffer_matrices              980 11.6    0.003    0.004    0.009    0.011
+ mp_maxloc_dv                      1405  1.0    0.011    0.011    0.011    0.011
+ cp_fm_start_copy_general             2 10.5    0.001    0.001    0.002    0.011
+ atomic_basis_at_grid_point           1  7.0    0.002    0.003    0.011    0.011
+ set_mo_occupation_2                  3  6.0    0.000    0.000    0.006    0.010
+ dbcsr_reserve_all_blocks           162 11.3    0.000    0.000    0.008    0.009
+ rs_grid_create_descriptor            4  6.0    0.000    0.000    0.005    0.009
+ ddapc_eval_gfunc                     1  7.0    0.009    0.009    0.009    0.009
+ topology_generate_bond_3             1  5.0    0.001    0.002    0.005    0.009
+ pw_multiply_with                     3  9.3    0.009    0.009    0.009    0.009
+ fft_wrap_pw1pw2_20                   6 10.7    0.000    0.000    0.008    0.009
+ get_fft_scratch                     50 12.9    0.006    0.009    0.006    0.009
+ dbcsr_make_index_exist            5079 12.6    0.008    0.009    0.008    0.009
+ cp_dbcsr_alloc_block_from_nbl        9  6.2    0.000    0.000    0.005    0.008
+ print_ri_rs_memory_estimate          1  7.0    0.002    0.002    0.008    0.008
+ fill_phi_for_atom                   10  8.0    0.000    0.000    0.007    0.008
+ restraint_control                    1  2.0    0.001    0.002    0.005    0.008
+ dbcsr_crop_matrix                    6 10.0    0.000    0.000    0.002    0.008
+ transfer_rs2pw_20                    3  9.0    0.002    0.002    0.006    0.007
+ dbcsr_copy_submatrix                 6 11.0    0.001    0.006    0.001    0.007
+ pw_scale                             9  9.8    0.007    0.007    0.007    0.007
+ build_fist_neighbor_lists            1  6.0    0.002    0.003    0.004    0.007
+ dbcsr_make_dbcsr_index            3636 13.3    0.007    0.007    0.007    0.007
+ mp_isendrecv_dv                     90 13.3    0.001    0.007    0.001    0.007
+ mp_min_d                             5  8.8    0.004    0.007    0.004    0.007
+ pw_grid_distribute                   4  8.0    0.003    0.004    0.007    0.007
+ transfer_pw2rs_20                    3 12.3    0.002    0.002    0.006    0.007
+ rs_scatter_matrices                  3  7.0    0.000    0.000    0.003    0.006
+ allocate_and_fill_fm_ks_fm_s         1  6.0    0.000    0.000    0.005    0.006
+ mpools_rebuild_fm_pools              1  4.0    0.001    0.002    0.004    0.006
+ pw_poisson_rebuild                   3  9.3    0.005    0.006    0.005    0.006
+ resolve_grid_panels                  4  8.2    0.000    0.000    0.003    0.006
+ init_qs_kind_set                     1  3.0    0.000    0.000    0.003    0.006
+ init_qs_kind                         2  4.0    0.000    0.000    0.003    0.006
+ init_orb_basis_set                   4  5.0    0.000    0.000    0.003    0.006
+ init_cphi_and_sphi                   5  5.4    0.003    0.005    0.003    0.005
+ mask_grid_blocks_near_panel         63  9.5    0.003    0.005    0.003    0.005
+ store_Z_lP_columns                  10  9.0    0.005    0.005    0.005    0.005
+ mp_send_dv                           1  8.0    0.001    0.005    0.001    0.005
+ plan_grid_panels                     1  9.0    0.000    0.000    0.003    0.005
+ dbcsr_distribution_new            2449 10.8    0.005    0.005    0.005    0.005
+ build_kinetic_matrix_low             1  5.0    0.003    0.005    0.003    0.005
+ evaluate_core_matrix_traces          2  6.0    0.000    0.000    0.003    0.005
+ calculate_ptrace_kp                  4  7.0    0.000    0.000    0.003    0.005
+ dbcsr_dot                            4  8.0    0.000    0.000    0.003    0.005
+ fm_add_on_diag                      60  9.0    0.003    0.005    0.003    0.005
+ Vh_1c_gg_integrals                   3  8.3    0.002    0.004    0.004    0.005
+ mp_bcast_av                        703  1.0    0.003    0.005    0.003    0.005
+ allocate_matrices                    1  8.0    0.001    0.003    0.003    0.004
+ mp_max_l                            22  1.8    0.002    0.004    0.002    0.004
+ build_neighbor_lists                 1  7.0    0.002    0.004    0.002    0.004
+ qs_scf_ensure_work_matrices          1  3.0    0.000    0.000    0.002    0.004
+ cp_fm_finish_copy_general            2 10.5    0.003    0.003    0.003    0.003
+ build_oce_matrices                   1  5.0    0.003    0.003    0.003    0.003
+ calculate_rho_atom                   3  9.3    0.003    0.003    0.003    0.003
+ write_mo_dependent_results           1  5.0    0.002    0.003    0.002    0.003
+ build_core_ae                        1  5.0    0.002    0.003    0.002    0.003
+ dbcsr_switch_data_area            2321 13.0    0.002    0.002    0.003    0.003
+ calculate_rho0_atom                  6  9.3    0.003    0.003    0.003    0.003
+ dbcsr_get_data_size_used          2233 11.9    0.003    0.003    0.003    0.003
+ cp_fm_syrk                           1  8.0    0.002    0.003    0.002    0.003
+ cp_fm_create                       383  9.3    0.002    0.003    0.002    0.003
+ pw_pool_create_pw                  107  9.4    0.001    0.002    0.001    0.003
+ calculate_ecore_overlap              1  4.0    0.000    0.000    0.001    0.003
+ grid_free_task_list                  1  7.0    0.002    0.002    0.002    0.002
+ vxc_of_r_new                        28  9.0    0.000    0.000    0.002    0.002
+ connectivity_control_check_ele       1  4.0    0.001    0.002    0.001    0.002
+ multrec_filtering                  334 15.6    0.002    0.002    0.002    0.002
+ xc_pw_smooth                         2 10.0    0.000    0.000    0.002    0.002
+ topology_generate_bond_2             1  5.0    0.001    0.002    0.001    0.002
+ create_fm_W_MIC_time                 1  8.0    0.000    0.000    0.002    0.002
+ grid_create_task_list                1  7.0    0.001    0.002    0.001    0.002
+ continuation_pade                   78 10.0    0.000    0.000    0.001    0.002
+ cp_fm_to_fm_columns                  4  6.2    0.001    0.002    0.001    0.002
+ get_rpa_minimax_coeff_larger_g       1  9.0    0.001    0.002    0.001    0.002
+ get_sigma_c_newton_pade             78 11.0    0.001    0.002    0.001    0.002
+ dbcsr_copy_into_existing             1  6.0    0.002    0.002    0.002    0.002
+ dbcsr_scale_d                       31  9.0    0.000    0.000    0.002    0.002
+ mp_sum_lv                          125  2.2    0.001    0.002    0.001    0.002
+ scf_c_read_parameters                1  3.0    0.001    0.002    0.001    0.002
+ cp_fm_redistribute_start             7  8.4    0.000    0.000    0.001    0.002
+ setup_kpoints_DOS_large_cell_G       1  6.0    0.000    0.000    0.001    0.002
+ scf_c_create                         1  3.0    0.001    0.002    0.001    0.002
+ mp_comm_free                       358 10.6    0.002    0.002    0.002    0.002
+ kpoint_init_cell_index_simple        1  7.0    0.000    0.000    0.001    0.002
+ kpoint_init_cell_index               1  8.0    0.001    0.002    0.001    0.002
+ build_qs_neighbor_lists              1  4.0    0.000    0.000    0.001    0.002
+ dbcsr_make_index_local_row         980 11.6    0.001    0.002    0.001    0.002
+ init_rho0                            1  3.0    0.001    0.001    0.001    0.001
+ dbcsr_get_local_rows               490 10.6    0.001    0.001    0.001    0.001
+ create_mat_munu                      1  9.0    0.000    0.000    0.001    0.001
+ lattice_sum_R_to_k                   8 11.0    0.001    0.001    0.001    0.001
+ wfi_create                           1  3.0    0.001    0.001    0.001    0.001
+ mp_sum_b                           116 10.4    0.001    0.001    0.001    0.001
+ init_cube_info                       4  6.0    0.001    0.001    0.001    0.001
+ init_scf_loop                        1  4.0    0.000    0.000    0.001    0.001
+ scf_c_write_parameters               1  3.0    0.000    0.001    0.000    0.001
+ external_control                     2  5.0    0.000    0.001    0.001    0.001
+ distribute_molecules_2d              2  7.0    0.001    0.001    0.001    0.001
+ compute_max_radius                   1  6.0    0.001    0.001    0.001    0.001
+ init_rho_atom                        1  3.0    0.000    0.000    0.001    0.001
+ dbcsr_get_local_cols               490 10.6    0.001    0.001    0.001    0.001
+ dbcsr_index_compact                152 10.4    0.001    0.001    0.001    0.001
+ mp_allgather_l                      13  9.9    0.001    0.001    0.001    0.001
+ write_particle_distances             1  3.0    0.001    0.001    0.001    0.001
+ init_interaction_radii               3  6.7    0.001    0.001    0.001    0.001
+ topology_connectivity_pack           1  3.0    0.000    0.000    0.001    0.001
+ mp_allgather_i                       6 11.0    0.001    0.001    0.001    0.001
+ scf_env_release                      1  7.0    0.001    0.001    0.001    0.001
+ atom2d_build                         4  8.5    0.000    0.001    0.000    0.001
+ time_to_freq                         1  9.0    0.001    0.001    0.001    0.001
+ mp_bcast_av_src                      1  6.0    0.001    0.001    0.001    0.001
+ dbcsr_mm_sched_init                490 13.6    0.001    0.001    0.001    0.001
+ read_smeagol_control                 1  3.0    0.000    0.001    0.000    0.001
+ setup_square_topology              123  9.5    0.001    0.001    0.001    0.001
+ topology_connectivity_pack_5         1  4.0    0.000    0.001    0.000    0.001
+ fft3d_s                              1  2.0    0.000    0.000    0.001    0.001
+ mp_bcast_iv                        129  2.6    0.001    0.001    0.001    0.001
+ qs_scf_ensure_mos                    1  3.0    0.000    0.000    0.001    0.001
+ bs_env_release                       1  2.0    0.000    0.001    0.000    0.001
+ create_harmonics_atom                2  4.0    0.000    0.001    0.000    0.001
+ dbcsr_get_global_row_map           490 10.6    0.001    0.001    0.001    0.001
+ dbcsr_make_images_dense              6 10.0    0.000    0.000    0.001    0.001
+ scale_rows_by_diag                  20  9.0    0.001    0.001    0.001    0.001
+ mp_recv_dv                           7  8.0    0.000    0.001    0.000    0.001
+ allocate_blocks_v_kp                 1 11.0    0.000    0.001    0.000    0.001
+ mp_rank_compare                     49 13.1    0.001    0.001    0.001    0.001
+ dbcsr_make_dense_low                 6 11.0    0.000    0.000    0.001    0.001
+ allocate_blocks_v_L                  2 11.0    0.000    0.001    0.000    0.001
+ build_neighbor_lists_sap_oce         1  5.0    0.000    0.001    0.000    0.001
+ pw_create_r3d                       57 10.3    0.000    0.001    0.000    0.001
+ make_dense_data                      6 12.0    0.000    0.000    0.000    0.000
+ write_qs_particle_coordinates        1  3.0    0.000    0.000    0.000    0.000
+ cp_fm_set_all                        8  7.9    0.000    0.000    0.000    0.000
+ create_local_tasks                   1  8.0    0.000    0.000    0.000    0.000
+ print_Z_lP_progress                 11  9.0    0.000    0.000    0.000    0.000
+ build_neighbor_lists_sac_ae          1  5.0    0.000    0.000    0.000    0.000
+ write_qs_kind_set                    1  3.0    0.000    0.000    0.000    0.000
+ dbcsr_get_global_col_map           490 10.6    0.000    0.000    0.000    0.000
+ cp_cfm_to_fm                         2  7.0    0.000    0.000    0.000    0.000
+ mp_max_r                             1  2.0    0.000    0.000    0.000    0.000
+ cp_cfm_to_cfm_columns                1  7.0    0.000    0.000    0.000    0.000
+ write_orbpop                         1  7.0    0.000    0.000    0.000    0.000
+ build_neighbor_lists_RPA_2c_nl       2  9.5    0.000    0.000    0.000    0.000
+ allocate_rho_atom_internals          1  4.0    0.000    0.000    0.000    0.000
+ topology_constraint_pack             1  3.0    0.000    0.000    0.000    0.000
+ allocate_tmp                         1 10.0    0.000    0.000    0.000    0.000
+ get_n_ao_in_sphere                 152  8.0    0.000    0.000    0.000    0.000
+ topology_constraint_pack_2           1  4.0    0.000    0.000    0.000    0.000
+ optimize_load_list                   2  9.0    0.000    0.000    0.000    0.000
+ dbcsr_mm_hostdrv_init              490 14.6    0.000    0.000    0.000    0.000
+ topology_generate_bond_4             1  5.0    0.000    0.000    0.000    0.000
+ set_blocks_to_matrix_v_kp            1 11.0    0.000    0.000    0.000    0.000
+ build_neighbor_lists_sab_orb_s       1 10.0    0.000    0.000    0.000    0.000
+ mp_alltoall_l11v                     1  9.0    0.000    0.000    0.000    0.000
+ pw_create_c1d                       60 10.4    0.000    0.000    0.000    0.000
+ build_neighbor_lists_sab_orb         1  5.0    0.000    0.000    0.000    0.000
+ qs_env_rebuild_rho                   1  5.0    0.000    0.000    0.000    0.000
+ load_balance_replicated              1  8.0    0.000    0.000    0.000    0.000
+ build_neighbor_lists_sab_core        1  5.0    0.000    0.000    0.000    0.000
+ panel_template_elems                 2  9.0    0.000    0.000    0.000    0.000
+ build_neighbor_lists_sab_all         1  5.0    0.000    0.000    0.000    0.000
+ qs_rho_rebuild                       1  6.0    0.000    0.000    0.000    0.000
+ pw_pool_give_back_pw               105  9.7    0.000    0.000    0.000    0.000
+ deallocate_blocks_v_L                2 11.0    0.000    0.000    0.000    0.000
+ mixing_allocate                      1  3.0    0.000    0.000    0.000    0.000
+ rs_grid_create                       9  7.3    0.000    0.000    0.000    0.000
+ pw_grid_allocate                     4  8.0    0.000    0.000    0.000    0.000
+ mp_cart_get                         55 12.7    0.000    0.000    0.000    0.000
+ mp_comm_dup                          4  7.0    0.000    0.000    0.000    0.000
+ offload_create_buffer               11  8.1    0.000    0.000    0.000    0.000
+ mp_sum_partial_im                    2 10.0    0.000    0.000    0.000    0.000
+ wfs_update                           1  3.0    0.000    0.000    0.000    0.000
+ distribute_molecules_1d              2  6.5    0.000    0.000    0.000    0.000
+ qs_scf_write_mos                     3  5.3    0.000    0.000    0.000    0.000
+ write_dft_control                    1  3.0    0.000    0.000    0.000    0.000
+ mp_comm_rank                        88 11.4    0.000    0.000    0.000    0.000
+ mp_comm_size                        88 11.4    0.000    0.000    0.000    0.000
+ mp_bcast_i3                          2 10.0    0.000    0.000    0.000    0.000
+ mp_min_lv                            4  8.0    0.000    0.000    0.000    0.000
+ precompute_ri_rs_radii               1  7.0    0.000    0.000    0.000    0.000
+ deallocate_blocks_v_kp               1 11.0    0.000    0.000    0.000    0.000
+ rho0_s_grid_create                   2  4.0    0.000    0.000    0.000    0.000
+ create_grid_atom                     2  4.0    0.000    0.000    0.000    0.000
+ get_all_VBM_CBM_bandgaps             1  9.0    0.000    0.000    0.000    0.000
+ print_header_and_input_paramet       1  7.0    0.000    0.000    0.000    0.000
+ qs_scf_print_scf_summary             1  5.0    0.000    0.000    0.000    0.000
+ init_lebedev_grids                   1  4.0    0.000    0.000    0.000    0.000
+ topology_generate_bond_1             1  5.0    0.000    0.000    0.000    0.000
+ mp_sum_root_iv                       2 10.0    0.000    0.000    0.000    0.000
+ topology_coordinate_pack             1  3.0    0.000    0.000    0.000    0.000
+ mp_max_iv                            1  9.0    0.000    0.000    0.000    0.000
+ check_scf_gw_level_ordering          1 10.0    0.000    0.000    0.000    0.000
+ dbcsr_index_prune_deleted           18 11.2    0.000    0.000    0.000    0.000
+ write_band_edges                     3  6.0    0.000    0.000    0.000    0.000
+ mp_bcast_dv_src                      2  7.0    0.000    0.000    0.000    0.000
+ check_generate_mol                   1  6.0    0.000    0.000    0.000    0.000
+ mp_max_lv                            4  8.0    0.000    0.000    0.000    0.000
+ write_qs_control                     1  3.0    0.000    0.000    0.000    0.000
+ set_RI_basis_function_indices        1  8.0    0.000    0.000    0.000    0.000
+ topology_set_atm_mass                1  4.0    0.000    0.000    0.000    0.000
+ mp_mem_used_per_rank_GB              1  7.0    0.000    0.000    0.000    0.000
+ topology_generate_molecule           1  4.0    0.000    0.000    0.000    0.000
+ qs_scf_initial_info                  1  4.0    0.000    0.000    0.000    0.000
+ scf_env_cleanup                      1  3.0    0.000    0.000    0.000    0.000
+ mp_min_i                             4  6.0    0.000    0.000    0.000    0.000
+ allocate_rho_atom_rad                7 10.0    0.000    0.000    0.000    0.000
+ print_gw_rirs_input                  1  8.0    0.000    0.000    0.000    0.000
+ qs_scf_loop_print                    2  5.0    0.000    0.000    0.000    0.000
+ get_basis_offsets                    1  8.0    0.000    0.000    0.000    0.000
+ topology_generate_onfo               1  4.0    0.000    0.000    0.000    0.000
+ topology_connectivity_pack_4         1  4.0    0.000    0.000    0.000    0.000
+ xc_libxc_check_functional            2  4.0    0.000    0.000    0.000    0.000
+ read_qs_section                      1  3.0    0.000    0.000    0.000    0.000
+ dbcsr_make_dists_dense               3  9.0    0.000    0.000    0.000    0.000
+ topology_connectivity_pack_14        1  4.0    0.000    0.000    0.000    0.000
+ cp_result_value_p_reallocate         4  6.8    0.000    0.000    0.000    0.000
+ mp_cart_coords                      64  9.0    0.000    0.000    0.000    0.000
+ check_gw_input                       1  8.0    0.000    0.000    0.000    0.000
+ make_basic_distribution              2  8.0    0.000    0.000    0.000    0.000
+ resolve_memory_per_proc              1  9.0    0.000    0.000    0.000    0.000
+ check_cp2k_input                     1  2.0    0.000    0.000    0.000    0.000
+ read_bandstructure_input_param       1  6.0    0.000    0.000    0.000    0.000
+ offload_free_buffer                 11  7.6    0.000    0.000    0.000    0.000
+ setup_AO_and_RI_basis_set            1  7.0    0.000    0.000    0.000    0.000
+ mp_sum_lm3                           1  2.0    0.000    0.000    0.000    0.000
+ topology_connectivity_pack_2         1  4.0    0.000    0.000    0.000    0.000
+ cp_fm_scale                          1  8.0    0.000    0.000    0.000    0.000
+ lpt_assign_atoms                     1  9.0    0.000    0.000    0.000    0.000
+ create_destination_list              2  9.0    0.000    0.000    0.000    0.000
+ calculate_mpole_gau                  1  4.0    0.000    0.000    0.000    0.000
+ qs_scf_post_charges                  1  4.0    0.000    0.000    0.000    0.000
+ mp_bcast_im                          4 11.5    0.000    0.000    0.000    0.000
+ write_molecule_kind_set              1  3.0    0.000    0.000    0.000    0.000
+ create_local_fixd_list               1  3.0    0.000    0.000    0.000    0.000
+ allocate_GW_eigenvalues              1  7.0    0.000    0.000    0.000    0.000
+ topology_connectivity_pack_6         1  4.0    0.000    0.000    0.000    0.000
+ read_tddfpt2_control                 1  3.0    0.000    0.000    0.000    0.000
+ topology_connectivity_pack_9         1  4.0    0.000    0.000    0.000    0.000
+ get_maxl_CG                          2  4.0    0.000    0.000    0.000    0.000
+ dbcsr_verify_matrix                  3  8.0    0.000    0.000    0.000    0.000
+ print_header                         1  6.0    0.000    0.000    0.000    0.000
+ topology_connectivity_pack_13        1  4.0    0.000    0.000    0.000    0.000
+ topology_coordinate_pack_11          1  4.0    0.000    0.000    0.000    0.000
+ topology_connectivity_pack_11        1  4.0    0.000    0.000    0.000    0.000
+ sort_neighbor_lists                  1  7.0    0.000    0.000    0.000    0.000
+ clebsch_gordon_init                  1  4.0    0.000    0.000    0.000    0.000
+ topology_generate_bond_6             1  5.0    0.000    0.000    0.000    0.000
+ topology_constraint_pack_5           1  4.0    0.000    0.000    0.000    0.000
+ topology_molecules_check             1  4.0    0.000    0.000    0.000    0.000
+ deallocate_tmp                       1 10.0    0.000    0.000    0.000    0.000
+ fix_atom_control                     1  2.0    0.000    0.000    0.000    0.000
+ spatial_atom_order                   1  8.0    0.000    0.000    0.000    0.000
+ wfi_extrapolate                      1  5.0    0.000    0.000    0.000    0.000
+ topology_coordinate_pack_1           1  4.0    0.000    0.000    0.000    0.000
+ topology_connectivity_pack_12        1  4.0    0.000    0.000    0.000    0.000
+ check_diag                           7  7.4    0.000    0.000    0.000    0.000
+ topology_connectivity_pack_10        1  4.0    0.000    0.000    0.000    0.000
+ correct_obvious_fitting_fails        1 10.0    0.000    0.000    0.000    0.000
+ metadyn_read                         1  2.0    0.000    0.000    0.000    0.000
+ print_sphere_cutoff_table            1  9.0    0.000    0.000    0.000    0.000
+ init_evGW0                           1  8.0    0.000    0.000    0.000    0.000
+ init_coulomb_local                   1  3.0    0.000    0.000    0.000    0.000
+ dump_info_core_hamiltonian           1  5.0    0.000    0.000    0.000    0.000
+ set_heuristic_parameters             2  6.5    0.000    0.000    0.000    0.000
+ mp_sum_r                             1  2.0    0.000    0.000    0.000    0.000
+ read_topology_section                1  3.0    0.000    0.000    0.000    0.000
+ mp_max_rv                            1  2.0    0.000    0.000    0.000    0.000
+ topology_generate_molecule_PAR       1  5.0    0.000    0.000    0.000    0.000
+ mp_min_rv                            1  2.0    0.000    0.000    0.000    0.000
+ mp_sum_rv                            1  2.0    0.000    0.000    0.000    0.000
+ ec_env_release                       1  7.0    0.000    0.000    0.000    0.000
+ de_init_bs_env                       1  7.0    0.000    0.000    0.000    0.000
+ qs_scf_post_elf                      1  4.0    0.000    0.000    0.000    0.000
+ get_factor_and_xyz_min_max           1 11.0    0.000    0.000    0.000    0.000
+ qs_scf_post_kubo_transport           1  6.0    0.000    0.000    0.000    0.000
+ kpoint_initialize                    1  2.0    0.000    0.000    0.000    0.000
+ balance_global_list                  2 10.0    0.000    0.000    0.000    0.000
+ qs_scf_post_epr                      1  4.0    0.000    0.000    0.000    0.000
+ qs_scf_post_et                       1  4.0    0.000    0.000    0.000    0.000
+ fist_neighbor_init                   1  8.0    0.000    0.000    0.000    0.000
+ get_exp_minimax_coeff_gw             1  9.0    0.000    0.000    0.000    0.000
+ scf_env_create                       1  3.0    0.000    0.000    0.000    0.000
+ setup_kpoints_chi_eps_W              1  8.0    0.000    0.000    0.000    0.000
+ print_cutoff_radius_input            4  9.0    0.000    0.000    0.000    0.000
+ qs_scf_post_ps_implicit              1  6.0    0.000    0.000    0.000    0.000
+ cp_fm_redistribute_end               7  8.4    0.000    0.000    0.000    0.000
+ cp_result_value_copy                 6  7.5    0.000    0.000    0.000    0.000
+ qs_scf_post_transport                1  6.0    0.000    0.000    0.000    0.000
+ cp_result_release                    1  2.0    0.000    0.000    0.000    0.000
+ linres_calculation_low               1  4.0    0.000    0.000    0.000    0.000
+ qs_efield_local_operator             3  8.3    0.000    0.000    0.000    0.000
+ qs_ks_did_change                     4  5.0    0.000    0.000    0.000    0.000
+ topology_coordinate_pack_7a          1  4.0    0.000    0.000    0.000    0.000
+ check_for_derivatives                2 10.0    0.000    0.000    0.000    0.000
+ cp_result_value_release             10  5.7    0.000    0.000    0.000    0.000
+ topology_generate_bond_7             1  5.0    0.000    0.000    0.000    0.000
+ read_rirs_input                      1  8.0    0.000    0.000    0.000    0.000
+ topology_connectivity_pack_1         1  4.0    0.000    0.000    0.000    0.000
+ read_mgrid_section                   1  3.0    0.000    0.000    0.000    0.000
+ write_structure_data                 1  3.0    0.000    0.000    0.000    0.000
+ topology_connectivity_pack_3         1  4.0    0.000    0.000    0.000    0.000
+ cp_fm_cleanup_copy_general           2 10.5    0.000    0.000    0.000    0.000
+ topology_constraint_pack_1           1  4.0    0.000    0.000    0.000    0.000
+ topology_constraint_pack_7           1  4.0    0.000    0.000    0.000    0.000
+ topology_coordinate_pack_5           1  4.0    0.000    0.000    0.000    0.000
+ calculate_ecore_self                 1  4.0    0.000    0.000    0.000    0.000
+ grid_create_basis_set                2  7.0    0.000    0.000    0.000    0.000
+ allocate_qs_energy                   1  3.0    0.000    0.000    0.000    0.000
+ wannier90_interface                  1  4.0    0.000    0.000    0.000    0.000
+ get_VBM_CBM_bandgaps                 3 10.0    0.000    0.000    0.000    0.000
+ transport_current                    1  7.0    0.000    0.000    0.000    0.000
+ print_atomic_charges                 3 12.3    0.000    0.000    0.000    0.000
+ grid_free_basis_set                  2  7.0    0.000    0.000    0.000    0.000
+ read_evgw0_input                     1  8.0    0.000    0.000    0.000    0.000
+ get_i_j_atoms                        2  9.0    0.000    0.000    0.000    0.000
+ cp_ddapc_apply_RF                    3  9.3    0.000    0.000    0.000    0.000
+ resp_fit                             1  5.0    0.000    0.000    0.000    0.000
+ topology_coordinate_pack_7b          1  4.0    0.000    0.000    0.000    0.000
+ write_gto_basis_sets                 1  3.0    0.000    0.000    0.000    0.000
+ topology_coordinate_pack_3           1  4.0    0.000    0.000    0.000    0.000
+ write_symmetry                       1  3.0    0.000    0.000    0.000    0.000
+ write_ks_matrix_csr                  1  6.0    0.000    0.000    0.000    0.000
+ qs_scf_post_moments                  1  4.0    0.000    0.000    0.000    0.000
+ qs_efield_berry_phase                3  8.3    0.000    0.000    0.000    0.000
+ topology_connectivity_pack_7         1  4.0    0.000    0.000    0.000    0.000
+ cp_result_value_create              10  7.6    0.000    0.000    0.000    0.000
+ qs_scf_post_molopt                   1  4.0    0.000    0.000    0.000    0.000
+ qs_scf_post_efg                      1  4.0    0.000    0.000    0.000    0.000
+ read_binary_coordinates              1  3.0    0.000    0.000    0.000    0.000
+ ps_implicit_release                  2  6.5    0.000    0.000    0.000    0.000
+ topology_muc                         1  4.0    0.000    0.000    0.000    0.000
+ mp_isend_im2                         4 11.5    0.000    0.000    0.000    0.000
+ qs_scf_post_xray                     1  4.0    0.000    0.000    0.000    0.000
+ qs_scf_post_local_energy             1  6.0    0.000    0.000    0.000    0.000
+ write_s_matrix_csr                   1  6.0    0.000    0.000    0.000    0.000
+ write_hcore_matrix_csr               1  6.0    0.000    0.000    0.000    0.000
+ write_adjacency_matrix               1  6.0    0.000    0.000    0.000    0.000
+ write_dm_binary_restart              1  6.0    0.000    0.000    0.000    0.000
+ qs_scf_post_local_stress             1  6.0    0.000    0.000    0.000    0.000
+ topology_generate_bend               1  4.0    0.000    0.000    0.000    0.000
+ atom2d_cleanup                       4  8.5    0.000    0.000    0.000    0.000
+ write_p_matrix_csr                   1  6.0    0.000    0.000    0.000    0.000
+ compute_xkp                          3  8.3    0.000    0.000    0.000    0.000
+ topology_coordinate_pack_89          1  4.0    0.000    0.000    0.000    0.000
+ handle_ext_restart                   1  3.0    0.000    0.000    0.000    0.000
+ cp_result_value_init                 4  6.8    0.000    0.000    0.000    0.000
+ topology_connectivity_pack_8         1  4.0    0.000    0.000    0.000    0.000
+ write_mos_molden                     1  6.0    0.000    0.000    0.000    0.000
+ add_external_potential               1  2.0    0.000    0.000    0.000    0.000
+ mp_irecv_im2                         4 11.5    0.000    0.000    0.000    0.000
+ topology_coordinate_pack_6           1  4.0    0.000    0.000    0.000    0.000
+ calculate_ecore_efield               1  4.0    0.000    0.000    0.000    0.000
+ fp_env_read                          1  2.0    0.000    0.000    0.000    0.000
+ square_mesh                          2 10.0    0.000    0.000    0.000    0.000
+ auto_ri_release                      1  3.0    0.000    0.000    0.000    0.000
+ tddfpt2_control_create               2  3.0    0.000    0.000    0.000    0.000
+ wfn_mix                              1  4.0    0.000    0.000    0.000    0.000
+ external_e_potential                 1  4.0    0.000    0.000    0.000    0.000
+ reset_and_clean_bs_env               1  8.0    0.000    0.000    0.000    0.000
+ init_ec_env                          1  2.0    0.000    0.000    0.000    0.000
+ topology_connectivity_pack_13_       1  4.0    0.000    0.000    0.000    0.000
+ topology_connectivity_pack_14_       1  4.0    0.000    0.000    0.000    0.000
+ compute_matrix_w                     1  3.0    0.000    0.000    0.000    0.000
+ topology_connectivity_pack_11_       1  4.0    0.000    0.000    0.000    0.000
+ init_harris_env                      1  3.0    0.000    0.000    0.000    0.000
+ excited_state_energy                 1  3.0    0.000    0.000    0.000    0.000
+ read_auto_ri_input                   1  8.0    0.000    0.000    0.000    0.000
+ external_read_density                1  4.0    0.000    0.000    0.000    0.000
+ topology_coordinate_pack_4           1  4.0    0.000    0.000    0.000    0.000
+ topology_generate_impr               1  4.0    0.000    0.000    0.000    0.000
+ tddfpt2_control_release              2  2.0    0.000    0.000    0.000    0.000
+ topology_generate_dihe               1  4.0    0.000    0.000    0.000    0.000
+ rescale_forces                       1  2.0    0.000    0.000    0.000    0.000
+ smeagol_control_create               1  3.0    0.000    0.000    0.000    0.000
+ topology_connectivity_pack_12_       1  4.0    0.000    0.000    0.000    0.000
+ topology_constraint_pack_3           1  4.0    0.000    0.000    0.000    0.000
+ smeagol_control_release              1  2.0    0.000    0.000    0.000    0.000
+ check_qs_kind_set                    1  3.0    0.000    0.000    0.000    0.000
+ fp_env_write                         1  2.0    0.000    0.000    0.000    0.000
+ topology_connectivity_pack_1.1       1  4.0    0.000    0.000    0.000    0.000
+ clebsch_gordon_deallocate            1  4.0    0.000    0.000    0.000    0.000
+ topology_constraint_pack_6           1  4.0    0.000    0.000    0.000    0.000
+ topology_coordinate_pack_2           1  4.0    0.000    0.000    0.000    0.000
+ topology_generate_ub                 1  4.0    0.000    0.000    0.000    0.000
+ pw_env_create                        1  5.0    0.000    0.000    0.000    0.000
+ topology_coordinate_pack_10          1  4.0    0.000    0.000    0.000    0.000
+ cp_result_create                     1  2.0    0.000    0.000    0.000    0.000
+ topology_constraint_pack_4           1  4.0    0.000    0.000    0.000    0.000
+ cleanup_scf_loop                     1  5.0    0.000    0.000    0.000    0.000
+ -------------------------------------------------------------------------------
+
+ The number of warnings for this run is : 1
+ 
+ -------------------------------------------------------------------------------
+  **** **** ******  **  PROGRAM ENDED AT                 2026-09-15 00:22:38.904
+ ***** ** ***  *** **   PROGRAM RAN ON                                 n2lcn0104
+ **    ****   ******    PROGRAM RAN BY                                  metdyn07
+ ***** **    ** ** **   PROGRAM PROCESS ID                                  7212
+  **** **  *******  **  PROGRAM STOPPED IN /scratch/hpc-prf-metdyn/metdyn07_Rita
+                                           j/otus/nanographene/8/rirs_opt_3
+corrupted double-linked list
+corrupted double-linked list
+corrupted double-linked list
+
+Program received signal SIGABRT: Process abort signal.
+
+Backtrace for this error:
+corrupted double-linked list
+corrupted double-linked list
+
+Program received signal SIGABRT: Process abort signal.
+
+Backtrace for this error:
+corrupted double-linked list
+
+Program received signal SIGABRT: Process abort signal.
+
+Backtrace for this error:
+malloc(): unsorted double linked list corrupted
+corrupted double-linked list
+
+Program received signal SIGABRT: Process abort signal.
+
+Backtrace for this error:
+corrupted double-linked list
+
+Program received signal SIGABRT: Process abort signal.
+
+Backtrace for this error:
+corrupted double-linked list
+
+Program received signal SIGABRT: Process abort signal.
+
+Backtrace for this error:
+corrupted double-linked list
+
+Program received signal SIGABRT: Process abort signal.
+
+Backtrace for this error:
+
+Program received signal SIGABRT: Process abort signal.
+
+Backtrace for this error:
+malloc(): unsorted double linked list corrupted
+
+Program received signal SIGABRT: Process abort signal.
+
+Backtrace for this error:
+
+Program received signal SIGABRT: Process abort signal.
+
+Backtrace for this error:
+
+Program received signal SIGABRT: Process abort signal.
+
+Backtrace for this error:
+
+Program received signal SIGABRT: Process abort signal.
+
+Backtrace for this error:
+malloc(): unsorted double linked list corrupted
+
+Program received signal SIGABRT: Process abort signal.
+
+Backtrace for this error:
+#0  0x14b54ff6962f in ???
+#1  0x14b54ff695af in ???
+#2  0x14b54ff3cee4 in ???
+#3  0x14b54ffaa756 in ???
+#4  0x14b54ffb1a5b in ???
+#5  0x14b54ffb22eb in ???
+#6  0x14b54ffb2448 in ???
+#7  0x14b54ffb3b0f in ???
+#0  0x14c67110362f in ???
+#1  0x14c6711035af in ???
+#2  0x14c6710d6ee4 in ???
+#3  0x14c671144756 in ???
+#4  0x14c67114ba5b in ???
+#5  0x14c67114c2eb in ???
+#6  0x14c67114c494 in ???
+#7  0x14c67114db0f in ???
+#0  0x14c4b980262f in ???
+#1  0x14c4b98025af in ???
+#2  0x14c4b97d5ee4 in ???
+#3  0x14c4b9843756 in ???
+#4  0x14c4b984aa5b in ???
+#5  0x14c4b984b2eb in ???
+#6  0x14c4b984b448 in ???
+#7  0x14c4b984cb0f in ???
+#0  0x153f163bf62f in ???
+#1  0x153f163bf5af in ???
+#2  0x153f16392ee4 in ???
+#3  0x153f16400756 in ???
+#4  0x153f16407a5b in ???
+#5  0x153f164082eb in ???
+#6  0x153f16408448 in ???
+#7  0x153f16409b0f in ???
+#0  0x15061f4e762f in ???
+#1  0x15061f4e75af in ???
+#2  0x15061f4baee4 in ???
+#3  0x15061f528756 in ???
+#4  0x15061f52fa5b in ???
+#5  0x15061f532e03 in ???
+#6  0x15061f534401 in ???
+#0  0x14ff77f5762f in ???
+#1  0x14ff77f575af in ???
+#2  0x14ff77f2aee4 in ???
+#3  0x14ff77f98756 in ???
+#4  0x14ff77f9fa5b in ???
+#5  0x14ff77fa02eb in ???
+#6  0x14ff77fa0494 in ???
+#7  0x14ff77fa1b0f in ???
+#8  0x14c671526028 in ???
+#9  0x14c670cf3b39 in ???
+#10  0x14c670ce90ee in ???
+#11  0x14c671554c79 in ???
+#12  0x14c6715578cb in ???
+#13  0x14c671558e44 in ???
+#14  0x14c6715511d0 in ???
+#15  0x14c672cd98e8 in ???
+#8  0x14c4b9c25028 in ???
+#9  0x14c4b93f2b39 in ???
+#10  0x14c4b93e80ee in ???
+#11  0x14c4b9c53c79 in ???
+#12  0x14c4b9c568cb in ???
+#13  0x14c4b9c57e44 in ???
+#14  0x14c4b9c501d0 in ???
+#15  0x14c4bb3d88e8 in ???
+#16  0x14c4bb423791 in ???
+#8  0x153f167e2028 in ???
+#9  0x153f15fafb39 in ???
+#10  0x153f15fa50ee in ???
+#11  0x153f16810c79 in ???
+#12  0x153f168138cb in ???
+#13  0x153f16814e44 in ???
+#14  0x153f1680d1d0 in ???
+#15  0x153f17f958e8 in ???
+#16  0x153f17fe0791 in ???
+#8  0x14ff7837a028 in ???
+#9  0x14ff77b47b39 in ???
+#10  0x14ff77b3d0ee in ???
+#11  0x14ff783a8c79 in ???
+#12  0x14ff783ab8cb in ???
+#13  0x14ff783ace44 in ???
+#14  0x14ff783a51d0 in ???
+#15  0x14ff79b2d8e8 in ???
+#16  0x14ff79b78791 in ???
+#16  0x14c672d24791 in ???
+#7  0x15061e11db0e in ucs_malloc
+	at debug/memtrack.c:330
+#8  0x15061e111bcc in ucs_mpool_chunk_malloc
+	at datastruct/mpool.c:328
+#9  0x15061e111922 in ucs_mpool_grow
+	at datastruct/mpool.c:266
+#10  0x15061e111b24 in ucs_mpool_get_grow
+	at datastruct/mpool.c:312
+#0  0x14ebd798c62f in ???
+#1  0x14ebd798c5af in ???
+#2  0x14ebd795fee4 in ???
+#3  0x14ebd79cd756 in ???
+#4  0x14ebd79d4a5b in ???
+#5  0x14ebd79d7e03 in ???
+#6  0x14ebd79d9401 in ???
+#0  0x1505d3ad662f in ???
+#1  0x1505d3ad65af in ???
+#2  0x1505d3aa9ee4 in ???
+#3  0x1505d3b17756 in ???
+#4  0x1505d3b1ea5b in ???
+#5  0x1505d3b1f2eb in ???
+#6  0x1505d3b1f448 in ???
+#7  0x1505d3b20b0f in ???
+#0  0x14a11505762f in ???
+#1  0x14a1150575af in ???
+#2  0x14a11502aee4 in ???
+#3  0x14a115098756 in ???
+#4  0x14a11509fa5b in ???
+#5  0x14a1150a02eb in ???
+#6  0x14a1150a0448 in ???
+#7  0x14a1150a1b0f in ???
+#0  0x148aa8e2f62f in ???
+#1  0x148aa8e2f5af in ???
+#2  0x148aa8e02ee4 in ???
+#3  0x148aa8e70756 in ???
+#4  0x148aa8e77a5b in ???
+#5  0x148aa8e7ae03 in ???
+#6  0x148aa8e7c401 in ???
+#0  0x15147f8a962f in ???
+#1  0x15147f8a95af in ???
+#2  0x15147f87cee4 in ???
+#3  0x15147f8ea756 in ???
+#4  0x15147f8f1a5b in ???
+#5  0x15147f8f22eb in ???
+#6  0x15147f8f2494 in ???
+#7  0x15147f8f3b0f in ???
+#0  0x14b2e314862f in ???
+#1  0x14b2e31485af in ???
+#2  0x14b2e311bee4 in ???
+#3  0x14b2e3189756 in ???
+#4  0x14b2e3190a5b in ???
+#5  0x14b2e31912eb in ???
+#6  0x14b2e319298a in ???
+#0  0x1474127e962f in ???
+#1  0x1474127e95af in ???
+#2  0x1474127bcee4 in ???
+#3  0x14741282a756 in ???
+#4  0x147412831a5b in ???
+#5  0x1474128322eb in ???
+#6  0x147412832494 in ???
+#7  0x147412833b0f in ???
+#8  0x14a11547a028 in ???
+#9  0x14a114c47b39 in ???
+#10  0x14a114c3d0ee in ???
+#11  0x14a1154a8c79 in ???
+#12  0x14a1154ab8cb in ???
+#13  0x14a1154ace44 in ???
+#8  0x15147fccc028 in ???
+#9  0x15147f499b39 in ???
+#10  0x15147f48f0ee in ???
+#11  0x15147fcfac79 in ???
+#12  0x15147fcfd8cb in ???
+#13  0x15147fcfee44 in ???
+#14  0x14a1154a51d0 in ???
+#15  0x14a116c2d8e8 in ???
+#14  0x15147fcf71d0 in ???
+#15  0x15148147f8e8 in ???
+#16  0x14a116c78791 in ???
+#16  0x1514814ca791 in ???
+#8  0x14b55041e9ff in ???
+#9  0x14b550456b58 in ???
+#10  0x14b55041c588 in ???
+#11  0x14b55038b8a9 in ???
+#12  0x14b55038bfc8 in ???
+#13  0x14b54fb59b39 in ???
+#14  0x14b54fb4f0ee in ???
+#15  0x14b5503bac79 in ???
+#16  0x14b5503bd8cb in ???
+#17  0x14b5503bee44 in ???
+#18  0x14b5503b71d0 in ???
+#19  0x14b551b3f8e8 in ???
+#20  0x14b551b8a791 in ???
+#7  0x14ebd65c2b0e in ucs_malloc
+	at debug/memtrack.c:330
+#7  0x148aa7a65b0e in ucs_malloc
+	at debug/memtrack.c:330
+#8  0x14ebd65b6bcc in ucs_mpool_chunk_malloc
+	at datastruct/mpool.c:328
+#9  0x14ebd65b6922 in ucs_mpool_grow
+	at datastruct/mpool.c:266
+#10  0x14ebd65b6b24 in ucs_mpool_get_grow
+	at datastruct/mpool.c:312
+#8  0x148aa7a59bcc in ucs_mpool_chunk_malloc
+	at datastruct/mpool.c:328
+#9  0x148aa7a59922 in ucs_mpool_grow
+	at datastruct/mpool.c:266
+#10  0x148aa7a59b24 in ucs_mpool_get_grow
+	at datastruct/mpool.c:312
+#8  0x1505d3f8959c in ???
+#9  0x1505d3ef88a9 in ???
+#10  0x1505d3ef8fc8 in ???
+#11  0x1505d36c6b39 in ???
+#12  0x1505d36bc0ee in ???
+#13  0x1505d3f27c79 in ???
+#14  0x1505d3f2a8cb in ???
+#15  0x1505d3f2be44 in ???
+#16  0x1505d3f241d0 in ???
+#7  0x14b2e35fb45e in ???
+#8  0x14b2e356a8a9 in ???
+#9  0x14b2e356d3b8 in ???
+#10  0x14b2e36647fb in ???
+#11  0x14b2e3635928 in ???
+#12  0x14b2e35fb588 in ???
+#13  0x14b2e356a8a9 in ???
+#14  0x14b2e356afc8 in ???
+#15  0x14b2e2d38b39 in ???
+#16  0x14b2e2d2e0ee in ???
+#17  0x14b2e3599c79 in ???
+#18  0x14b2e359c8cb in ???
+#19  0x14b2e359de44 in ???
+#20  0x14b2e35961d0 in ???
+#21  0x14b2e4d1e8e8 in ???
+#22  0x14b2e4d69791 in ???
+#8  0x147412c9c59c in ???
+#9  0x147412c0b8a9 in ???
+#10  0x147412c0e3b8 in ???
+#11  0x147412d057fb in ???
+#12  0x147412cd6928 in ???
+#13  0x147412c9c588 in ???
+#14  0x147412c0b8a9 in ???
+#15  0x147412c0bfc8 in ???
+#16  0x1474123d9b39 in ???
+#17  0x1474123cf0ee in ???
+#18  0x147412c3ac79 in ???
+#19  0x147412c3d8cb in ???
+#20  0x147412c3ee44 in ???
+#21  0x147412c371d0 in ???
+#22  0x1474143bf8e8 in ???
+#23  0x14741440a791 in ???
+#17  0x1505d56ac8e8 in ???
+#18  0x1505d56f7791 in ???
+#11  0x150593d4a3a4 in uct_rc_txqp_add_flush_comp
+	at /dev/shm/rschade/UCX/1.19.0/GCCcore-14.3.0/ucx-1.19.0/src/uct/ib/rc/base/rc_ep.h:418
+#12  0x150593d4a3a4 in uct_rc_mlx5_base_ep_flush
+	at rc/rc_mlx5_ep.c:621
+#11  0x14eb4c1ef3a4 in uct_rc_txqp_add_flush_comp
+	at /dev/shm/rschade/UCX/1.19.0/GCCcore-14.3.0/ucx-1.19.0/src/uct/ib/rc/base/rc_ep.h:418
+#12  0x14eb4c1ef3a4 in uct_rc_mlx5_base_ep_flush
+	at rc/rc_mlx5_ep.c:621
+#11  0x148a1d6923a4 in uct_rc_txqp_add_flush_comp
+	at /dev/shm/rschade/UCX/1.19.0/GCCcore-14.3.0/ucx-1.19.0/src/uct/ib/rc/base/rc_ep.h:418
+#12  0x148a1d6923a4 in uct_rc_mlx5_base_ep_flush
+	at rc/rc_mlx5_ep.c:621
+#13  0x14ebd66a29d8 in uct_ep_flush
+	at /dev/shm/rschade/UCX/1.19.0/GCCcore-14.3.0/ucx-1.19.0/src/uct/api/uct.h:3280
+#14  0x14ebd66a29d8 in ucp_ep_flush_progress
+	at rma/flush.c:123
+#13  0x148aa7b459d8 in uct_ep_flush
+	at /dev/shm/rschade/UCX/1.19.0/GCCcore-14.3.0/ucx-1.19.0/src/uct/api/uct.h:3280
+#14  0x148aa7b459d8 in ucp_ep_flush_progress
+	at rma/flush.c:123
+#15  0x14ebd66a325a in ucp_ep_flush_internal
+	at rma/flush.c:417
+#15  0x148aa7b4625a in ucp_ep_flush_internal
+	at rma/flush.c:417
+#16  0x14ebd6672f5d in ucp_ep_close_nbx
+	at core/ucp_ep.c:1770
+#17  0x14ebd6673214 in ucp_ep_close_nb
+	at core/ucp_ep.c:1739
+#18  0x14ebd761df94 in ???
+#19  0x14ebd761e0e8 in ???
+#20  0x14ebd7f8a750 in ???
+#21  0x14ebd7ddf6bc in ???
+#22  0x14ebd757cb39 in ???
+#23  0x14ebd75720ee in ???
+#24  0x14ebd7dddc79 in ???
+#25  0x14ebd7de08cb in ???
+#26  0x14ebd7de1e44 in ???
+#27  0x14ebd7dda1d0 in ???
+#28  0x14ebd95628e8 in ???
+#29  0x14ebd95ad791 in ???
+#16  0x148aa7b15f5d in ucp_ep_close_nbx
+	at core/ucp_ep.c:1770
+#17  0x148aa7b16214 in ucp_ep_close_nb
+	at core/ucp_ep.c:1739
+#18  0x148aa8ac0f94 in ???
+#19  0x148aa8ac10e8 in ???
+#20  0x148aa942d750 in ???
+#21  0x148aa92826bc in ???
+#22  0x148aa8a1fb39 in ???
+#23  0x148aa8a150ee in ???
+#24  0x148aa9280c79 in ???
+#25  0x148aa92838cb in ???
+#26  0x148aa9284e44 in ???
+#27  0x148aa927d1d0 in ???
+#28  0x148aaaa058e8 in ???
+#29  0x148aaaa50791 in ???
+#13  0x15061e1fd9d8 in uct_ep_flush
+	at /dev/shm/rschade/UCX/1.19.0/GCCcore-14.3.0/ucx-1.19.0/src/uct/api/uct.h:3280
+#14  0x15061e1fd9d8 in ucp_ep_flush_progress
+	at rma/flush.c:123
+#15  0x15061e1fe25a in ucp_ep_flush_internal
+	at rma/flush.c:417
+#16  0x15061e1cdf5d in ucp_ep_close_nbx
+	at core/ucp_ep.c:1770
+#17  0x15061e1ce214 in ucp_ep_close_nb
+	at core/ucp_ep.c:1739
+#18  0x15061f178f94 in ???
+#19  0x15061f1790e8 in ???
+#20  0x15061fae5750 in ???
+#21  0x15061f93a6bc in ???
+#22  0x15061f0d7b39 in ???
+#23  0x15061f0cd0ee in ???
+#24  0x15061f938c79 in ???
+#25  0x15061f93b8cb in ???
+#26  0x15061f93ce44 in ???
+#27  0x15061f9351d0 in ???
+#28  0x1506210bd8e8 in ???
+#29  0x150621108791 in ???
+#21  0x14b560f51227 in __message_passing_MOD_mp_world_finalize
+	at /pc2/groups/hpc-prf-metdyn/metdyn07_Ritaj/implementation/github/cp2k-noctua/cp2k/src/mpiwrap/message_passing.F:1358
+#17  0x14c6820eb227 in __message_passing_MOD_mp_world_finalize
+	at /pc2/groups/hpc-prf-metdyn/metdyn07_Ritaj/implementation/github/cp2k-noctua/cp2k/src/mpiwrap/message_passing.F:1358
+#17  0x14c4ca7ea227 in __message_passing_MOD_mp_world_finalize
+	at /pc2/groups/hpc-prf-metdyn/metdyn07_Ritaj/implementation/github/cp2k-noctua/cp2k/src/mpiwrap/message_passing.F:1358
+#17  0x153f273ae227 in __message_passing_MOD_mp_world_finalize
+	at /pc2/groups/hpc-prf-metdyn/metdyn07_Ritaj/implementation/github/cp2k-noctua/cp2k/src/mpiwrap/message_passing.F:1358
+#30  0x1506304cf227 in __message_passing_MOD_mp_world_finalize
+	at /pc2/groups/hpc-prf-metdyn/metdyn07_Ritaj/implementation/github/cp2k-noctua/cp2k/src/mpiwrap/message_passing.F:1358
+#17  0x14ff88f3f227 in __message_passing_MOD_mp_world_finalize
+	at /pc2/groups/hpc-prf-metdyn/metdyn07_Ritaj/implementation/github/cp2k-noctua/cp2k/src/mpiwrap/message_passing.F:1358
+#30  0x148ab9e17227 in __message_passing_MOD_mp_world_finalize
+	at /pc2/groups/hpc-prf-metdyn/metdyn07_Ritaj/implementation/github/cp2k-noctua/cp2k/src/mpiwrap/message_passing.F:1358
+#17  0x14a12603f227 in __message_passing_MOD_mp_world_finalize
+	at /pc2/groups/hpc-prf-metdyn/metdyn07_Ritaj/implementation/github/cp2k-noctua/cp2k/src/mpiwrap/message_passing.F:1358
+#17  0x151490891227 in __message_passing_MOD_mp_world_finalize
+	at /pc2/groups/hpc-prf-metdyn/metdyn07_Ritaj/implementation/github/cp2k-noctua/cp2k/src/mpiwrap/message_passing.F:1358
+#23  0x14b2f4137227 in __message_passing_MOD_mp_world_finalize
+	at /pc2/groups/hpc-prf-metdyn/metdyn07_Ritaj/implementation/github/cp2k-noctua/cp2k/src/mpiwrap/message_passing.F:1358
+#24  0x1474237d1227 in __message_passing_MOD_mp_world_finalize
+	at /pc2/groups/hpc-prf-metdyn/metdyn07_Ritaj/implementation/github/cp2k-noctua/cp2k/src/mpiwrap/message_passing.F:1358
+#30  0x14ebe8974227 in __message_passing_MOD_mp_world_finalize
+	at /pc2/groups/hpc-prf-metdyn/metdyn07_Ritaj/implementation/github/cp2k-noctua/cp2k/src/mpiwrap/message_passing.F:1358
+#19  0x1505e4abe227 in __message_passing_MOD_mp_world_finalize
+	at /pc2/groups/hpc-prf-metdyn/metdyn07_Ritaj/implementation/github/cp2k-noctua/cp2k/src/mpiwrap/message_passing.F:1358
+#22  0x14b55ef0eed4 in __f77_interface_MOD_finalize_cp2k
+	at /pc2/groups/hpc-prf-metdyn/metdyn07_Ritaj/implementation/github/cp2k-noctua/cp2k/src/f77_interface.F:389
+#18  0x14c6800a8ed4 in __f77_interface_MOD_finalize_cp2k
+	at /pc2/groups/hpc-prf-metdyn/metdyn07_Ritaj/implementation/github/cp2k-noctua/cp2k/src/f77_interface.F:389
+#18  0x14c4c87a7ed4 in __f77_interface_MOD_finalize_cp2k
+	at /pc2/groups/hpc-prf-metdyn/metdyn07_Ritaj/implementation/github/cp2k-noctua/cp2k/src/f77_interface.F:389
+#18  0x153f2536bed4 in __f77_interface_MOD_finalize_cp2k
+	at /pc2/groups/hpc-prf-metdyn/metdyn07_Ritaj/implementation/github/cp2k-noctua/cp2k/src/f77_interface.F:389
+#31  0x15062e48ced4 in __f77_interface_MOD_finalize_cp2k
+	at /pc2/groups/hpc-prf-metdyn/metdyn07_Ritaj/implementation/github/cp2k-noctua/cp2k/src/f77_interface.F:389
+#18  0x14ff86efced4 in __f77_interface_MOD_finalize_cp2k
+	at /pc2/groups/hpc-prf-metdyn/metdyn07_Ritaj/implementation/github/cp2k-noctua/cp2k/src/f77_interface.F:389
+#31  0x14ebe6931ed4 in __f77_interface_MOD_finalize_cp2k
+	at /pc2/groups/hpc-prf-metdyn/metdyn07_Ritaj/implementation/github/cp2k-noctua/cp2k/src/f77_interface.F:389
+#19  0x404372 in cp2k
+	at /pc2/groups/hpc-prf-metdyn/metdyn07_Ritaj/implementation/github/cp2k-noctua/cp2k/src/start/cp2k.F:414
+#20  0x4032ce in main
+	at /pc2/groups/hpc-prf-metdyn/metdyn07_Ritaj/implementation/github/cp2k-noctua/cp2k/src/start/cp2k.F:44
+#20  0x1505e2a7bed4 in __f77_interface_MOD_finalize_cp2k
+	at /pc2/groups/hpc-prf-metdyn/metdyn07_Ritaj/implementation/github/cp2k-noctua/cp2k/src/f77_interface.F:389
+#19  0x404372 in cp2k
+	at /pc2/groups/hpc-prf-metdyn/metdyn07_Ritaj/implementation/github/cp2k-noctua/cp2k/src/start/cp2k.F:414
+#20  0x4032ce in main
+	at /pc2/groups/hpc-prf-metdyn/metdyn07_Ritaj/implementation/github/cp2k-noctua/cp2k/src/start/cp2k.F:44
+#18  0x14a123ffced4 in __f77_interface_MOD_finalize_cp2k
+	at /pc2/groups/hpc-prf-metdyn/metdyn07_Ritaj/implementation/github/cp2k-noctua/cp2k/src/f77_interface.F:389
+#19  0x404372 in cp2k
+	at /pc2/groups/hpc-prf-metdyn/metdyn07_Ritaj/implementation/github/cp2k-noctua/cp2k/src/start/cp2k.F:414
+#20  0x4032ce in main
+	at /pc2/groups/hpc-prf-metdyn/metdyn07_Ritaj/implementation/github/cp2k-noctua/cp2k/src/start/cp2k.F:44
+#31  0x148ab7dd4ed4 in __f77_interface_MOD_finalize_cp2k
+	at /pc2/groups/hpc-prf-metdyn/metdyn07_Ritaj/implementation/github/cp2k-noctua/cp2k/src/f77_interface.F:389
+#23  0x404372 in cp2k
+	at /pc2/groups/hpc-prf-metdyn/metdyn07_Ritaj/implementation/github/cp2k-noctua/cp2k/src/start/cp2k.F:414
+#24  0x4032ce in main
+	at /pc2/groups/hpc-prf-metdyn/metdyn07_Ritaj/implementation/github/cp2k-noctua/cp2k/src/start/cp2k.F:44
+#18  0x15148e84eed4 in __f77_interface_MOD_finalize_cp2k
+	at /pc2/groups/hpc-prf-metdyn/metdyn07_Ritaj/implementation/github/cp2k-noctua/cp2k/src/f77_interface.F:389
+#32  0x404372 in cp2k
+	at /pc2/groups/hpc-prf-metdyn/metdyn07_Ritaj/implementation/github/cp2k-noctua/cp2k/src/start/cp2k.F:414
+#33  0x4032ce in main
+	at /pc2/groups/hpc-prf-metdyn/metdyn07_Ritaj/implementation/github/cp2k-noctua/cp2k/src/start/cp2k.F:44
+#24  0x14b2f20f4ed4 in __f77_interface_MOD_finalize_cp2k
+	at /pc2/groups/hpc-prf-metdyn/metdyn07_Ritaj/implementation/github/cp2k-noctua/cp2k/src/f77_interface.F:389
+#19  0x404372 in cp2k
+	at /pc2/groups/hpc-prf-metdyn/metdyn07_Ritaj/implementation/github/cp2k-noctua/cp2k/src/start/cp2k.F:414
+#20  0x4032ce in main
+	at /pc2/groups/hpc-prf-metdyn/metdyn07_Ritaj/implementation/github/cp2k-noctua/cp2k/src/start/cp2k.F:44
+#25  0x14742178eed4 in __f77_interface_MOD_finalize_cp2k
+	at /pc2/groups/hpc-prf-metdyn/metdyn07_Ritaj/implementation/github/cp2k-noctua/cp2k/src/f77_interface.F:389
+#19  0x404372 in cp2k
+	at /pc2/groups/hpc-prf-metdyn/metdyn07_Ritaj/implementation/github/cp2k-noctua/cp2k/src/start/cp2k.F:414
+#20  0x4032ce in main
+	at /pc2/groups/hpc-prf-metdyn/metdyn07_Ritaj/implementation/github/cp2k-noctua/cp2k/src/start/cp2k.F:44
+#32  0x404372 in cp2k
+	at /pc2/groups/hpc-prf-metdyn/metdyn07_Ritaj/implementation/github/cp2k-noctua/cp2k/src/start/cp2k.F:414
+#33  0x4032ce in main
+	at /pc2/groups/hpc-prf-metdyn/metdyn07_Ritaj/implementation/github/cp2k-noctua/cp2k/src/start/cp2k.F:44
+#21  0x404372 in cp2k
+	at /pc2/groups/hpc-prf-metdyn/metdyn07_Ritaj/implementation/github/cp2k-noctua/cp2k/src/start/cp2k.F:414
+#22  0x4032ce in main
+	at /pc2/groups/hpc-prf-metdyn/metdyn07_Ritaj/implementation/github/cp2k-noctua/cp2k/src/start/cp2k.F:44
+#32  0x404372 in cp2k
+	at /pc2/groups/hpc-prf-metdyn/metdyn07_Ritaj/implementation/github/cp2k-noctua/cp2k/src/start/cp2k.F:414
+#33  0x4032ce in main
+	at /pc2/groups/hpc-prf-metdyn/metdyn07_Ritaj/implementation/github/cp2k-noctua/cp2k/src/start/cp2k.F:44
+#19  0x404372 in cp2k
+	at /pc2/groups/hpc-prf-metdyn/metdyn07_Ritaj/implementation/github/cp2k-noctua/cp2k/src/start/cp2k.F:414
+#20  0x4032ce in main
+	at /pc2/groups/hpc-prf-metdyn/metdyn07_Ritaj/implementation/github/cp2k-noctua/cp2k/src/start/cp2k.F:44
+#25  0x404372 in cp2k
+	at /pc2/groups/hpc-prf-metdyn/metdyn07_Ritaj/implementation/github/cp2k-noctua/cp2k/src/start/cp2k.F:414
+#26  0x4032ce in main
+	at /pc2/groups/hpc-prf-metdyn/metdyn07_Ritaj/implementation/github/cp2k-noctua/cp2k/src/start/cp2k.F:44
+#26  0x404372 in cp2k
+	at /pc2/groups/hpc-prf-metdyn/metdyn07_Ritaj/implementation/github/cp2k-noctua/cp2k/src/start/cp2k.F:414
+#27  0x4032ce in main
+	at /pc2/groups/hpc-prf-metdyn/metdyn07_Ritaj/implementation/github/cp2k-noctua/cp2k/src/start/cp2k.F:44
+srun: error: n2lcn0104: tasks 0-3,5,7: Aborted (core dumped)
+srun: Terminating StepId=34383868.0
+srun: error: n2lcn0118: tasks 8-9,11-15: Aborted (core dumped)
+srun: error: n2lcn0118: task 10: Terminated
+srun: Force Terminated StepId=34383868.0
