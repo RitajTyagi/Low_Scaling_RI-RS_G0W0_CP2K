@@ -40,12 +40,12 @@
 
 
 
-  Date     :  20260729, Time     :  222646.715
-  Time zero on CPU 1             :   0.152395000000000E+00  s.
-  Internal wall clock time zero  :           554596006.715  s.
+  Date     :  20261015, Time     :  192151.366
+  Time zero on CPU 1             :   0.156704000000000E+00  s.
+  Internal wall clock time zero  :           561324111.366  s.
 
   FHI-aims created a unique identifier for this run for later identification
-  aims_uuid : F3DF138B-A7B1-452E-AE96-330646EC8E74
+  aims_uuid : 03B2A8A1-2CAA-49E1-A739-0BB56FB6F8D8
 
   Build configuration of the current instance of FHI-aims
   -------------------------------------------------------
@@ -77,14 +77,14 @@
                    /opt/software/pc2/EB-SW/software/imkl/2025.1.0/mkl/2025.1/lib/libmkl_scalapack_lp64.so
 
   Using        8 parallel tasks.
-  Task        0 on host cn0457 reporting.
-  Task        1 on host cn0457 reporting.
-  Task        2 on host cn0457 reporting.
-  Task        3 on host cn0457 reporting.
-  Task        4 on host cn0457 reporting.
-  Task        5 on host cn0457 reporting.
-  Task        6 on host cn0457 reporting.
-  Task        7 on host cn0457 reporting.
+  Task        0 on host cn1226 reporting.
+  Task        1 on host cn1226 reporting.
+  Task        2 on host cn1226 reporting.
+  Task        3 on host cn1226 reporting.
+  Task        4 on host cn1226 reporting.
+  Task        5 on host cn1226 reporting.
+  Task        6 on host cn1226 reporting.
+  Task        7 on host cn1226 reporting.
 
   Obtaining array dimensions for all initial allocations:
   
@@ -104,7 +104,7 @@
     anacon_type            1
     n_anacon_par           128
     frequency_points       600
-    contour_def_gw         3 100
+    contour_def_gw         1 30
     contour_eta            0.001
     state_lower_limit      1
     state_upper_limit      500
@@ -3288,7 +3288,7 @@ ntrol.in files!
   Using Pade approximation for analytical continuation.
   Number of fitting parameters for analytical continuation :    128
   Number of frequency points used for the self-energy calculation:    600
-  Contour deformation in GW for the levels:      3     to     100
+  Contour deformation in GW for the levels:      1     to      30
   Broadening parameter eta:       0.001000
   Lower limit of the eigenstates for the self-energy correction :      1
   Upper limit of the eigenstates for the self-energy correction :    500
@@ -6731,7 +6731,7 @@ ntrol.in files!
   | Maximum number of basis functions            :       20
   | Number of Kohn-Sham states (occupied + empty):       20
 ------------------------------------------------------------
-  After read_input_data [GB]:    762.30
+  After read_input_data [GB]:    760.43
 
   Performing system and environment tests:
   | Environment variable OMP_NUM_THREADS correctly set to 1.
@@ -6741,7 +6741,7 @@ ntrol.in files!
   | Testing CPU compatibility for run-time vs. build-time.
   | Reading /proc/cpuinfo for CPU information ...
   | Built for  : AMD EPYC 7763 64-Core Processor
-  *** WARNING: CPU mismatch detected for Node cn0457 : AMD EPYC 9655 96-Core Processor                                                                  
+  *** WARNING: CPU mismatch detected for Node cn1226 : AMD EPYC 9655 96-Core Processor                                                                  
 ** WARNING:
   | WARNING: This FHI-aims executable was built on a different
   CPU type than the CPUs used in this run.
@@ -6755,7 +6755,7 @@ ntrol.in files!
   | Running on : AMD EPYC 9655 96-Core Processor
   | Runtime CPU compatibility verified.
   
-  After prepare_system [GB]:    762.24
+  After prepare_system [GB]:    760.37
 
 ------------------------------------------------------------
           Preparing all fixed parts of the calculation.
@@ -8812,10 +8812,10 @@ ntrol.in files!
   Preparing densities etc. for the partition functions (integrals / Hartree potential).
 
   Preparations completed.
-  max(cpu_time)          :      1.171 s.
-  Wall clock time (cpu1) :      1.173 s.
+  max(cpu_time)          :      1.172 s.
+  Wall clock time (cpu1) :      1.174 s.
 ------------------------------------------------------------
-  After prepare_scf [GB]:    756.90
+  After prepare_scf [GB]:    755.32
 
   Initializing index lists of integration centers etc. from given atomic structure:
   | Number of centers in hartree potential                       :         2
@@ -8826,26 +8826,26 @@ ntrol.in files!
   | Number of centers in hamiltonian                             :         2
   | Number of centers in partition table from touching 0-cell    :         2
   | Number of centers in partition table total                   :         2
-  After initialize_bc_dependent_lists [GB]:    756.89
+  After initialize_bc_dependent_lists [GB]:    755.31
 
 ------------------------------------------------------------
           Begin self-consistency loop: Initialization.
 
-          Date     :  20260729, Time     :  222647.948
+          Date     :  20261015, Time     :  192152.588
 ------------------------------------------------------------
-  Available memory per node after initialize_hartree_non_periodic_ewald [GB]:    756.89
-  Available memory per node after initialize_recip_hartree_potential [GB]:    756.89
+  Available memory per node after initialize_hartree_non_periodic_ewald [GB]:    755.31
+  Available memory per node after initialize_recip_hartree_potential [GB]:    755.31
   * Using 8 tasks for Scalapack Eigenvalue solver.
   Detailed listing of tasks and assigned k-points:
   (for non-periodic systems, the "k-point" denotes an internal label only)
-   Task     0 k-point     1 on cn0457
-   Task     1 k-point     1 on cn0457
-   Task     2 k-point     1 on cn0457
-   Task     3 k-point     1 on cn0457
-   Task     4 k-point     1 on cn0457
-   Task     5 k-point     1 on cn0457
-   Task     6 k-point     1 on cn0457
-   Task     7 k-point     1 on cn0457
+   Task     0 k-point     1 on cn1226
+   Task     1 k-point     1 on cn1226
+   Task     2 k-point     1 on cn1226
+   Task     3 k-point     1 on cn1226
+   Task     4 k-point     1 on cn1226
+   Task     5 k-point     1 on cn1226
+   Task     6 k-point     1 on cn1226
+   Task     7 k-point     1 on cn1226
   Tasks:     8 split into      4 X      2 BLACS grid
   Calculating block size based on n_basis =           20  max_nprow =            4  max_npcol =            2
   ScaLAPACK block size set to:            4
@@ -8853,9 +8853,9 @@ ntrol.in files!
   Allocating        0.001 MB for ham
   Allocating        0.001 MB for eigenvec
   Required Scalapack workspace - INTEGER:          158  REAL:           353
-  Available memory per node after initialize_scalapack [GB]:    756.89
-  Available memory per node after aims_elsi_init_scf [GB]:    756.89
-  Available memory per node after initialize_fixed_grids [GB]:    756.89
+  Available memory per node after initialize_scalapack [GB]:    755.31
+  Available memory per node after aims_elsi_init_scf [GB]:    755.31
+  Available memory per node after initialize_fixed_grids [GB]:    755.31
   Partitioning the integration grid into batches with parallel hashing+maxmin method.
   | Number of batches:     1677
   | Maximal batch size:     184
@@ -8873,11 +8873,11 @@ ntrol.in files!
   Task     5 has      19265 integration points.
   Task     6 has      19264 integration points.
   Task     7 has      19215 integration points.
-  Available memory per node after partition_grid [GB]:    756.89
+  Available memory per node after partition_grid [GB]:    755.31
   Initializing partition tables, free-atom densities, potentials, etc. across the integration grid (initialize_grid_storage).
   | Net number of integration points:   153920
   | of which are non-zero points    :   153920
-  Available memory per node after initialize_grid_storage_p1 [GB]:    756.87
+  Available memory per node after initialize_grid_storage_p1 [GB]:    755.29
   Renormalizing the initial density to the exact electron count on the 3D integration grid.
   | Initial density: Formal number of electrons (from input files) :       4.0000000000
   | Integrated number of electrons on 3D grid     :       3.9999999838
@@ -8897,29 +8897,29 @@ ntrol.in files!
   | Maximal number of non-zero basis functions:       20 in task     5
   | Maximal number of non-zero basis functions:       20 in task     6
   | Maximal number of non-zero basis functions:       20 in task     7
-  Available memory per node after get_n_compute_maxes_p1 [GB]:    756.87
+  Available memory per node after get_n_compute_maxes_p1 [GB]:    755.29
   Allocating        0.003 MB for KS_eigenvector
-  Available memory per node after allocate_matrices [GB]:    756.87
-  Available memory per node after init_comm_sparse_local_matrix_scalapack [GB]:    756.87
+  Available memory per node after allocate_matrices [GB]:    755.29
+  Available memory per node after init_comm_sparse_local_matrix_scalapack [GB]:    755.29
   Integrating Hamiltonian matrix: batch-based integration.
-  Time summed over all CPUs for integration: real work        0.162 s, elapsed        0.164 s
-  Available memory per node after integrate hamiltonian matrix [GB]:    756.87
+  Time summed over all CPUs for integration: real work        0.164 s, elapsed        0.167 s
+  Available memory per node after integrate hamiltonian matrix [GB]:    755.29
   Integrating overlap matrix.
-  Time summed over all CPUs for integration: real work        0.068 s, elapsed        0.069 s
-  Available memory per node after integrate ovlp matrix [GB]:    756.87
+  Time summed over all CPUs for integration: real work        0.068 s, elapsed        0.068 s
+  Available memory per node after integrate ovlp matrix [GB]:    755.29
   Deallocating overlap matrix.
-  Available memory per node after save_overlap_scalapack [GB]:    756.87
+  Available memory per node after save_overlap_scalapack [GB]:    755.29
 
   Updating Kohn-Sham eigenvalues and eigenvectors using ELSI and the ELPA eigensolver.
   Overlap matrix is not singular
   | Lowest and highest eigenvalues :  0.6097E-01,  0.1939E+01
   Finished singularity check of overlap matrix
-  | Time :     0.001 s
+  | Time :     0.000 s
   Starting ELPA eigensolver
   Finished Cholesky decomposition
-  | Time :     0.005 s
+  | Time :     0.001 s
   Finished transformation to standard eigenproblem
-  | Time :     0.002 s
+  | Time :     0.000 s
   Finished solving standard eigenproblem
   | Time :     0.000 s
   Finished back-transformation of eigenvectors
@@ -8931,7 +8931,7 @@ ntrol.in files!
   | In systems with a gap, the physically relevant chemical potential is the VBM or HOMO.
 
   | Chemical potential (Fermi level):    -5.50916453 eV
-  Available memory per node after advance_KS_solution [GB]:    756.87
+  Available memory per node after advance_KS_solution [GB]:    755.29
   Writing Kohn-Sham eigenvalues.
 
   State    Occupation    Eigenvalue [Ha]    Eigenvalue [eV]
@@ -9051,8 +9051,8 @@ ntrol.in files!
   | Task at    1 x    1 gets     32 x     16 entries of 2D aux
   | Task at    1 x    2 gets     32 x     16 entries of 2D aux
   | Task at    1 x    3 gets     32 x     16 entries of 2D aux
-  Minimal free memory per node after shrink_svd_auxil [GB]:    756.62
-  Minimal free memory per node after allocate_basis_pairs [GB]:    756.62
+  Minimal free memory per node after shrink_svd_auxil [GB]:    755.02
+  Minimal free memory per node after allocate_basis_pairs [GB]:    755.02
  
   Basis pair condensation :       210  -->        210
  
@@ -9068,11 +9068,11 @@ ntrol.in files!
   large SBT ringing -> decrease lnr0 & increase lnr0+lnrange
   |            El't  L: logFT-al.   small-k   large-k   small-r   large-r
   Atomic logSBT for 2-center Coulomb matrix    :  max(cpu_time)    wall_clock(cpu1)
-  | Multiplication with kernel                  :        0.000 s           0.000 s
+  | Multiplication with kernel                  :        0.000 s           0.001 s
   | Main matrix multiplication                  :        0.001 s           0.001 s
   | Analytic angular integration                :        0.000 s           0.000 s
   | Kernel construction                         :        0.000 s           0.000 s
-  | Overall 2-center overlap time               :        0.001 s           0.001 s
+  | Overall 2-center overlap time               :        0.001 s           0.002 s
 
   Diagonalizing the Coulomb matrix and checking for singularities with ScaLapack .
  
@@ -9086,19 +9086,19 @@ ntrol.in files!
   Max. number of atoms included in rho_multipole:            2
 
   End scf initialization - timings             :  max(cpu_time)    wall_clock(cpu1)
-  | Time for scf. initialization                :        0.352 s           0.358 s
-  | Boundary condition initialization           :        0.001 s           0.002 s
-  | Integration                                 :        0.029 s           0.029 s
-  | Solution of K.-S. eqns.                     :        0.002 s           0.008 s
+  | Time for scf. initialization                :        0.350 s           0.351 s
+  | Boundary condition initialization           :        0.002 s           0.001 s
+  | Integration                                 :        0.029 s           0.030 s
+  | Solution of K.-S. eqns.                     :        0.002 s           0.001 s
   | Grid partitioning                           :        0.041 s           0.041 s
-  | Preloading free-atom quantities on grid     :        0.145 s           0.147 s
-  | Free-atom superposition energy              :        0.008 s           0.008 s
-  | Total energy evaluation                     :        0.000 s           0.000 s
-  | Product basis setup: Total time             :        0.125 s           0.125 s
+  | Preloading free-atom quantities on grid     :        0.143 s           0.144 s
+  | Free-atom superposition energy              :        0.008 s           0.007 s
+  | Total energy evaluation                     :        0.000 s           0.001 s
+  | Product basis setup: Total time             :        0.126 s           0.126 s
   | Product basis: | 3-center integrations      :        0.091 s           0.091 s
-  | Product basis: | 2-center integrations      :        0.019 s           0.020 s
-  | Product basis: | 2-center linear algebra    :        0.001 s           0.001 s
-  | Product basis: | 3-center x 2-center        :        0.000 s           0.001 s
+  | Product basis: | 2-center integrations      :        0.020 s           0.021 s
+  | Product basis: | 2-center linear algebra    :        0.002 s           0.002 s
+  | Product basis: | 3-center x 2-center        :        0.000 s           0.000 s
 
   Partial memory accounting:
   | Current value for overall tracked memory usage:
@@ -9116,8 +9116,8 @@ ntrol.in files!
   Note:  These values currently only include a subset of arrays which are explicitly tracked.
   The "true" memory usage will be greater.
 ------------------------------------------------------------
-  Available memory after initialize_scf [GB]:    756.59
-  Available memory after allocating mixing [GB]:    756.59
+  Available memory after initialize_scf [GB]:    754.97
+  Available memory after allocating mixing [GB]:    754.97
   Evaluating new KS density using the density matrix
   Evaluating density matrix
   Computing the DM
@@ -9125,20 +9125,20 @@ ntrol.in files!
   Using rank-k update with pdsyrk
   Finished density matrix calculation
   | Time :     0.000 s
-  Time summed over all CPUs for getting density from density matrix: real work        0.107 s, elapsed        0.108 s
+  Time summed over all CPUs for getting density from density matrix: real work        0.108 s, elapsed        0.110 s
   Integration grid: deviation in total charge (<rho> - N_e) =   1.065814E-14
 
   Time for density update prior                :  max(cpu_time)    wall_clock(cpu1)
-  | self-consistency iterative process          :        0.014 s           0.014 s
-  Available memory before start of SCF loop [GB]:    756.58
+  | self-consistency iterative process          :        0.015 s           0.015 s
+  Available memory before start of SCF loop [GB]:    754.97
 
 ------------------------------------------------------------
           Begin self-consistency iteration #    1
 
-  Date     :  20260729, Time     :  222648.320
+  Date     :  20261015, Time     :  192152.954
 ------------------------------------------------------------
   Pulay mixing of updated and previous charge densities.
-  Available memory per node after mixing [GB]:    756.58
+  Available memory per node after mixing [GB]:    754.97
   Renormalizing the density to the exact electron count on the 3D integration grid.
   | Formal number of electrons (from input files) :       4.0000000000
   | Integrated number of electrons on 3D grid     :       4.0000000000
@@ -9155,7 +9155,7 @@ ntrol.in files!
   | RMS charge density error from multipole expansion :   0.209702E-03
 
   Integrating Hamiltonian matrix: batch-based integration.
-  Time summed over all CPUs for integration: real work        0.166 s, elapsed        0.169 s
+  Time summed over all CPUs for integration: real work        0.168 s, elapsed        0.170 s
   Evaluating the exchange matrix ... 
 
   Updating Kohn-Sham eigenvalues and eigenvectors using ELSI and the ELPA eigensolver.
@@ -9165,7 +9165,7 @@ ntrol.in files!
   Finished solving standard eigenproblem
   | Time :     0.000 s
   Finished back-transformation of eigenvectors
-  | Time :     0.001 s
+  | Time :     0.000 s
 
   Obtaining occupation numbers and electronic chemical potential using ELSI.
   | Note that, for insulating systems, the printed 'chemical potential' value is not uniquely defined.
@@ -9232,7 +9232,7 @@ ntrol.in files!
   Using rank-k update with pdsyrk
   Finished density matrix calculation
   | Time :     0.000 s
-  Time summed over all CPUs for getting density from density matrix: real work        0.105 s, elapsed        0.106 s
+  Time summed over all CPUs for getting density from density matrix: real work        0.105 s, elapsed        0.107 s
   Integration grid: deviation in total charge (<rho> - N_e) =   5.329071E-15
 
   Self-consistency convergence accuracy:
@@ -9245,13 +9245,13 @@ ntrol.in files!
 ------------------------------------------------------------
   End self-consistency iteration #     1       :  max(cpu_time)    wall_clock(cpu1)
   | Time for this iteration                     :        0.043 s           0.043 s
-  | Charge density update                       :        0.013 s           0.013 s
-  | Density mixing                              :        0.001 s           0.001 s
+  | Charge density update                       :        0.014 s           0.014 s
+  | Density mixing                              :        0.000 s           0.000 s
   | Hartree multipole update                    :        0.002 s           0.002 s
   | Hartree multipole summation                 :        0.005 s           0.005 s
-  | Integration                                 :        0.021 s           0.021 s
+  | Integration                                 :        0.021 s           0.022 s
   | Fock matrix evaluation                      :        0.000 s           0.000 s
-  | Solution of K.-S. eqns.                     :        0.000 s           0.001 s
+  | Solution of K.-S. eqns.                     :        0.000 s           0.000 s
   | Total energy evaluation                     :        0.000 s           0.000 s
 
   Partial memory accounting:
@@ -9274,10 +9274,10 @@ ntrol.in files!
 ------------------------------------------------------------
           Begin self-consistency iteration #    2
 
-  Date     :  20260729, Time     :  222648.363
+  Date     :  20261015, Time     :  192152.997
 ------------------------------------------------------------
   Pulay mixing of updated and previous charge densities.
-  Available memory per node after mixing [GB]:    756.57
+  Available memory per node after mixing [GB]:    754.95
   Renormalizing the density to the exact electron count on the 3D integration grid.
   | Formal number of electrons (from input files) :       4.0000000000
   | Integrated number of electrons on 3D grid     :       4.0000000000
@@ -9294,7 +9294,7 @@ ntrol.in files!
   | RMS charge density error from multipole expansion :   0.826113E-03
 
   Integrating Hamiltonian matrix: batch-based integration.
-  Time summed over all CPUs for integration: real work        0.165 s, elapsed        0.167 s
+  Time summed over all CPUs for integration: real work        0.167 s, elapsed        0.169 s
   Evaluating the exchange matrix ... 
 
   Updating Kohn-Sham eigenvalues and eigenvectors using ELSI and the ELPA eigensolver.
@@ -9349,7 +9349,7 @@ ntrol.in files!
   Using rank-k update with pdsyrk
   Finished density matrix calculation
   | Time :     0.000 s
-  Time summed over all CPUs for getting density from density matrix: real work        0.104 s, elapsed        0.105 s
+  Time summed over all CPUs for getting density from density matrix: real work        0.105 s, elapsed        0.106 s
   Integration grid: deviation in total charge (<rho> - N_e) =  -3.996803E-15
 
   Self-consistency convergence accuracy:
@@ -9361,13 +9361,13 @@ ntrol.in files!
 
 ------------------------------------------------------------
   End self-consistency iteration #     2       :  max(cpu_time)    wall_clock(cpu1)
-  | Time for this iteration                     :        0.042 s           0.042 s
-  | Charge density update                       :        0.013 s           0.013 s
+  | Time for this iteration                     :        0.042 s           0.043 s
+  | Charge density update                       :        0.014 s           0.014 s
   | Density mixing                              :        0.001 s           0.001 s
   | Hartree multipole update                    :        0.002 s           0.002 s
-  | Hartree multipole summation                 :        0.005 s           0.005 s
-  | Integration                                 :        0.021 s           0.020 s
-  | Fock matrix evaluation                      :        0.000 s           0.001 s
+  | Hartree multipole summation                 :        0.005 s           0.004 s
+  | Integration                                 :        0.021 s           0.022 s
+  | Fock matrix evaluation                      :        0.000 s           0.000 s
   | Solution of K.-S. eqns.                     :        0.000 s           0.000 s
   | Total energy evaluation                     :        0.000 s           0.000 s
 
@@ -9391,10 +9391,10 @@ ntrol.in files!
 ------------------------------------------------------------
           Begin self-consistency iteration #    3
 
-  Date     :  20260729, Time     :  222648.405
+  Date     :  20261015, Time     :  192153.040
 ------------------------------------------------------------
   Pulay mixing of updated and previous charge densities.
-  Available memory per node after mixing [GB]:    756.57
+  Available memory per node after mixing [GB]:    754.95
   Renormalizing the density to the exact electron count on the 3D integration grid.
   | Formal number of electrons (from input files) :       4.0000000000
   | Integrated number of electrons on 3D grid     :       4.0000000000
@@ -9411,7 +9411,7 @@ ntrol.in files!
   | RMS charge density error from multipole expansion :   0.735507E-03
 
   Integrating Hamiltonian matrix: batch-based integration.
-  Time summed over all CPUs for integration: real work        0.165 s, elapsed        0.167 s
+  Time summed over all CPUs for integration: real work        0.167 s, elapsed        0.171 s
   Evaluating the exchange matrix ... 
 
   Updating Kohn-Sham eigenvalues and eigenvectors using ELSI and the ELPA eigensolver.
@@ -9464,7 +9464,7 @@ ntrol.in files!
   Using rank-k update with pdsyrk
   Finished density matrix calculation
   | Time :     0.000 s
-  Time summed over all CPUs for getting density from density matrix: real work        0.104 s, elapsed        0.105 s
+  Time summed over all CPUs for getting density from density matrix: real work        0.105 s, elapsed        0.106 s
   Integration grid: deviation in total charge (<rho> - N_e) =   4.440892E-15
 
   Self-consistency convergence accuracy:
@@ -9476,13 +9476,13 @@ ntrol.in files!
 
 ------------------------------------------------------------
   End self-consistency iteration #     3       :  max(cpu_time)    wall_clock(cpu1)
-  | Time for this iteration                     :        0.042 s           0.043 s
+  | Time for this iteration                     :        0.043 s           0.042 s
   | Charge density update                       :        0.013 s           0.013 s
   | Density mixing                              :        0.001 s           0.001 s
-  | Hartree multipole update                    :        0.002 s           0.002 s
-  | Hartree multipole summation                 :        0.004 s           0.005 s
+  | Hartree multipole update                    :        0.002 s           0.001 s
+  | Hartree multipole summation                 :        0.005 s           0.005 s
   | Integration                                 :        0.021 s           0.021 s
-  | Fock matrix evaluation                      :        0.000 s           0.000 s
+  | Fock matrix evaluation                      :        0.000 s           0.001 s
   | Solution of K.-S. eqns.                     :        0.000 s           0.000 s
   | Total energy evaluation                     :        0.000 s           0.000 s
 
@@ -9506,10 +9506,10 @@ ntrol.in files!
 ------------------------------------------------------------
           Begin self-consistency iteration #    4
 
-  Date     :  20260729, Time     :  222648.448
+  Date     :  20261015, Time     :  192153.083
 ------------------------------------------------------------
   Pulay mixing of updated and previous charge densities.
-  Available memory per node after mixing [GB]:    756.57
+  Available memory per node after mixing [GB]:    754.95
   Renormalizing the density to the exact electron count on the 3D integration grid.
   | Formal number of electrons (from input files) :       4.0000000000
   | Integrated number of electrons on 3D grid     :       4.0000000000
@@ -9526,13 +9526,13 @@ ntrol.in files!
   | RMS charge density error from multipole expansion :   0.146842E-02
 
   Integrating Hamiltonian matrix: batch-based integration.
-  Time summed over all CPUs for integration: real work        0.156 s, elapsed        0.157 s
+  Time summed over all CPUs for integration: real work        0.157 s, elapsed        0.161 s
   Evaluating the exchange matrix ... 
 
   Updating Kohn-Sham eigenvalues and eigenvectors using ELSI and the ELPA eigensolver.
   Starting ELPA eigensolver
   Finished transformation to standard eigenproblem
-  | Time :     0.000 s
+  | Time :     0.001 s
   Finished solving standard eigenproblem
   | Time :     0.000 s
   Finished back-transformation of eigenvectors
@@ -9591,14 +9591,14 @@ ntrol.in files!
 
 ------------------------------------------------------------
   End self-consistency iteration #     4       :  max(cpu_time)    wall_clock(cpu1)
-  | Time for this iteration                     :        0.041 s           0.041 s
-  | Charge density update                       :        0.013 s           0.014 s
+  | Time for this iteration                     :        0.042 s           0.041 s
+  | Charge density update                       :        0.013 s           0.013 s
   | Density mixing                              :        0.001 s           0.001 s
   | Hartree multipole update                    :        0.002 s           0.002 s
-  | Hartree multipole summation                 :        0.004 s           0.004 s
+  | Hartree multipole summation                 :        0.005 s           0.004 s
   | Integration                                 :        0.020 s           0.020 s
   | Fock matrix evaluation                      :        0.000 s           0.000 s
-  | Solution of K.-S. eqns.                     :        0.000 s           0.000 s
+  | Solution of K.-S. eqns.                     :        0.000 s           0.001 s
   | Total energy evaluation                     :        0.000 s           0.000 s
 
   Partial memory accounting:
@@ -9621,10 +9621,10 @@ ntrol.in files!
 ------------------------------------------------------------
           Begin self-consistency iteration #    5
 
-  Date     :  20260729, Time     :  222648.489
+  Date     :  20261015, Time     :  192153.124
 ------------------------------------------------------------
   Pulay mixing of updated and previous charge densities.
-  Available memory per node after mixing [GB]:    756.57
+  Available memory per node after mixing [GB]:    754.95
   Renormalizing the density to the exact electron count on the 3D integration grid.
   | Formal number of electrons (from input files) :       4.0000000000
   | Integrated number of electrons on 3D grid     :       4.0000000000
@@ -9641,7 +9641,7 @@ ntrol.in files!
   | RMS charge density error from multipole expansion :   0.135373E-02
 
   Integrating Hamiltonian matrix: batch-based integration.
-  Time summed over all CPUs for integration: real work        0.166 s, elapsed        0.167 s
+  Time summed over all CPUs for integration: real work        0.166 s, elapsed        0.171 s
   Evaluating the exchange matrix ... 
 
   Updating Kohn-Sham eigenvalues and eigenvectors using ELSI and the ELPA eigensolver.
@@ -9694,7 +9694,7 @@ ntrol.in files!
   Using rank-k update with pdsyrk
   Finished density matrix calculation
   | Time :     0.000 s
-  Time summed over all CPUs for getting density from density matrix: real work        0.104 s, elapsed        0.105 s
+  Time summed over all CPUs for getting density from density matrix: real work        0.106 s, elapsed        0.107 s
   Integration grid: deviation in total charge (<rho> - N_e) =  -8.881784E-16
 
   Self-consistency convergence accuracy:
@@ -9706,11 +9706,11 @@ ntrol.in files!
 
 ------------------------------------------------------------
   End self-consistency iteration #     5       :  max(cpu_time)    wall_clock(cpu1)
-  | Time for this iteration                     :        0.043 s           0.043 s
-  | Charge density update                       :        0.013 s           0.014 s
-  | Density mixing                              :        0.002 s           0.001 s
+  | Time for this iteration                     :        0.044 s           0.044 s
+  | Charge density update                       :        0.014 s           0.014 s
+  | Density mixing                              :        0.002 s           0.002 s
   | Hartree multipole update                    :        0.002 s           0.002 s
-  | Hartree multipole summation                 :        0.004 s           0.005 s
+  | Hartree multipole summation                 :        0.005 s           0.005 s
   | Integration                                 :        0.021 s           0.021 s
   | Fock matrix evaluation                      :        0.000 s           0.000 s
   | Solution of K.-S. eqns.                     :        0.000 s           0.000 s
@@ -9736,10 +9736,10 @@ ntrol.in files!
 ------------------------------------------------------------
           Begin self-consistency iteration #    6
 
-  Date     :  20260729, Time     :  222648.532
+  Date     :  20261015, Time     :  192153.168
 ------------------------------------------------------------
   Pulay mixing of updated and previous charge densities.
-  Available memory per node after mixing [GB]:    756.57
+  Available memory per node after mixing [GB]:    754.95
   Renormalizing the density to the exact electron count on the 3D integration grid.
   | Formal number of electrons (from input files) :       4.0000000000
   | Integrated number of electrons on 3D grid     :       4.0000000000
@@ -9756,7 +9756,7 @@ ntrol.in files!
   | RMS charge density error from multipole expansion :   0.134090E-02
 
   Integrating Hamiltonian matrix: batch-based integration.
-  Time summed over all CPUs for integration: real work        0.166 s, elapsed        0.167 s
+  Time summed over all CPUs for integration: real work        0.166 s, elapsed        0.168 s
   Evaluating the exchange matrix ... 
 
   Updating Kohn-Sham eigenvalues and eigenvectors using ELSI and the ELPA eigensolver.
@@ -9821,12 +9821,12 @@ ntrol.in files!
 
 ------------------------------------------------------------
   End self-consistency iteration #     6       :  max(cpu_time)    wall_clock(cpu1)
-  | Time for this iteration                     :        0.043 s           0.043 s
-  | Charge density update                       :        0.013 s           0.014 s
+  | Time for this iteration                     :        0.043 s           0.044 s
+  | Charge density update                       :        0.013 s           0.013 s
   | Density mixing                              :        0.002 s           0.002 s
   | Hartree multipole update                    :        0.002 s           0.002 s
-  | Hartree multipole summation                 :        0.004 s           0.004 s
-  | Integration                                 :        0.021 s           0.021 s
+  | Hartree multipole summation                 :        0.005 s           0.004 s
+  | Integration                                 :        0.021 s           0.022 s
   | Fock matrix evaluation                      :        0.000 s           0.000 s
   | Solution of K.-S. eqns.                     :        0.000 s           0.000 s
   | Total energy evaluation                     :        0.000 s           0.000 s
@@ -9851,10 +9851,10 @@ ntrol.in files!
 ------------------------------------------------------------
           Begin self-consistency iteration #    7
 
-  Date     :  20260729, Time     :  222648.575
+  Date     :  20261015, Time     :  192153.212
 ------------------------------------------------------------
   Pulay mixing of updated and previous charge densities.
-  Available memory per node after mixing [GB]:    756.57
+  Available memory per node after mixing [GB]:    754.95
   Renormalizing the density to the exact electron count on the 3D integration grid.
   | Formal number of electrons (from input files) :       4.0000000000
   | Integrated number of electrons on 3D grid     :       4.0000000000
@@ -9924,7 +9924,7 @@ ntrol.in files!
   Using rank-k update with pdsyrk
   Finished density matrix calculation
   | Time :     0.000 s
-  Time summed over all CPUs for getting density from density matrix: real work        0.104 s, elapsed        0.106 s
+  Time summed over all CPUs for getting density from density matrix: real work        0.105 s, elapsed        0.106 s
   Integration grid: deviation in total charge (<rho> - N_e) =  -4.884981E-15
 
   Self-consistency convergence accuracy:
@@ -9940,7 +9940,7 @@ ntrol.in files!
   | Charge density update                       :        0.013 s           0.013 s
   | Density mixing                              :        0.002 s           0.002 s
   | Hartree multipole update                    :        0.002 s           0.002 s
-  | Hartree multipole summation                 :        0.004 s           0.004 s
+  | Hartree multipole summation                 :        0.005 s           0.004 s
   | Integration                                 :        0.021 s           0.021 s
   | Fock matrix evaluation                      :        0.000 s           0.000 s
   | Solution of K.-S. eqns.                     :        0.000 s           0.001 s
@@ -9966,10 +9966,10 @@ ntrol.in files!
 ------------------------------------------------------------
           Begin self-consistency iteration #    8
 
-  Date     :  20260729, Time     :  222648.618
+  Date     :  20261015, Time     :  192153.255
 ------------------------------------------------------------
   Pulay mixing of updated and previous charge densities.
-  Available memory per node after mixing [GB]:    756.56
+  Available memory per node after mixing [GB]:    754.94
   Renormalizing the density to the exact electron count on the 3D integration grid.
   | Formal number of electrons (from input files) :       4.0000000000
   | Integrated number of electrons on 3D grid     :       4.0000000000
@@ -9986,7 +9986,7 @@ ntrol.in files!
   | RMS charge density error from multipole expansion :   0.132404E-02
 
   Integrating Hamiltonian matrix: batch-based integration.
-  Time summed over all CPUs for integration: real work        0.166 s, elapsed        0.168 s
+  Time summed over all CPUs for integration: real work        0.166 s, elapsed        0.170 s
   Evaluating the exchange matrix ... 
 
   Updating Kohn-Sham eigenvalues and eigenvectors using ELSI and the ELPA eigensolver.
@@ -10038,8 +10038,8 @@ ntrol.in files!
   Selected method: RANK_UPDATE (ELPA capabilities not available)
   Using rank-k update with pdsyrk
   Finished density matrix calculation
-  | Time :     0.001 s
-  Time summed over all CPUs for getting density from density matrix: real work        0.104 s, elapsed        0.105 s
+  | Time :     0.000 s
+  Time summed over all CPUs for getting density from density matrix: real work        0.105 s, elapsed        0.106 s
   Integration grid: deviation in total charge (<rho> - N_e) =   0.000000E+00
 
   Self-consistency convergence accuracy:
@@ -10052,11 +10052,11 @@ ntrol.in files!
 ------------------------------------------------------------
   End self-consistency iteration #     8       :  max(cpu_time)    wall_clock(cpu1)
   | Time for this iteration                     :        0.044 s           0.044 s
-  | Charge density update                       :        0.013 s           0.014 s
+  | Charge density update                       :        0.013 s           0.013 s
   | Density mixing                              :        0.003 s           0.003 s
   | Hartree multipole update                    :        0.002 s           0.002 s
-  | Hartree multipole summation                 :        0.004 s           0.004 s
-  | Integration                                 :        0.021 s           0.021 s
+  | Hartree multipole summation                 :        0.005 s           0.004 s
+  | Integration                                 :        0.021 s           0.022 s
   | Fock matrix evaluation                      :        0.000 s           0.000 s
   | Solution of K.-S. eqns.                     :        0.000 s           0.000 s
   | Total energy evaluation                     :        0.000 s           0.000 s
@@ -10081,10 +10081,10 @@ ntrol.in files!
 ------------------------------------------------------------
           Begin self-consistency iteration #    9
 
-  Date     :  20260729, Time     :  222648.662
+  Date     :  20261015, Time     :  192153.300
 ------------------------------------------------------------
   Pulay mixing of updated and previous charge densities.
-  Available memory per node after mixing [GB]:    756.56
+  Available memory per node after mixing [GB]:    754.94
   Renormalizing the density to the exact electron count on the 3D integration grid.
   | Formal number of electrons (from input files) :       4.0000000000
   | Integrated number of electrons on 3D grid     :       4.0000000000
@@ -10101,7 +10101,7 @@ ntrol.in files!
   | RMS charge density error from multipole expansion :   0.132218E-02
 
   Integrating Hamiltonian matrix: batch-based integration.
-  Time summed over all CPUs for integration: real work        0.166 s, elapsed        0.168 s
+  Time summed over all CPUs for integration: real work        0.165 s, elapsed        0.171 s
   Evaluating the exchange matrix ... 
 
   Updating Kohn-Sham eigenvalues and eigenvectors using ELSI and the ELPA eigensolver.
@@ -10154,7 +10154,7 @@ ntrol.in files!
   Using rank-k update with pdsyrk
   Finished density matrix calculation
   | Time :     0.000 s
-  Time summed over all CPUs for getting density from density matrix: real work        0.104 s, elapsed        0.105 s
+  Time summed over all CPUs for getting density from density matrix: real work        0.105 s, elapsed        0.107 s
   Integration grid: deviation in total charge (<rho> - N_e) =  -6.661338E-15
 
   Self-consistency convergence accuracy:
@@ -10166,14 +10166,14 @@ ntrol.in files!
 
 ------------------------------------------------------------
   End self-consistency iteration #     9       :  max(cpu_time)    wall_clock(cpu1)
-  | Time for this iteration                     :        0.044 s           0.044 s
-  | Charge density update                       :        0.013 s           0.013 s
-  | Density mixing                              :        0.003 s           0.003 s
+  | Time for this iteration                     :        0.045 s           0.044 s
+  | Charge density update                       :        0.014 s           0.013 s
+  | Density mixing                              :        0.003 s           0.002 s
   | Hartree multipole update                    :        0.002 s           0.002 s
-  | Hartree multipole summation                 :        0.004 s           0.004 s
+  | Hartree multipole summation                 :        0.005 s           0.005 s
   | Integration                                 :        0.021 s           0.021 s
   | Fock matrix evaluation                      :        0.000 s           0.000 s
-  | Solution of K.-S. eqns.                     :        0.000 s           0.000 s
+  | Solution of K.-S. eqns.                     :        0.000 s           0.001 s
   | Total energy evaluation                     :        0.000 s           0.000 s
 
   Partial memory accounting:
@@ -10196,10 +10196,10 @@ ntrol.in files!
 ------------------------------------------------------------
           Begin self-consistency iteration #   10
 
-  Date     :  20260729, Time     :  222648.706
+  Date     :  20261015, Time     :  192153.344
 ------------------------------------------------------------
   Pulay mixing of updated and previous charge densities.
-  Available memory per node after mixing [GB]:    756.56
+  Available memory per node after mixing [GB]:    754.93
   Renormalizing the density to the exact electron count on the 3D integration grid.
   | Formal number of electrons (from input files) :       4.0000000000
   | Integrated number of electrons on 3D grid     :       4.0000000000
@@ -10216,7 +10216,7 @@ ntrol.in files!
   | RMS charge density error from multipole expansion :   0.132356E-02
 
   Integrating Hamiltonian matrix: batch-based integration.
-  Time summed over all CPUs for integration: real work        0.164 s, elapsed        0.166 s
+  Time summed over all CPUs for integration: real work        0.165 s, elapsed        0.168 s
   Evaluating the exchange matrix ... 
 
   Updating Kohn-Sham eigenvalues and eigenvectors using ELSI and the ELPA eigensolver.
@@ -10226,7 +10226,7 @@ ntrol.in files!
   Finished solving standard eigenproblem
   | Time :     0.000 s
   Finished back-transformation of eigenvectors
-  | Time :     0.000 s
+  | Time :     0.001 s
 
   Obtaining occupation numbers and electronic chemical potential using ELSI.
   | Note that, for insulating systems, the printed 'chemical potential' value is not uniquely defined.
@@ -10269,7 +10269,7 @@ ntrol.in files!
   Using rank-k update with pdsyrk
   Finished density matrix calculation
   | Time :     0.000 s
-  Time summed over all CPUs for getting density from density matrix: real work        0.105 s, elapsed        0.105 s
+  Time summed over all CPUs for getting density from density matrix: real work        0.105 s, elapsed        0.106 s
   Integration grid: deviation in total charge (<rho> - N_e) =   8.881784E-15
 
   Self-consistency convergence accuracy:
@@ -10281,14 +10281,14 @@ ntrol.in files!
 
 ------------------------------------------------------------
   End self-consistency iteration #    10       :  max(cpu_time)    wall_clock(cpu1)
-  | Time for this iteration                     :        0.044 s           0.044 s
-  | Charge density update                       :        0.013 s           0.013 s
-  | Density mixing                              :        0.003 s           0.003 s
-  | Hartree multipole update                    :        0.002 s           0.002 s
-  | Hartree multipole summation                 :        0.004 s           0.004 s
+  | Time for this iteration                     :        0.045 s           0.045 s
+  | Charge density update                       :        0.014 s           0.013 s
+  | Density mixing                              :        0.003 s           0.004 s
+  | Hartree multipole update                    :        0.002 s           0.001 s
+  | Hartree multipole summation                 :        0.005 s           0.005 s
   | Integration                                 :        0.021 s           0.021 s
   | Fock matrix evaluation                      :        0.000 s           0.000 s
-  | Solution of K.-S. eqns.                     :        0.000 s           0.000 s
+  | Solution of K.-S. eqns.                     :        0.000 s           0.001 s
   | Total energy evaluation                     :        0.000 s           0.000 s
 
   Partial memory accounting:
@@ -10311,10 +10311,10 @@ ntrol.in files!
 ------------------------------------------------------------
           Begin self-consistency iteration #   11
 
-  Date     :  20260729, Time     :  222648.750
+  Date     :  20261015, Time     :  192153.389
 ------------------------------------------------------------
   Pulay mixing of updated and previous charge densities.
-  Available memory per node after mixing [GB]:    756.56
+  Available memory per node after mixing [GB]:    754.93
   Renormalizing the density to the exact electron count on the 3D integration grid.
   | Formal number of electrons (from input files) :       4.0000000000
   | Integrated number of electrons on 3D grid     :       4.0000000000
@@ -10331,7 +10331,7 @@ ntrol.in files!
   | RMS charge density error from multipole expansion :   0.132367E-02
 
   Integrating Hamiltonian matrix: batch-based integration.
-  Time summed over all CPUs for integration: real work        0.165 s, elapsed        0.167 s
+  Time summed over all CPUs for integration: real work        0.166 s, elapsed        0.167 s
   Evaluating the exchange matrix ... 
 
   Updating Kohn-Sham eigenvalues and eigenvectors using ELSI and the ELPA eigensolver.
@@ -10339,7 +10339,7 @@ ntrol.in files!
   Finished transformation to standard eigenproblem
   | Time :     0.000 s
   Finished solving standard eigenproblem
-  | Time :     0.001 s
+  | Time :     0.000 s
   Finished back-transformation of eigenvectors
   | Time :     0.000 s
 
@@ -10384,7 +10384,7 @@ ntrol.in files!
   Using rank-k update with pdsyrk
   Finished density matrix calculation
   | Time :     0.000 s
-  Time summed over all CPUs for getting density from density matrix: real work        0.105 s, elapsed        0.106 s
+  Time summed over all CPUs for getting density from density matrix: real work        0.105 s, elapsed        0.107 s
   Integration grid: deviation in total charge (<rho> - N_e) =   8.881784E-16
 
   Self-consistency convergence accuracy:
@@ -10396,14 +10396,14 @@ ntrol.in files!
 
 ------------------------------------------------------------
   End self-consistency iteration #    11       :  max(cpu_time)    wall_clock(cpu1)
-  | Time for this iteration                     :        0.044 s           0.044 s
-  | Charge density update                       :        0.014 s           0.013 s
-  | Density mixing                              :        0.003 s           0.003 s
-  | Hartree multipole update                    :        0.002 s           0.002 s
-  | Hartree multipole summation                 :        0.004 s           0.004 s
+  | Time for this iteration                     :        0.045 s           0.045 s
+  | Charge density update                       :        0.014 s           0.014 s
+  | Density mixing                              :        0.003 s           0.004 s
+  | Hartree multipole update                    :        0.002 s           0.001 s
+  | Hartree multipole summation                 :        0.005 s           0.005 s
   | Integration                                 :        0.021 s           0.021 s
   | Fock matrix evaluation                      :        0.000 s           0.000 s
-  | Solution of K.-S. eqns.                     :        0.000 s           0.001 s
+  | Solution of K.-S. eqns.                     :        0.000 s           0.000 s
   | Total energy evaluation                     :        0.000 s           0.000 s
 
   Partial memory accounting:
@@ -10426,10 +10426,10 @@ ntrol.in files!
 ------------------------------------------------------------
           Begin self-consistency iteration #   12
 
-  Date     :  20260729, Time     :  222648.794
+  Date     :  20261015, Time     :  192153.434
 ------------------------------------------------------------
   Pulay mixing of updated and previous charge densities.
-  Available memory per node after mixing [GB]:    756.56
+  Available memory per node after mixing [GB]:    754.93
   Renormalizing the density to the exact electron count on the 3D integration grid.
   | Formal number of electrons (from input files) :       4.0000000000
   | Integrated number of electrons on 3D grid     :       4.0000000000
@@ -10446,7 +10446,7 @@ ntrol.in files!
   | RMS charge density error from multipole expansion :   0.132358E-02
 
   Integrating Hamiltonian matrix: batch-based integration.
-  Time summed over all CPUs for integration: real work        0.165 s, elapsed        0.167 s
+  Time summed over all CPUs for integration: real work        0.166 s, elapsed        0.169 s
   Evaluating the exchange matrix ... 
 
   Updating Kohn-Sham eigenvalues and eigenvectors using ELSI and the ELPA eigensolver.
@@ -10498,8 +10498,8 @@ ntrol.in files!
   Selected method: RANK_UPDATE (ELPA capabilities not available)
   Using rank-k update with pdsyrk
   Finished density matrix calculation
-  | Time :     0.000 s
-  Time summed over all CPUs for getting density from density matrix: real work        0.105 s, elapsed        0.105 s
+  | Time :     0.001 s
+  Time summed over all CPUs for getting density from density matrix: real work        0.105 s, elapsed        0.108 s
   Integration grid: deviation in total charge (<rho> - N_e) =   8.881784E-15
 
   Self-consistency convergence accuracy:
@@ -10511,11 +10511,11 @@ ntrol.in files!
 
 ------------------------------------------------------------
   End self-consistency iteration #    12       :  max(cpu_time)    wall_clock(cpu1)
-  | Time for this iteration                     :        0.044 s           0.044 s
-  | Charge density update                       :        0.013 s           0.013 s
+  | Time for this iteration                     :        0.045 s           0.045 s
+  | Charge density update                       :        0.014 s           0.014 s
   | Density mixing                              :        0.003 s           0.003 s
   | Hartree multipole update                    :        0.002 s           0.002 s
-  | Hartree multipole summation                 :        0.004 s           0.005 s
+  | Hartree multipole summation                 :        0.005 s           0.005 s
   | Integration                                 :        0.021 s           0.021 s
   | Fock matrix evaluation                      :        0.000 s           0.000 s
   | Solution of K.-S. eqns.                     :        0.000 s           0.000 s
@@ -10541,10 +10541,10 @@ ntrol.in files!
 ------------------------------------------------------------
           Begin self-consistency iteration #   13
 
-  Date     :  20260729, Time     :  222648.839
+  Date     :  20261015, Time     :  192153.479
 ------------------------------------------------------------
   Pulay mixing of updated and previous charge densities.
-  Available memory per node after mixing [GB]:    756.56
+  Available memory per node after mixing [GB]:    754.93
   Renormalizing the density to the exact electron count on the 3D integration grid.
   | Formal number of electrons (from input files) :       4.0000000000
   | Integrated number of electrons on 3D grid     :       4.0000000000
@@ -10561,7 +10561,7 @@ ntrol.in files!
   | RMS charge density error from multipole expansion :   0.132359E-02
 
   Integrating Hamiltonian matrix: batch-based integration.
-  Time summed over all CPUs for integration: real work        0.165 s, elapsed        0.167 s
+  Time summed over all CPUs for integration: real work        0.166 s, elapsed        0.169 s
   Evaluating the exchange matrix ... 
 
   Updating Kohn-Sham eigenvalues and eigenvectors using ELSI and the ELPA eigensolver.
@@ -10613,8 +10613,8 @@ ntrol.in files!
   Selected method: RANK_UPDATE (ELPA capabilities not available)
   Using rank-k update with pdsyrk
   Finished density matrix calculation
-  | Time :     0.000 s
-  Time summed over all CPUs for getting density from density matrix: real work        0.104 s, elapsed        0.105 s
+  | Time :     0.001 s
+  Time summed over all CPUs for getting density from density matrix: real work        0.105 s, elapsed        0.105 s
   Integration grid: deviation in total charge (<rho> - N_e) =  -5.329071E-15
 
   Self-consistency convergence accuracy:
@@ -10626,11 +10626,11 @@ ntrol.in files!
 
 ------------------------------------------------------------
   End self-consistency iteration #    13       :  max(cpu_time)    wall_clock(cpu1)
-  | Time for this iteration                     :        0.044 s           0.044 s
+  | Time for this iteration                     :        0.045 s           0.045 s
   | Charge density update                       :        0.013 s           0.014 s
   | Density mixing                              :        0.003 s           0.003 s
   | Hartree multipole update                    :        0.002 s           0.002 s
-  | Hartree multipole summation                 :        0.004 s           0.004 s
+  | Hartree multipole summation                 :        0.005 s           0.005 s
   | Integration                                 :        0.021 s           0.021 s
   | Fock matrix evaluation                      :        0.000 s           0.000 s
   | Solution of K.-S. eqns.                     :        0.000 s           0.000 s
@@ -10656,10 +10656,10 @@ ntrol.in files!
 ------------------------------------------------------------
           Begin self-consistency iteration #   14
 
-  Date     :  20260729, Time     :  222648.883
+  Date     :  20261015, Time     :  192153.524
 ------------------------------------------------------------
   Pulay mixing of updated and previous charge densities.
-  Available memory per node after mixing [GB]:    756.56
+  Available memory per node after mixing [GB]:    754.93
   Renormalizing the density to the exact electron count on the 3D integration grid.
   | Formal number of electrons (from input files) :       4.0000000000
   | Integrated number of electrons on 3D grid     :       4.0000000000
@@ -10676,7 +10676,7 @@ ntrol.in files!
   | RMS charge density error from multipole expansion :   0.132358E-02
 
   Integrating Hamiltonian matrix: batch-based integration.
-  Time summed over all CPUs for integration: real work        0.165 s, elapsed        0.167 s
+  Time summed over all CPUs for integration: real work        0.166 s, elapsed        0.168 s
   Evaluating the exchange matrix ... 
 
   Updating Kohn-Sham eigenvalues and eigenvectors using ELSI and the ELPA eigensolver.
@@ -10684,7 +10684,7 @@ ntrol.in files!
   Finished transformation to standard eigenproblem
   | Time :     0.000 s
   Finished solving standard eigenproblem
-  | Time :     0.001 s
+  | Time :     0.000 s
   Finished back-transformation of eigenvectors
   | Time :     0.000 s
 
@@ -10775,10 +10775,10 @@ ntrol.in files!
   | Charge density update                       :        0.000 s           0.000 s
   | Density mixing                              :        0.003 s           0.003 s
   | Hartree multipole update                    :        0.002 s           0.002 s
-  | Hartree multipole summation                 :        0.004 s           0.004 s
+  | Hartree multipole summation                 :        0.005 s           0.005 s
   | Integration                                 :        0.021 s           0.021 s
   | Fock matrix evaluation                      :        0.000 s           0.000 s
-  | Solution of K.-S. eqns.                     :        0.000 s           0.001 s
+  | Solution of K.-S. eqns.                     :        0.000 s           0.000 s
   | Total energy evaluation                     :        0.000 s           0.000 s
 
   Partial memory accounting:
@@ -10887,8 +10887,8 @@ ntrol.in files!
   | Task at    1 x    1 gets     32 x     16 entries of 2D aux
   | Task at    1 x    2 gets     32 x     16 entries of 2D aux
   | Task at    1 x    3 gets     32 x     16 entries of 2D aux
-  Minimal free memory per node after shrink_svd_auxil [GB]:    756.47
-  Minimal free memory per node after allocate_basis_pairs [GB]:    756.47
+  Minimal free memory per node after shrink_svd_auxil [GB]:    754.85
+  Minimal free memory per node after allocate_basis_pairs [GB]:    754.85
  
   Basis pair condensation :       210  -->        210
  
@@ -10905,9 +10905,9 @@ ntrol.in files!
   |            El't  L: logFT-al.   small-k   large-k   small-r   large-r
   Atomic logSBT for 2-center Coulomb matrix    :  max(cpu_time)    wall_clock(cpu1)
   | Multiplication with kernel                  :        0.000 s           0.000 s
-  | Main matrix multiplication                  :        0.001 s           0.000 s
+  | Main matrix multiplication                  :        0.001 s           0.001 s
   | Analytic angular integration                :        0.000 s           0.000 s
-  | Kernel construction                         :        0.000 s           0.001 s
+  | Kernel construction                         :        0.000 s           0.000 s
   | Overall 2-center overlap time               :        0.001 s           0.001 s
 
   Diagonalizing the Coulomb matrix and checking for singularities with ScaLapack .
@@ -11544,6 +11544,35 @@ ntrol.in files!
   Quasi particle energy calculation using analytic continuation starts...
  
   Self-consistent quasi particle energy calculation with contour deformation starts...
+ 
+ ------------------------------------------------------------
+  Start contour deformation for level:      1    
+ ------------------------------------------------------------
+  Step:    1
+  Step:    2
+  Step:    3
+  Step:    4
+  Step:    5
+  Step:    6
+  Step:    7
+  Step:    8
+  Step:    9
+  Step:   10
+  Step:   11
+ 
+ ------------------------------------------------------------
+  Start contour deformation for level:      2    
+ ------------------------------------------------------------
+  Step:    1
+  Step:    2
+  Step:    3
+  Step:    4
+  Step:    5
+  Step:    6
+  Step:    7
+  Step:    8
+  Step:    9
+  Step:   10
  
  ------------------------------------------------------------
   Start contour deformation for level:      3    
@@ -12767,7 +12796,7 @@ ntrol.in files!
 ----------------------------------------------------------------------------------------
     GW quasi-particle energy levels
  
-               Start contour deformation at level:      3
+               Start contour deformation at level:      1
                End contour deformation at level:       20
  
                e_qp = e_gs + e_x^ex - e_xc^gs + e_c^nloc
@@ -12775,8 +12804,8 @@ ntrol.in files!
   state     occ_num        e_gs        e_x^ex        e_xc^gs        e_c^nloc        e_qp
 ----------------------------------------------------------------------------------------
 ----------------------------------------------------------------------------------------
-       1    2.0000            -55.0231            -33.5916            -21.9509              3.7785            -62.8852
-       2    2.0000             -5.4750             -9.8895             -7.0894              0.9663             -7.3089
+       1    2.0000            -55.0231            -33.5916            -21.9509              4.9175            -61.7462
+       2    2.0000             -5.4750             -9.8895             -7.0894              0.9662             -7.3090
        3    0.0000             -1.0193             -0.5503             -2.0128             -0.2643              0.1788
        4    0.0000              0.4939             -0.4426             -2.3862             -0.2489              2.1886
        5    0.0000              0.4939             -0.4426             -2.3862             -0.2489              2.1886
@@ -12799,20 +12828,20 @@ ntrol.in files!
 
    DFT/Hartree-Fock HOMO level (eV):    -5.4750   -5.4750
  
-   Quasiparticle HOMO level (eV):       -7.3089   -7.3089
+   Quasiparticle HOMO level (eV):       -7.3090   -7.3090
 ----------------------------------------------------------------------------------------
  
           | Total time for transforming the 3-center integrals :        0.000 s
           | Total time for calculating the exchange-correlation
                                   energy matrix elements   :        0.013 s
           | Total time for calculating polarisability     
-                        for imaginary frequencies          :        0.033 s
+                        for imaginary frequencies          :        0.032 s
           | Total time for calculating self energy 
-                        on imaginary frequency axis        :        0.320 s
+                        on imaginary frequency axis        :        0.331 s
           | Total time for calculating the quasiparticle 
                   energies with analytic continuation      :        0.002 s
           | Total time for calculating the quasiparticle 
-                  energies with contour deformation        :       10.942 s
+                  energies with contour deformation        :       11.005 s
 
 ------------------------------------------------------------------------------
   Final output of selected total energy values:
@@ -12909,44 +12938,44 @@ At least    4 warnings were raised during execution.
 
 ------------------------------------------------------------
           Leaving FHI-aims.
-          Date     :  20260729, Time     :  222700.419
+          Date     :  20261015, Time     :  192205.099
 
           Computational steps:
           | Number of self-consistency cycles          :           14
           | Number of SCF (re)initializations          :            1
 
           Detailed time accounting                     :  max(cpu_time)    wall_clock(cpu1)
-          | Total time                                  :       13.632 s          13.704 s
-          | Preparation time                            :        1.171 s           1.173 s
-          | Boundary condition initalization            :        0.001 s           0.002 s
+          | Total time                                  :       13.711 s          13.733 s
+          | Preparation time                            :        1.172 s           1.174 s
+          | Boundary condition initalization            :        0.002 s           0.001 s
           | Grid partitioning                           :        0.041 s           0.041 s
-          | Preloading free-atom quantities on grid     :        0.145 s           0.147 s
-          | Free-atom superposition energy              :        0.008 s           0.008 s
-          | Total time for integrations                 :        0.321 s           0.321 s
-          | Product basis setup: Total time             :        0.125 s           0.125 s
-          | Product basis: | 3-center integrations     :(       0.182 s)  (       0.181 s)
-          | Product basis: | 2-center integrations     :(       0.038 s)  (       0.040 s)
-          | Product basis: | 2-center linear algebra   :(       0.002 s)  (       0.002 s)
+          | Preloading free-atom quantities on grid     :        0.143 s           0.144 s
+          | Free-atom superposition energy              :        0.008 s           0.007 s
+          | Total time for integrations                 :        0.324 s           0.327 s
+          | Product basis setup: Total time             :        0.126 s           0.126 s
+          | Product basis: | 3-center integrations     :(       0.182 s)  (       0.182 s)
+          | Product basis: | 2-center integrations     :(       0.039 s)  (       0.040 s)
+          | Product basis: | 2-center linear algebra   :(       0.003 s)  (       0.003 s)
           | Product basis: | 3-center x 2-center       :(       0.001 s)  (       0.001 s)
           | Total time evaluating exchange matrix       :        0.001 s           0.001 s
           | Transforming ovlp_3fn to ovlp_3KS           :        0.000 s           0.000 s
-          | Screened Coulomb matrix W_mn(iw)            :        0.303 s           0.304 s
-          | Polarisability matrix Pi_PQ(iw)             :        0.033 s           0.033 s
-          | Total time for GW calculation               :       11.314 s          11.340 s
-          | GW self-energy (analytic cont.)             :        0.352 s           0.353 s
-          | Contour def: | Solving qp equations         :       10.942 s          10.968 s
-          | Contour def: | GW self-energy               :       10.939 s          10.963 s
-          | Contour def: | Scr Coulomb matrix W_mn(w)   :       10.858 s          10.888 s
+          | Screened Coulomb matrix W_mn(iw)            :        0.313 s           0.314 s
+          | Polarisability matrix Pi_PQ(iw)             :        0.032 s           0.032 s
+          | Total time for GW calculation               :       11.387 s          11.407 s
+          | GW self-energy (analytic cont.)             :        0.363 s           0.363 s
+          | Contour def: | Solving qp equations         :       11.005 s          11.024 s
+          | Contour def: | GW self-energy               :       11.002 s          11.015 s
+          | Contour def: | Scr Coulomb matrix W_mn(w)   :       10.920 s          10.927 s
           | Contour def: | CD-WAC W_mn(w) and Pade      :        0.000 s           0.000 s
-          | Contour def: | Scr aux Coulomb mat W_PQ(w)  :        9.782 s           9.780 s
-          | Contour def: | Polarisability Pi_PQ(w)      :        1.542 s           1.478 s
+          | Contour def: | Scr aux Coulomb mat W_PQ(w)  :        9.860 s           9.936 s
+          | Contour def: | Polarisability Pi_PQ(w)      :        1.561 s           1.486 s
           | Contour def: | GW+C Spectral function       :        0.000 s           0.000 s
-          | Total time for solution of K.-S. equations  :        0.007 s           0.012 s
-          | Total time for density update               :        0.189 s           0.188 s
-          | Total time for mixing                       :        0.031 s           0.030 s
-          | Total time for Hartree multipole update     :        0.025 s           0.028 s
-          | Total time for Hartree multipole sum        :        0.062 s           0.061 s
-          | Total time for total energy evaluation      :        0.000 s           0.000 s
+          | Total time for solution of K.-S. equations  :        0.007 s           0.005 s
+          | Total time for density update               :        0.191 s           0.190 s
+          | Total time for mixing                       :        0.031 s           0.031 s
+          | Total time for Hartree multipole update     :        0.025 s           0.025 s
+          | Total time for Hartree multipole sum        :        0.065 s           0.065 s
+          | Total time for total energy evaluation      :        0.000 s           0.001 s
 
           Partial memory accounting:
           | Residual value for overall tracked memory usage across tasks:     0.000000 MB (should be 0.000000 MB)

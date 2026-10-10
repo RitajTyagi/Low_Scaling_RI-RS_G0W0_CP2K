@@ -17,7 +17,7 @@ Data: data/csv/acc24.csv (columns homo_tikh<k>, lumo_tikh<k>, lambda = 10^-k)
 from plot_param import *
 
 d = pd.read_csv(f"{csv_dir}/acc24.csv")
-KS = [0, 2, 4, 6, 8, 10, 12]                       # folder names
+KS = [0, 2, 4, 6, 8, 10]                           # lambda = 10^-k (0: no regularization)
 LABELS = ["0"] + [f"$10^{{-{k}}}$" for k in KS[1:]]
 # three shades of the RI-RS colour, light to full
 METRICS = [("MSE", tint(C_RIRS, 0.65)), ("MAE", tint(C_RIRS, 0.30)), ("MAX", C_RIRS)]

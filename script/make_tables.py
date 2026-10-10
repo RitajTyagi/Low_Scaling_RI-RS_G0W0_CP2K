@@ -8,7 +8,6 @@ Written CSV files:
     acc24.csv              same for ACC24, plus RI-RS for every Tikhonov parameter
     ribbon_validation.csv  L = 1, 2, 4, 8 ribbons: FHI-aims (AC, CD) and CP2K RI-RS
     ribbon_scaling.csv     L = 1 ... 512: gap, basis sizes, grid size and timings
-    parallel_scaling.csv   L = 64 ribbon on 8 nodes, varying MPI ranks / OMP threads
     convergence.csv        L = 16 ribbon, one numerical parameter scanned at a time
 
 Two definitions of the LUMO are used, both applied identically to CP2K and
@@ -105,8 +104,8 @@ def read_cp2k_printed_edges(out_file):
 
     Only trusted if CP2K did not warn that "G0W0 reorders the empty levels";
     then the printed CBM is the QP energy of the KS LUMO and all three LUMO
-    definitions coincide.  Otherwise nan.  (Used for the parallel-scaling and
-    convergence runs, L = 64 and 16, none of which reorders.)
+    definitions coincide.  Otherwise nan.  (Used for the
+    convergence runs, L = 16, none of which reorders.)
     """
     if not os.path.isfile(out_file):
         return np.nan, np.nan
@@ -186,7 +185,11 @@ def read_run_info(out_file):
         "n_grid": grep_last_number(out_file, "Total grid points used for RI-RS", int),
         "mpi": grep_last_number(out_file, "Total number of message passing processes", int),
         "threads": grep_last_number(out_file, "Number of threads for this process", int),
-        "occ_phi": grep_last_number(out_file, "Percentage of non-zero matrix elements in Φ_μ(r_l)"),
+        # Φ_μ(r_l) in older CP2K revisions, ϕ_μ(r_l) in revision 0e87843579
+        "occ_phi": np.fmax(grep_last_number(out_file, "Percentage of non-zero matrix elements in Φ_μ(r_l)"),
+                           grep_last_number(out_file, "Percentage of non-zero matrix elements in ϕ_μ(r_l)")),
+        # Σ^c(iτ) in the AO basis, first time point (printed from revision 0e87843579 on)
+        "occ_Sigma": grep_last_number(out_file, "Percentage of non-zero matrix elements in Σ^c(iτ) for time point 1"),
         "occ_Z": grep_last_number(out_file, "Percentage of non-zero matrix elements in Z_lP"),
         # one sparsity pattern shared by the grid-by-grid matrices G_ll', chi_ll', W_ll'
         "occ_Gll": grep_last_number(out_file, "Percentage of non-zero matrix elements in G_ll'"),
@@ -216,7 +219,19 @@ STEP_TIMERS = {
 def step_times(out_file):
     """Wall time in s of each GW step, plus the SCF and the whole run."""
     t = read_timers(out_file)
+    # timer names of the newer CP2K revision 0e87843579: the GW part is
+    # 'run_gw' instead of 'gw', and the grid step is split into
+    # initialize_ri_rs_grid + optimize_ri_rs_grid instead of ri_rs_grid_assembler
+    if "gw" not in t and "run_gw" in t:
+        t["gw"] = t["run_gw"]
+    if "ri_rs_grid_assembler" not in t and ("initialize_ri_rs_grid" in t or "optimize_ri_rs_grid" in t):
+        t["ri_rs_grid_assembler"] = t.get("initialize_ri_rs_grid", 0.0) + t.get("optimize_ri_rs_grid", 0.0)
     row = {f"t_{k}": t.get(v, np.nan) for k, v in STEP_TIMERS.items()}
+    # compute_Z_lP also writes one DBCSR matrix to disk (dbcsr_binary_write);
+    # its time depends only on the file system (1.3 s at L=64, 248 s at L=512)
+    # and makes the Z_lP timings zig-zag, so it is not counted as Z_lP time
+    row["t_io_Z"] = t.get("dbcsr_binary_write", 0.0) if "compute_Z_lP" in t else np.nan
+    row["t_Z_lP"] = row["t_Z_lP"] - np.nan_to_num(row["t_io_Z"])
     row["t_scf"] = t.get("qs_energies", np.nan) - t.get("qs_energies_properties", 0.0)
     row["t_cp2k"] = t.get("CP2K", np.nan)
     return row
@@ -234,12 +249,6 @@ def formula(xyz):
     return out
 
 
-# FHI-aims G0W0@PBE0 values (eV) given by hand where the output file is not
-# (yet) in data/.  Remove an entry once its output.out is added; values from
-# the file always take precedence.
-#   GW100 37 = CBr4: FHI-aims numbers provided by Ritaj, 2026-10-08.
-AIMS_MANUAL = {("gw100", 37): (-10.0341, -0.5236)}
-
 for name in ("gw100", "acc24"):
     rows = []
     ids = sorted(int(d) for d in os.listdir(f"{data_dir}/{name}/fhi_aims"))
@@ -247,17 +256,17 @@ for name in ("gw100", "acc24"):
         row = {"id": i, "formula": formula(f"{data_dir}/{name}/fhi_aims/{i}/struc.xyz")}
         row["homo_aims"], row["lumo_aims"] = read_aims_qp(
             f"{data_dir}/{name}/fhi_aims/{i}/output.out")
-        if np.isnan(row["homo_aims"]) and (name, i) in AIMS_MANUAL:
-            row["homo_aims"], row["lumo_aims"] = AIMS_MANUAL[(name, i)]
         for code in ("cp2k_tensor", "cp2k_rirs"):
             tag = code.replace("cp2k_", "")
             row[f"homo_{tag}"], row[f"lumo_{tag}"] = read_cp2k_qp(
                 f"{data_dir}/{name}/{code}/{i}")
         if name == "acc24":
-            # Tikhonov scan: folder k means lambda = 10^-k, folder 0 means lambda = 0
-            for k in (0, 2, 4, 6, 8, 10, 12):
+            # Tikhonov scan: folder k means lambda = 10^-k, folder 0 means lambda = 0;
+            # lambda = 10^-8 is the default of the cp2k_rirs runs themselves
+            for k in (0, 2, 4, 6, 10):
                 row[f"homo_tikh{k}"], row[f"lumo_tikh{k}"] = read_cp2k_qp(
                     f"{data_dir}/{name}/cp2k_rirs_tikhonov/{i}/{k}")
+            row["homo_tikh8"], row["lumo_tikh8"] = row["homo_rirs"], row["lumo_rirs"]
         rows.append(row)
     df = pd.DataFrame(rows)
     df.to_csv(f"{csv_dir}/{name}.csv", index=False, float_format="%.4f")
@@ -274,8 +283,10 @@ for L in (1, 2, 4, 8):
         # FHI-aims: L = 1 was run with both analytic continuation (ac/) and
         # contour deformation (cd/); the longer ribbons with AC only.
         aims = f"{base}/fhi_aims/{L}/{basis}"
+        # L = 1 tzvp: the AC run may also sit in <aims>/ itself
+        ac_out = f"{aims}/ac/output.out" if os.path.isfile(f"{aims}/ac/output.out") else f"{aims}/output.out"
         if os.path.isdir(f"{aims}/ac"):
-            row["homo_aims_ac"], row["lumo_aims_ac"] = read_aims_qp(f"{aims}/ac/output.out")
+            row["homo_aims_ac"], row["lumo_aims_ac"] = read_aims_qp(ac_out)
             row["homo_aims_cd"], row["lumo_aims_cd"] = read_aims_qp(f"{aims}/cd/output.out")
         else:
             row["homo_aims_ac"], row["lumo_aims_ac"] = read_aims_qp(f"{aims}/output.out")
@@ -286,7 +297,7 @@ for L in (1, 2, 4, 8):
             cp2k = f"{data_dir}/nanographene/{L}/rirs_avdz"
         row["homo_rirs"], row["lumo_rirs"] = read_cp2k_qp(cp2k)
         # "window" LUMO in both codes (see module docstring)
-        aims_out = f"{aims}/ac/output.out" if os.path.isdir(f"{aims}/ac") else f"{aims}/output.out"
+        aims_out = ac_out
         row["homo_aims_win"], row["lumo_aims_win"] = read_aims_qp(aims_out, mode="window")
         row["homo_rirs_win"], row["lumo_rirs_win"] = read_cp2k_qp(cp2k, mode="window")
         rows.append(row)
@@ -298,12 +309,17 @@ print("wrote data/csv/ribbon_validation.csv")
 
 ########## Ribbons: size scaling (L = 1 ... 512) ##########
 
+# skip the size-scaling block if data/nanographene/<L>/ is absent
+HAVE_SCALING = os.path.isdir(f"{data_dir}/nanographene/1")
 rows = []
-for L in (1, 2, 4, 8, 16, 32, 64, 128, 256, 512):
+for L in ((1, 2, 4, 8, 16, 32, 64, 128, 256, 512) if HAVE_SCALING else ()):
     for flavour in ("rirs_opt_mini", "rirs_mini", "tensor_mini", "rirs_avdz", "tensor_avdz"):
         run = f"{data_dir}/nanographene/{L}/{flavour}"
         out = f"{run}/output.out"
         if not os.path.isfile(out):
+            continue
+        if "PROGRAM ENDED" not in open(out, errors="replace").read():
+            print(f"  skipped unfinished run nanographene/{L}/{flavour}")
             continue
         row = {"L": L, "flavour": flavour}
         row.update(read_run_info(out))
@@ -312,51 +328,31 @@ for L in (1, 2, 4, 8, 16, 32, 64, 128, 256, 512):
         row["gap"] = row["lumo"] - row["homo"]
         row.update(step_times(out))
         rows.append(row)
-df = pd.DataFrame(rows)
-df["cores"] = df["mpi"] * df["threads"]
-df["nodes"] = df["cores"] / 128           # Noctua 2: 128 cores per node
+if HAVE_SCALING:
+    df = pd.DataFrame(rows)
+    df["cores"] = df["mpi"] * df["threads"]
+    df["nodes"] = df["cores"] / 128           # Noctua 2: 128 cores per node
 
-# Reference cost of the PBE ground state (SCF) for every L.  The RI-RS runs
-# for large L restarted from an already converged wave function, so their
-# own SCF time is not the cost of a ground-state calculation.  Sources (set
-# by Ritaj, 2026-10-06):
-#   L = 1 ... 64    tensor_mini/output.out   (SCF from scratch)
-#   L = 128         rirs_mini/scf.out        (separate run, SCF part only)
-#   L = 256         rirs_mini/output.out
-#   L = 512         rirs_mini/scf.out        (separate SCF-only run of the
-#                   RI-RS + cutoffs setup)
-# SCF time = qs_energies - qs_energies_properties, i.e. everything before the
-# band-structure / GW post-processing; core hours with the cores of that run.
-SCF_SOURCE = {L: f"{L}/tensor_mini/output.out" for L in (1, 2, 4, 8, 16, 32, 64)}
-SCF_SOURCE.update({128: "128/rirs_mini/scf.out", 256: "256/rirs_mini/output.out",
-                   512: "512/rirs_mini/scf.out"})
-for L, src in SCF_SOURCE.items():
-    out = f"{data_dir}/nanographene/{src}"
-    t = step_times(out)["t_scf"]
-    info = read_run_info(out)
-    m = df.L == L
-    df.loc[m, "t_scf_ref"] = t
-    df.loc[m, "cores_scf_ref"] = info["mpi"] * info["threads"]
-    df.loc[m, "scf_ref_source"] = src
-df.to_csv(f"{csv_dir}/ribbon_scaling.csv", index=False, float_format="%.4f")
-print("wrote data/csv/ribbon_scaling.csv")
-
-########## Parallel scaling (L = 64, 1160 atoms, 8 nodes) ##########
-
-rows = []
-for kind in ("mpi", "omp"):
-    for d in sorted(glob.glob(f"{data_dir}/nanographene/parallel_scaling/{kind}/*")):
-        out = f"{d}/output.out"
-        row = {"scan": kind, "value": int(os.path.basename(d))}
-        row.update(read_run_info(out))
-        row["homo"], row["lumo"] = read_cp2k_qp(d, mode="window")
-        row.update(step_times(out))
-        rows.append(row)
-df = pd.DataFrame(rows)
-df["cores"] = df["mpi"] * df["threads"]
-df = df.sort_values(["scan", "cores"])
-df.to_csv(f"{csv_dir}/parallel_scaling.csv", index=False, float_format="%.4f")
-print("wrote data/csv/parallel_scaling.csv")
+    # Reference cost of the PBE ground state (SCF), per L and basis set
+    # taken from the SCF of the RI-RS runs, which
+    # start from an atomic guess (no restart file present, ~40 SCF steps):
+    #   aug-cc-pVDZ flavours            <L>/rirs_avdz/output.out
+    #   aug-SZV-MOLOPT-ae-mini flavours <L>/rirs_opt_mini/output.out
+    # SCF time = qs_energies - qs_energies_properties, i.e. everything before
+    # the band-structure / GW post-processing; core hours with the cores of that run.
+    for (L, flavour), idx in df.groupby(["L", "flavour"]).groups.items():
+        src = f"{L}/{'rirs_avdz' if flavour.endswith('avdz') else 'rirs_opt_mini'}/output.out"
+        out = f"{data_dir}/nanographene/{src}"
+        if not os.path.isfile(out):
+            continue
+        info = read_run_info(out)
+        df.loc[idx, "t_scf_ref"] = step_times(out)["t_scf"]
+        df.loc[idx, "cores_scf_ref"] = info["mpi"] * info["threads"]
+        df.loc[idx, "scf_ref_source"] = src
+    df.to_csv(f"{csv_dir}/ribbon_scaling.csv", index=False, float_format="%.4f")
+    print("wrote data/csv/ribbon_scaling.csv")
+else:
+    print("no size-scaling runs in data yet: ribbon_scaling.csv not written")
 
 ########## Parameter convergence (L = 16, 296 atoms) ##########
 
@@ -366,7 +362,8 @@ SCANS = {
     "cutoff_radius_rl_ao": ("CUTOFF_RADIUS_RL_AO", lambda s: float(s)),
     "cutoff_radius_rl_w":  ("CUTOFF_RADIUS_RL_W", lambda s: float(s)),
     "eps_filter":          ("EPS_FILTER", lambda s: 10.0 ** (-int(s))),
-    "grid_percentage":     ("N_POINT_PERCENTAGE", lambda s: float(s)),
+    "rs_ao_ratio":         ("RS_AO_RATIO", lambda s: float(s)),
+    "cutoff_atomic_cluster": ("CUTOFF_ATOMIC_CLUSTER", lambda s: float(s)),
 }
 rows = []
 for scan, (keyword, to_value) in SCANS.items():

@@ -1,35 +1,23 @@
 """
-Main figure 4 -- G0W0+H@PBE on nanographene ribbons C14L H4L+8, L = 1 ... 512
-(26 ... 9224 atoms).  Same layout as the poster (run-nanoribbon/poster/mkfigs.py):
-x axis = number of strips L on a log2 scale with the number of atoms written
-under every tick, and scaling exponents given in L (N = 18 L + 8, so for long
-ribbons an exponent in L is the exponent in N).
+Main figure 4 -- G0W0+H@PBE on nanographenes C14L H4L+8, L = 1 ... 512
+(26 ... 9224 atoms), one-column layout:
+  (a) structure (drawn with 11 strips; the L - 2 middle strips bracketed)
+  (b) HOMO-LUMO gap, number of atoms N = 18 L + 8 on the top axis
+  (c) cost of the full G0W0 step in core hours (wall time x cores, SCF not
+      included); grey dashed lines: power-law fits L^a through the three
+      largest systems of every setup, exponent written above the last point
+  (d) cost of the individual steps of RI-RS-Opt and of the total G0W0, with
+      the exponents of the three largest systems in the legend
 
-Five setups are compared (folder name in data/nanographene/<L>/):
+Setups (folder name in data/nanographene/<L>/):
     tensor_avdz     CP2K tensor-based low-scaling GW,  aug-cc-pVDZ
-    rirs_avdz       CP2K RI-RS,                        aug-cc-pVDZ
     tensor_mini     CP2K tensor-based low-scaling GW,  aug-SZV-MOLOPT-ae-mini
+    rirs_avdz       CP2K RI-RS,                        aug-cc-pVDZ
     rirs_mini       CP2K RI-RS,                        aug-SZV-MOLOPT-ae-mini
-    rirs_opt_mini   CP2K RI-RS + r_AO = 6 A, r_W = 35 A, grid optimized to 30 %
-                                                       aug-SZV-MOLOPT-ae-mini
-The tensor-based curves are drawn as a thick pale "halo" underneath, so that
-an RI-RS curve lying on top of them stays visible.
-
-(a) HOMO-LUMO gap = "window" LUMO minus HOMO (lowest QP level of the virtual
-    states within 2 eV of the KS LUMO, see make_tables.py).
-(b) Cost of the full G0W0 step in core hours (wall time x cores of that run),
-    SCF not included.  Dashed lines are power-law fits L^a to the first three
-    and to the last three points of every setup; the legend gives
-    "first three -> last three", and the last-three exponent is written at
-    the end of each curve.  Setups with fewer than six points (aug-cc-pVDZ)
-    get one fit, to their last three points.
-(c) Cost of the individual steps of RI-RS + cutoffs + optimized grid, with
-    "first three / last three" exponents, also for the total G0W0.  The SCF
-    is NOT shown here; its comparison with G0W0 is Figure 5.  The SCF is NOT taken
-    from the same run (those restarted from a converged wave function for
-    large L) but from the reference runs listed in make_tables.py (column
-    scf_ref_source): tensor_mini for L <= 64, rirs_mini/scf.out for L = 128
-    and 512, rirs_mini/output.out for L = 256.
+    rirs_opt_mini   CP2K RI-RS-Opt (cutoffs + optimized grid), mini
+Colour = method (tensor red, RI-RS navy, RI-RS-Opt teal), marker = basis
+(square aug-cc-pVDZ, circle mini); tensor curves dashed with large open
+markers so that the RI-RS curves on top of them stay visible.
 
 Machine: Noctua 2, 2 x AMD EPYC 7763 per node (128 cores), 8 MPI ranks x 16
 threads per node, 1 ... 18 nodes.
@@ -38,188 +26,228 @@ Data: data/csv/ribbon_scaling.csv
 """
 
 from plot_param import *
+from matplotlib.lines import Line2D
+from matplotlib.ticker import LogLocator, NullFormatter
 
 d = pd.read_csv(f"{csv_dir}/ribbon_scaling.csv")
 for c in [c for c in d.columns if c.startswith("t_")]:
     d["ch_" + c[2:]] = d[c] * d.cores / 3600.0          # core hours
-# SCF reference run (own cores), see make_tables.py
-d["ch_scf"] = d.t_scf_ref * d.cores_scf_ref / 3600.0
+d["ch_Sigma"] = d["ch_Sigma_x"] + d["ch_Sigma_c"]
 
 L_ALL = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512]
 ATOMS = {L: 18 * L + 8 for L in L_ALL}                    # C14L H4L+8
 
-SETUPS = [  # (flavour, label, colour, marker, drawn as halo?)
-    ("tensor_avdz",   "Tensor, aug-cc-pVDZ",          C_TENSOR,   's', True),
-    ("rirs_avdz",     "RI-RS, aug-cc-pVDZ",           C_RIRS,     's', False),
-    ("tensor_mini",   "Tensor, mini",                 C_TENSOR,   'o', True),
-    ("rirs_mini",     "RI-RS, mini",                  C_RIRS,     'o', False),
-    ("rirs_opt_mini", "RI-RS-Opt, mini",        C_RIRS_OPT, 'o', False),
+# (flavour, method, basis)
+SETUPS = [
+    ("tensor_avdz",   "tensor", "avdz"),
+    ("tensor_mini",   "tensor", "mini"),
+    ("rirs_avdz",     "rirs",   "avdz"),
+    ("rirs_mini",     "rirs",   "mini"),
+    ("rirs_opt_mini", "opt",    "mini"),
 ]
+METHOD = {  # colour, line style, marker filled?, marker size, line width
+    "tensor": dict(col=C_TENSOR,   ls=(0, (4, 2)), filled=False, ms=11, lw=1.6),
+    "rirs":   dict(col=C_RIRS,     ls='-',         filled=True,  ms=6,  lw=1.6),
+    "opt":    dict(col=C_RIRS_OPT, ls='-',         filled=True,  ms=7,  lw=2.4),
+}
+METHOD_LABEL = {"tensor": "Tensor", "rirs": "RI-RS", "opt": "RI-RS-Opt"}
+MARKER = {"avdz": 's', "mini": 'o'}
+BASIS_LABEL = {"avdz": "aug-cc-pVDZ", "mini": "aug-SZV-MOLOPT-ae-mini"}
+
+# colours of the RI-RS-Opt steps: none of them is used for a method
+STEPS = [  # (column, label, colour)
+    ("grid",  "Grid optimization",                          '#8E6BBF'),
+    ("Z_lP",  r"$Z_{lP}$",                                   '#4DBBD5'),
+    ("chi",   r"$\chi(i\tau)$",                              '#E89F0C'),
+    ("W",     r"$W(i\tau)$",                                 '#D0458F'),
+    ("Sigma", r"$\Sigma^\mathrm{x}+\Sigma^\mathrm{c}(i\tau)$", '#7A8B2E'),
+    ("QP",    "QP",                                          '#5A5A5A'),
+]
+C_FIT = '#9A9A9A'
 
 
-def style(col, mk, halo):
-    """Line/marker style.  The tensor reference is a thick pale line with
-    open markers underneath; the colour is pre-blended with white instead of
-    using alpha, because the figure is saved with a transparent background."""
-    if halo:
-        return dict(color=tint(col, 0.55), lw=8.0, marker=mk, mfc='none',
-                    mec=col, mew=2.2, ms=18 if mk == 's' else 15, zorder=2)
-    return dict(color=col, lw=2.6, marker=mk, mfc=col, mec='white', mew=1.2,
-                ms=11 if mk == 's' else 9, zorder=4)
+def style(method, basis, clip=False):
+    m = METHOD[method]
+    mk = 'D' if method == "opt" else MARKER[basis]
+    return dict(color=m["col"], ls=m["ls"], lw=m["lw"], marker=mk,
+                ms=m["ms"] if mk != 'D' else 7,
+                mfc=m["col"] if m["filled"] else 'white',
+                mec=m["col"] if not m["filled"] else 'white',
+                mew=1.8 if not m["filled"] else 0.6, clip_on=clip)
 
 
 def slope(x, y):
-    """Exponent a of a power-law fit y = c x^a (least squares in log-log)."""
-    return np.polyfit(np.log10(x), np.log10(y), 1)[0]
+    return np.polyfit(np.log10(x), np.log10(y), 1)
 
 
-def strips_axis(ax, xmax=640):
-    """log2 axis in L at the bottom, number of atoms N = 18 L + 8 on top."""
+def fit_line(ax, x, y, text):
+    """Grey dashed line of the power-law fit through the last three points,
+    extended a little on both sides, and the exponent above the last point."""
+    a, b = slope(x[-3:], y[-3:])
+    xx = np.array([x[-3] / 1.35, x[-1] * 1.35])
+    ax.plot(xx, 10 ** (a * np.log10(xx) + b), color=C_FIT, lw=1.3,
+            ls=(0, (3, 2)), zorder=1)
+    ax.annotate(text.format(a=a), xy=(x[-1], y[-1]), xytext=(0, 3),
+                textcoords='offset points', fontsize=FG - 1, ha='center',
+                va='bottom', color=INK, zorder=6)
+    return a
+
+
+def x_axis(ax, bottom=True):
     ax.set_xscale('log', base=2)
     ax.set_xticks(L_ALL)
-    ax.set_xticklabels([f"$2^{{{int(np.log2(L))}}}$" for L in L_ALL], fontsize=22)
     ax.minorticks_off()
-    ax.set_xlim(0.8, xmax)
-    ax.set_xlabel("Number of strips $L$")
-    # top axis: same tick positions, labelled with the number of atoms
-    top = ax.secondary_xaxis('top')
-    top.set_xticks(L_ALL)
-    top.set_xticklabels([f"{ATOMS[L]:,}" for L in L_ALL], fontsize=18, rotation=45,
-                        ha='left', rotation_mode='anchor')
-    top.minorticks_off()
-    top.tick_params(direction='in')
-    top.set_xlabel("Number of atoms $N$", labelpad=10)
-    ax.tick_params(axis='x', top=False)
+    ax.set_xlim(0.8, 700)
+    ax.set_axisbelow(True)
+    ax.grid(True, which="major", axis="both", color="#d6d6d6", lw=0.8)
+    ax.tick_params(axis='both', labelsize=FT)
+    if bottom:
+        ax.set_xticklabels([str(L) for L in L_ALL])
+        ax.set_xlabel("Number of strips $L$", fontsize=FL)
+    else:
+        ax.tick_params(axis='x', labelbottom=False)
 
 
-def ribbon_L3():
-    """Geometry of the L = 3 nanographene, built from the L = 4 xyz file.
+def log_y(ax):
+    ax.set_yscale('log')
+    ax.set_ylim(1e-3, 1e6)
+    ax.yaxis.set_major_locator(LogLocator(base=10, numticks=20))
+    ax.yaxis.set_minor_formatter(NullFormatter())
+    ax.yaxis.set_minor_locator(LogLocator(base=10, subs=(), numticks=20))
 
-    The ribbons are periodic along y with one C14H4 strip per 4.264 A; strip
-    k of the L = 4 file is centred at y = k * 4.264 A.  We delete strip 2 and
-    shift everything above it down by one period, which gives L = 3 with the
-    same CH2-terminated ends.  Returns symbols, coordinates and the y range
-    of the middle strip (the one that is repeated L - 2 times).
-    """
+
+# drawn at 8 in width, shown at one column (3.37 in): FT = 19 -> ~8 pt
+FT, FL, FG = 19, 21, 17
+fig = plt.figure(figsize=(8, 19.0))
+gs = fig.add_gridspec(5, 1, height_ratios=[0.30, 0.13, 0.8, 1.0, 1.0], hspace=0.08)
+ax_s = fig.add_subplot(gs[0])
+ax_b = fig.add_subplot(gs[2])
+ax_c = fig.add_subplot(gs[3], sharex=ax_b)
+ax_d = fig.add_subplot(gs[4], sharex=ax_b)
+
+########## (a) structure ##########
+def draw_ribbon_long(ax, n_strip=11):
+    """Ball-and-stick drawing of the ribbon with n_strip strips, built from
+    the L = 4 xyz file by repeating its second strip; the n_strip - 2 middle
+    strips are bracketed and labelled L - 2."""
     period = 4.264
-    lines = open(f"{data_dir}/nanographene/4/struc.xyz").read().split("\n")[2:]
+    lines = open(f"{data_dir}/nanographene/4/rirs_opt_mini/struc.xyz").read().split("\n")[2:]
     rows = [l.split() for l in lines if l.strip()]
-    sym = np.array([r[0] for r in rows])
-    xyz = np.array([[float(v) for v in r[1:4]] for r in rows])
-    lo, hi = 2 * period - period / 2, 2 * period + period / 2
-    keep = ~((xyz[:, 1] > lo) & (xyz[:, 1] < hi))
-    sym, xyz = sym[keep], xyz[keep].copy()
-    xyz[xyz[:, 1] >= hi, 1] -= period
-    return sym, xyz, (period - period / 2, period + period / 2)
-
-
-def draw_ribbon(ax):
-    """Ball-and-stick drawing of the L = 3 ribbon, long axis horizontal, with
-    the repeated middle strip in brackets labelled L - 2."""
-    sym, xyz, (y0, y1) = ribbon_L3()
+    sym0 = np.array([r[0] for r in rows])
+    xyz0 = np.array([[float(v) for v in r[1:4]] for r in rows])
+    y = xyz0[:, 1]
+    first, middle, last = y < period / 2, (y >= period / 2) & (y < 1.5 * period), y >= 2.5 * period
+    parts = [(sym0[first], xyz0[first])]
+    for j in range(n_strip - 2):
+        parts.append((sym0[middle], xyz0[middle] + [0, j * period, 0]))
+    parts.append((sym0[last], xyz0[last] + [0, (n_strip - 4) * period, 0]))
+    sym = np.concatenate([a for a, _ in parts])
+    xyz = np.concatenate([b for _, b in parts])
     u, v = xyz[:, 1], xyz[:, 0]               # long axis horizontal
-    d = np.linalg.norm(xyz[:, None, :] - xyz[None, :, :], axis=-1)
+    dd = np.linalg.norm(xyz[:, None, :] - xyz[None, :, :], axis=-1)
     rcov = np.where(sym == "C", 0.76, 0.31)
-    bonded = np.triu(d < 1.25 * (rcov[:, None] + rcov[None, :]), k=1)
+    bonded = np.triu(dd < 1.25 * (rcov[:, None] + rcov[None, :]), k=1)
     for i, j in zip(*np.where(bonded)):
-        ax.plot([u[i], u[j]], [v[i], v[j]], color='#6e6e6e', lw=3.0,
+        ax.plot([u[i], u[j]], [v[i], v[j]], color='#6e6e6e', lw=1.7,
                 solid_capstyle='round', zorder=1)
-    for el, col, size in (("C", '#3a3a3a', 150), ("H", 'white', 70)):
+    for el, col, size in (("C", '#3a3a3a', 42), ("H", 'white', 22)):
         m = sym == el
         ax.scatter(u[m], v[m], s=size, c=col, edgecolors='#3a3a3a',
-                   linewidths=1.0, zorder=2)
-    # brackets around the middle strip
+                   linewidths=0.7, zorder=2)
+    y0, y1 = period / 2, (n_strip - 1.5) * period
     ylo, yhi = v.min() - 0.9, v.max() + 0.9
     for x, sgn in ((y0, 1), (y1, -1)):
         ax.plot([x + sgn * 0.45, x, x, x + sgn * 0.45], [ylo, ylo, yhi, yhi],
-                color=INK, lw=2.4, zorder=3)
-    ax.text(y1 + 0.2, ylo - 0.1, "$L-2$", ha='left', va='center',
-            fontsize=24, color=INK)
+                color=INK, lw=2.2, zorder=3)
+    ax.text(y1 + 0.5, ylo + 0.3, "$L-2$", ha='left', va='top',
+            fontsize=FG + 3, color=INK)
     ax.set_aspect('equal')
     ax.axis('off')
 
 
-fig, axes = plt.subplots(1, 3, figsize=(30, 10))
-fig.subplots_adjust(wspace=0.27)
+draw_ribbon_long(ax_s)
+ax_s.text(0.5, 1.0, "C$_{14L}$H$_{4L+8}$", transform=ax_s.transAxes,
+          fontsize=FL, ha='center', va='bottom', color=INK)
 
-########## (a) gap ##########
-ax = axes[0]
-for fl, lab, col, mk, halo in SETUPS:
-    s = d[d.flavour == fl].dropna(subset=["gap"]).sort_values("L")
-    ax.plot(s.L, s.gap, label=lab, clip_on=False, **style(col, mk, halo))
+########## (b) gap ##########
+ax = ax_b
+for fl, meth, bas in SETUPS:
+    s_ = d[d.flavour == fl].dropna(subset=["gap"]).sort_values("L")
+    ax.plot(s_.L, s_.gap, zorder=3 if meth == "tensor" else 4, **style(meth, bas))
 g512 = d[(d.flavour == "rirs_opt_mini") & (d.L == 512)].gap.iloc[0]
-ax.annotate(f"{g512:.3f} eV", xy=(512, g512), xytext=(-4, 22),
-            textcoords='offset points', ha='right', fontsize=20, color=C_RIRS_OPT)
-strips_axis(ax)
-ax.set_ylabel("HOMO-LUMO gap (eV)")
-ax.set_ylim(3.6, 9.4)
-ax.legend(loc='upper right', fontsize=17, handlelength=2.4)
-# structure of the nanographene in the empty middle-right part of (a)
-ins = ax.inset_axes([0.40, 0.26, 0.58, 0.40])
-draw_ribbon(ins)
-panel_label(ax, "a")
+ax.annotate(f"{g512:.3f} eV", xy=(512, g512), xytext=(8, 12),
+            textcoords='offset points', ha='right', va='bottom',
+            fontsize=FG, color=C_RIRS_OPT)
+x_axis(ax, bottom=False)
+ax.set_ylabel("HOMO-LUMO gap (eV)", fontsize=FL)
+ax.set_ylim(3.5, 9.0)
+t = ax.secondary_xaxis('top')
+t.set_xticks(L_ALL)
+t.set_xticklabels([f"{ATOMS[L]:,}" for L in L_ALL], fontsize=FT - 3,
+                  rotation=45, ha='left', rotation_mode='anchor')
+t.minorticks_off()
+t.tick_params(direction='in')
+t.set_xlabel("Number of atoms $N$", fontsize=FL, labelpad=8)
+ax.tick_params(axis='x', top=False)
+# legends: colour/line = method, marker = basis
+h_meth = [Line2D([], [], **{**style(m, "mini"), "marker": None}, label=METHOD_LABEL[m])
+          for m in ("tensor", "rirs", "opt")]
+h_bas = [Line2D([], [], ls='none', marker=MARKER[b], ms=8, mfc=INK_GREY,
+                mec='white', label=BASIS_LABEL[b]) for b in ("avdz", "mini")]
+h_bas.append(Line2D([], [], ls='none', marker='D', ms=7, mfc=C_RIRS_OPT,
+                    mec='white', label="mini, opt. grid"))
+h_bas.append(Line2D([], [], ls='none', marker='o', ms=10, mfc='white',
+                    mec=INK_GREY, mew=1.8, label="open: tensor"))
+ax.legend(handles=h_meth + h_bas[:2], loc='upper right', fontsize=FG,
+          frameon=False, handlelength=2.4,
+          labelspacing=0.3, borderpad=0.4)
 
-########## (b) total G0W0 cost with first-3 / last-3 fits ##########
-ax = axes[1]
-handles = []
-for fl, lab, col, mk, halo in SETUPS:
-    s = d[d.flavour == fl].sort_values("L")
-    x, y = s.L.values.astype(float), s.ch_total.values
-    a_hi = slope(x[-3:], y[-3:])
-    if len(x) >= 6:
-        a_lo = slope(x[:3], y[:3])
-        txt = f"{lab}\n$L^{{{a_lo:.2f}}} \\rightarrow L^{{{a_hi:.2f}}}$"
-        # (points, extend left by, extend right by, write exponent at end?)
-        fits = [(x[:3], y[:3], 1 / 2.2, 1.0, False), (x[-3:], y[-3:], 1.0, 1.35, True)]
-    else:
-        txt = f"{lab}\n$L^{{{a_hi:.2f}}}$"
-        fits = [(x[-3:], y[-3:], 1.0, 1.9, True)]
-    print(f"(b) {fl:14s} " + (f"first 3: L^{a_lo:.2f}  " if len(x) >= 6 else "") +
-          f"last 3: L^{a_hi:.2f}")
-    h, = ax.plot(x, y, label=txt, clip_on=False, **style(col, mk, halo))
-    handles.append(h)
-    for xr, yr, f0, f1, write in fits:
-        a, b = np.polyfit(np.log10(xr), np.log10(yr), 1)
-        xx = np.geomspace(xr[0] * f0, xr[-1] * f1, 30)
-        ax.plot(xx, 10 ** b * xx ** a, ls=(0, (4, 3)), lw=1.8, color=col, zorder=3)
-        if write:
-            ax.annotate(f"$L^{{{a:.2f}}}$", xy=(xx[-1], 10 ** b * xx[-1] ** a),
-                        xytext=(6, 2), textcoords='offset points', fontsize=21,
-                        color=col, fontweight='bold', va='center')
-strips_axis(ax, xmax=1700)       # room for the exponents at the end of the fits
-ax.set_yscale('log')
-ax.set_ylim(0.15, 1.5e6)
-ax.set_ylabel(r"$G_0W_0$ computational cost (core hours)")
-ax.legend(handles=handles, loc='lower right', fontsize=17, handlelength=2.4,
-          labelspacing=0.6)
-panel_label(ax, "b")
+########## (c) total G0W0 cost ##########
+ax = ax_c
+for fl, meth, bas in SETUPS:
+    s_ = d[d.flavour == fl].sort_values("L")
+    x, y = s_.L.values.astype(float), s_.ch_total.values
+    ax.plot(x, y, zorder=3 if meth == "tensor" else 4, **style(meth, bas))
+    a = fit_line(ax, x, y, "$L^{{{a:.1f}}}$")
+    print(f"(c) {fl:14s} last 3: L^{a:.2f}")
+x_axis(ax, bottom=False)
+log_y(ax)
+ax.set_ylabel(r"$G_0W_0$ cost (core hours)", fontsize=FL)
 
-########## (c) steps of RI-RS + cutoffs, first-3 / last-3 ##########
-ax = axes[2]
-s = d[d.flavour == "rirs_opt_mini"].sort_values("L")
-x = s.L.values.astype(float)
-# the SCF is shown separately, in Figure 5 (fig5_scf_vs_gw.py)
-for step, ls, mk, lw in (("total", '-', 'o', 3.4),):
-    y = s["ch_" + step].values
-    a_lo, a_hi = slope(x[:3], y[:3]), slope(x[-3:], y[-3:])
-    print(f"(c) {step:8s} first 3: L^{a_lo:.2f}  last 3: L^{a_hi:.2f}")
-    ax.plot(x, y, ls=ls, marker=mk, color=C_STEP[step], lw=lw, ms=9,
-            mfc=C_STEP[step] if step == "total" else 'white', mec=C_STEP[step],
-            mew=2.0, zorder=6, clip_on=False,
-            label=f"{STEP_LABEL[step]}   $L^{{{a_lo:.2f}}}$ / $L^{{{a_hi:.2f}}}$")
-for step in ("grid", "Z_lP", "chi", "W", "Sigma_x", "Sigma_c", "QP"):
-    y = s["ch_" + step].values
-    a_lo, a_hi = slope(x[:3], y[:3]), slope(x[-3:], y[-3:])
-    print(f"(c) {step:8s} first 3: L^{a_lo:.2f}  last 3: L^{a_hi:.2f}")
-    ax.plot(x, y, marker='o', color=C_STEP[step], mec='white', mew=1.0, ms=8,
-            lw=2.2, zorder=4, clip_on=False,
-            label=f"{STEP_LABEL[step]}   $L^{{{a_lo:.2f}}}$ / $L^{{{a_hi:.2f}}}$")
-strips_axis(ax)
-ax.set_yscale('log')
-ax.set_ylim(1e-3, 3e6)
-ax.set_ylabel("Computational cost (core hours)")
-ax.legend(loc='upper left', ncol=2, fontsize=17, columnspacing=1.0,
-          handlelength=1.8, labelspacing=0.45, bbox_to_anchor=(0.0, 0.93))
-panel_label(ax, "c")
+########## (d) steps of RI-RS-Opt ##########
+ax = ax_d
+s_ = d[d.flavour == "rirs_opt_mini"].sort_values("L")
+x = s_.L.values.astype(float)
+ax.plot(x, s_.ch_total.values, zorder=5, label="RI-RS-Opt total",
+        **style("opt", "mini"))
+a = fit_line(ax, x, s_.ch_total.values, "$L^{{{a:.1f}}}$")
+print(f"(d) total    last 3: L^{a:.2f}")
+for step, lab, col in STEPS:
+    y = s_["ch_" + step].values
+    ax.plot(x, y, color=col, lw=1.8, marker='o', ms=6, mec='white', mew=0.6,
+            clip_on=False, zorder=4, label=lab)
+    a, b = slope(x[-3:], y[-3:])
+    print(f"(d) {step:8s} last 3: L^{a:.2f}")
+x_axis(ax, bottom=True)
+log_y(ax)
+ax.set_ylabel("Cost of the steps (core hours)", fontsize=FL)
+# exponents of the steps in the legend (six fit lines would hide the data)
+hs, ls_ = ax.get_legend_handles_labels()
+ls_ = [l if l == "RI-RS-Opt total" else
+       f"{l}  ($L^{{{slope(x[-3:], s_['ch_' + st].values[-3:])[0]:.1f}}}$)"
+       for l, st in zip(ls_, ["total"] + [s[0] for s in STEPS])]
+ax.legend(hs, ls_, loc='upper left', fontsize=FG - 2, frameon=False,
+          handlelength=1.5,
+          labelspacing=0.25, borderpad=0.3, ncol=2, columnspacing=0.8,
+          handletextpad=0.4)
 
+# (a) at the same x as (b)-(d), level with the top of the structure panel
+fig.canvas.draw()
+_pb = ax_b.get_position()
+_top = fig.transFigure.inverted().transform_bbox(ax_s.get_tightbbox(fig.canvas.get_renderer())).y1
+fig.text(_pb.x0 - 0.17 * _pb.width, _top, "(a)", ha='left', va='top',
+         fontsize=FL + 2, color=INK)
+for ax, l in ((ax_b, "b"), (ax_c, "c"), (ax_d, "d")):
+    ax.text(-0.17, 1.0, f"({l})", transform=ax.transAxes, ha='left',
+            va='top', fontsize=FL + 2, color=INK)
 save(fig, "fig4_size_scaling")

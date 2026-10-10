@@ -5,7 +5,6 @@
   &TIMINGS
     THRESHOLD 0.0
   &END TIMINGS
-  EXTENDED_FFT_LENGTHS
 &END GLOBAL
 
 &FORCE_EVAL
@@ -53,13 +52,16 @@
       &BANDSTRUCTURE
       &GW
         NUM_TIME_FREQ_POINTS         30
-        MEMORY_PER_PROC              14
-        EPS_FILTER              1.0E-11
-        CUTOFF_RADIUS_RI             12
+        EPS_FILTER              1.0E-10
+        CUTOFF_RADIUS_RI             14
         HEDIN_SHIFT
         &RI_RS
            CUTOFF_RADIUS_RL_AO        6
            CUTOFF_RADIUS_RL_W        20
+           &GRID_OPTIMIZATION
+               RS_AO_RATIO            6
+               CUTOFF_ATOMIC_CLUSTER  3
+           &END
         &END
       &END GW
     &END BANDSTRUCTURE

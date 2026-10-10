@@ -119,6 +119,25 @@ def panel_label(ax, letter, extra="", fontsize=24, x=0.025, y=0.955):
             fontsize=fontsize, color=INK)
 
 
+def outer_labels(fig, axes, letters, fontsize=24, pad=0.004, one_row=False):
+    """Put "(a)", "(b)", ... at the top-left corner of each panel's full
+    extent, i.e. outside the plot box and including the axis labels and
+    tick labels (and a top axis, if present)."""
+    fig.canvas.draw()
+    r = fig.canvas.get_renderer()
+    inv = fig.transFigure.inverted()
+    bbs = [inv.transform_bbox(ax.get_tightbbox(r)) for ax in axes]
+    for ax, bb, letter in zip(axes, bbs, letters):
+        # same height for all panels in one row (rows = equal plot-box top)
+        top = ax.get_position().y1
+        if one_row:          # caller says: all these panels form one row
+            y = max(b.y1 for b in bbs)
+        else:
+            y = max(b.y1 for a, b in zip(axes, bbs) if abs(a.get_position().y1 - top) < 0.02)
+        fig.text(bb.x0 - pad, y + pad, f"({letter})", ha='left', va='bottom',
+                 fontsize=fontsize, color=INK)
+
+
 def fit_exponent(x, y):
     """Slope of log(y) against log(x), i.e. the exponent a in y ~ x^a."""
     a, b = np.polyfit(np.log(x), np.log(y), 1)
@@ -132,4 +151,4 @@ def save(fig, name):
         fig.savefig(os.path.join(fig_dir, f"{name}.{ext}"),
                     bbox_inches='tight', pad_inches=0.05,
                     transparent=True, **kw)
-    print(f"wrote fig/{name}.pdf and fig/{name}.png")
+    print(f"wrote {os.path.basename(fig_dir)}/{name}.pdf and .png")

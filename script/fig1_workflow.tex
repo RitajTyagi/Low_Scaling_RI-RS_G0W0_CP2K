@@ -16,8 +16,8 @@
 %
 % Build:   cd script && pdflatex -output-directory=../fig fig1_workflow.tex
 %
-\documentclass[border=2pt]{standalone}
-\usepackage{amsmath,amssymb}
+\documentclass[border=2pt]{standalone}\usepackage{amsmath,amssymb}\usepackage{bm}
+\usepackage{upgreek}
 \usepackage{tikz}
 \usetikzlibrary{positioning,arrows.meta,calc}
 \usepackage[T1]{fontenc}
@@ -28,6 +28,8 @@
 \definecolor{dense}{HTML}{E18727}
 \definecolor{ink}{HTML}{111111}
 \definecolor{inp}{HTML}{7f7f7f}
+\definecolor{spgreen}{HTML}{0B6E4F}   % sparse matrices are written in this colour
+\newcommand{\spm}[1]{{\color{spgreen}#1}}
 
 \tikzset{
   step/.style={draw=#1, line width=0.8pt, fill=#1!7, rounded corners=2.5pt,
@@ -49,37 +51,41 @@
 
 % ---- 1: fitting coefficients ---------------------------------------------
 \node[step=sparse, below=of in] (s1) {%
-  \hspace{9pt}\textbf{Fitting coefficients} (for every atom $P$)\par\vspace{1pt}\centering
-  $\displaystyle \sum_{l'} D_{ll'}\, Z_{l'P} = d_{lP}\,,\quad
-   D_{ll'}=\Big[\sum_\mu \phi_\mu(\mathbf r_l)\,\phi_\mu(\mathbf r_{l'})\Big]^2,$\par\vspace{1pt}
-  $\displaystyle d_{lP}=\sum_{\mu\nu}\phi_\mu(\mathbf r_l)\,\phi_\nu(\mathbf r_l)\,(\mu\nu|P)$\par};
+  \hspace{9pt}\textbf{Fitting coefficients} (for every atom $A$)\par\vspace{1pt}\centering
+  $\displaystyle \sum_{l'} D_{ll'}\, \spm{Z_{l'P}} = d_{lP}\,,\quad
+   D_{ll'}=\Big[\sum_\mu \spm{\phi_\mu(\mathbf r_l)}\,\spm{\phi_\mu(\mathbf r_{l'})}\Big]^2,$\par\vspace{1pt}
+  $\displaystyle d_{lP}=\sum_{\mu\nu}\spm{\phi_\mu(\mathbf r_l)}\,\spm{\phi_\nu(\mathbf r_l)}\,\spm{(\mu\nu|P)}$\par};
 
 % ---- 2: polarizability -----------------------------------------------------
 \node[step=sparse, below=of s1] (s2) {%
   \hspace{9pt}\textbf{Polarizability} (for every imaginary time $\tau$)\par\vspace{1pt}\centering
-  $\displaystyle \chi_{PQ}(i\tau) = -2\sum_{ll'} Z_{lP}\,
-     G^\text{occ}_{ll'}(i\tau)\,G^\text{vir}_{ll'}(i\tau)\,Z_{l'Q}\,,$\par\vspace{1pt}
-  $\displaystyle G^\text{occ/vir}_{ll'}(i\tau)=\sum_{\mu\nu}\phi_\mu(\mathbf r_l)\,
-     G^\text{occ/vir}_{\mu\nu}(i\tau)\,\phi_\nu(\mathbf r_{l'})$\par};
+  $\displaystyle \chi_{PQ}(i\tau) = -2\sum_{ll'} \spm{Z_{lP}}\,
+     \spm{G_{ll'}}(i\tau)\,\spm{G_{l'l}}(-i\tau)\,\spm{Z_{l'Q}}\,,$\par\vspace{1pt}
+  $\displaystyle \spm{G_{ll'}}(i\tau)=\sum_{\mu\nu}\spm{\phi_\mu(\mathbf r_l)}\,
+     \spm{G_{\mu\nu}}(i\tau)\,\spm{\phi_\nu(\mathbf r_{l'})}$\par};
 
 % ---- 3: screened interaction -----------------------------------------------
+% includes the multiplication with M^-1 from both sides, so that box 4 uses
+% the result directly (M^-1 W M^-1 is a dense O(N^3) step and belongs here)
 \node[step=dense, below=of s2] (s3) {%
   \hspace{9pt}\textbf{Screened interaction} (for every frequency $\omega$)\par\vspace{1pt}\centering
-  $\displaystyle \epsilon(i\omega) = 1 - V^{1/2}M^{-1}\chi(i\omega)M^{-1}V^{1/2},$\par\vspace{1pt}
-  $\displaystyle W^\text{c}(i\omega) = V^{1/2}\big[\epsilon^{-1}(i\omega)-1\big]V^{1/2}$\par};
+  $\displaystyle \bm{\upepsilon}(i\omega) = \mathbf{1} - \mathbf{V}^{1/2}\mathbf{M}^{-1}\bm{\upchi}(i\omega)\mathbf{M}^{-1}\mathbf{V}^{1/2},$\par\vspace{1pt}
+  $\displaystyle \widetilde{\mathbf{W}}^\text{c}(i\omega) = \mathbf{M}^{-1}\mathbf{V}^{1/2}\big[\bm{\upepsilon}^{-1}(i\omega)-\mathbf{1}\big]\mathbf{V}^{1/2}\mathbf{M}^{-1}$\par};
 
 % ---- 4: self-energy ----------------------------------------------------------
 \node[step=sparse, below=of s3] (s4) {%
   \hspace{9pt}\textbf{Self-energy} (for every imaginary time $\tau$)\par\vspace{1pt}\centering
-  $\displaystyle \Sigma^\text{c}_{\mu\nu}(i\tau) = \sum_{ll'}\phi_\mu(\mathbf r_l)\,
-     G_{ll'}(i\tau)\,W^\text{c}_{ll'}(i\tau)\,\phi_\nu(\mathbf r_{l'})\,,$\par\vspace{1pt}
-  $\displaystyle W^\text{c}_{ll'}(i\tau) = \sum_{PQ} Z_{lP}\,\big[M^{-1}W^\text{c}(i\tau)M^{-1}\big]_{PQ}\,Z_{l'Q}$\par};
+  $\displaystyle \Sigma^\text{c}_{\mu\nu}(i\tau) = i\sum_{ll'}\spm{\phi_\mu(\mathbf r_l)}\,
+     \spm{G_{ll'}}(i\tau)\,\spm{\widetilde W^\text{c}_{ll'}}(i\tau)\,\spm{\phi_\nu(\mathbf r_{l'})}\,,$\par\vspace{1pt}
+  $\displaystyle \spm{\widetilde W^\text{c}_{ll'}}(i\tau) = \sum_{PQ} \spm{Z_{lP}}\,\widetilde W^\text{c}_{PQ}(i\tau)\,\spm{Z_{l'Q}}$\par};
 
 % ---- 5: QP energies ----------------------------------------------------------
 \node[step=dense, below=of s4] (s5) {%
   \hspace{9pt}\textbf{Quasiparticle energies} (analytic continuation)\par\vspace{1pt}\centering
+  $\displaystyle \Sigma^\text{c}_{nn}(i\tau) = \sum_{\mu\nu} C_{\mu n}\,\Sigma^\text{c}_{\mu\nu}(i\tau)\,C_{\nu n}\,,$\par\vspace{1pt}
   $\displaystyle \varepsilon_n^{G_0W_0} = \varepsilon_n + \Sigma^\text{x}_{nn}
-     + \text{Re}\,\Sigma^\text{c}_{nn}\big(\varepsilon_n^{G_0W_0}\big) - v^\text{xc}_{nn}$\par};
+     + \text{Re}\,\Sigma^\text{c}_{nn}\big(\varepsilon_n^{G_0W_0}\big) - v^\text{xc}_{nn}$\par\vspace{1pt}
+  {\scriptsize $O(N^2)$ per state $n$, $O(N^3)$ for all states}\par};
 
 % ---- arrows ----------------------------------------------------------------
 \foreach \a/\b in {in/s1, s1/s2, s2/s3, s3/s4, s4/s5}
@@ -100,9 +106,10 @@
 \node[anchor=north west, font=\footnotesize, text=ink, align=left]
   at ($(s5.south west)+(0,-0.12)$) {%
   \tikz\fill[sparse!7, draw=sparse, line width=0.7pt, rounded corners=1pt] (0,0) rectangle (0.3,0.18);\
-  sparse grid contraction\quad
+  sparse contraction\quad
   \tikz\fill[dense!7, draw=dense, line width=0.7pt, rounded corners=1pt] (0,0) rectangle (0.3,0.18);\
-  dense, auxiliary / MO basis};
+  dense, auxiliary / MO basis\\
+  matrices in \spm{green} are sparse};
 
 \end{tikzpicture}
 \end{document}
